@@ -15,6 +15,7 @@ Create Table HOCVIEN
 	TenHocVien nvarchar(30) not null,
 	NgaySinh date not null,
 	GioiTinh nchar(5) not null,
+	NgheNgiep nvarchar(50) not null,
 	SoDienThoai varchar(20) not null,
 	DiaChi nvarchar(100) not null
 )
@@ -62,22 +63,22 @@ Create Table HOSOHOCVIEN
 Create Table BIENLAI
 (
 	MaBienLai char(10) primary key,
-	ThanhTien float not null,
+	HocPhi float not null,
 	MienGiam float
 )
 
 Create Table DANGKY
 (
 	MaDangKy char(10) primary key,
-	TenDangKy nvarchar(50),
+	MaKhoaHoc char(10) foreign key references KHOAHOC(MaKhoaHoc),
 	MaLop char(10) foreign key references LOP(MaLop),
 	MaHocVien char(10) foreign key references HOCVIEN(MaHocVien),
 	MaBienLai char(10) foreign key references BIENLAI(MaBienLai)
 )
 
-Create Table DOTTHI
+Create Table KYTHI
 (
-	MaDotThi char(10) primary key,
+	MaKyThi char(10) primary key,
 	MaKhoaHoc char(10) foreign key references KHOAHOC(MaKhoaHoc),
 	NgayThi date not null,
 	GioThi time not null
@@ -86,7 +87,27 @@ Create Table DOTTHI
 Create Table DIEMTHI
 (
 	MaHocVien char(10) foreign key references HOCVIEN(MaHocVien),
-	MaDotThi char(10) foreign key references DOTTHI(MaDotThi),
+	MaKyThi char(10) foreign key references KYTHI(MaKyThi),
 	Diem float not null,
-	constraint PK_DIEMTHI primary key (MaHocVien,MaDotThi)
+	constraint PK_DIEMTHI primary key (MaHocVien,MaKyThi)
+)
+
+Create Table BANGCAP
+(
+	MaBangCap char(10) primary key,
+	TenBangCap nvarchar(30) not null
+)
+
+Create Table GIAOVIEN
+(
+	MaGiaoVien char(10) primary key,
+	TenGiaoVien nvarchar(30) not null,
+	MaBangCap char(10) foreign key references BANGCAP(MaBangCap),
+)
+
+Create Table PHANCONG
+(
+	MaGiaoVien char(10) foreign key references GIAOVIEN(MaGiaoVien),
+	MaLop char(10) foreign key references LOP(MaLop),
+	constraint PK_PHANCONG primary key (MaGiaoVien,MaLop)
 )
