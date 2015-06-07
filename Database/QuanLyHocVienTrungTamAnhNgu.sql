@@ -15,7 +15,7 @@ Create Table HOCVIEN
 	TenHocVien nvarchar(30) not null,
 	NgaySinh date not null,
 	GioiTinh nchar(5) not null,
-	NgheNgiep nvarchar(50) not null,
+	NgheNghiep nvarchar(50) not null,
 	SoDienThoai varchar(20) not null,
 	DiaChi nvarchar(100) not null
 )
