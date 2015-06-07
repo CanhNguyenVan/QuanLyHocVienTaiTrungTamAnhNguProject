@@ -63,8 +63,8 @@ Create Table HOSOHOCVIEN
 Create Table BIENLAI
 (
 	MaBienLai char(10) primary key,
-	HocPhi float not null,
-	MienGiam float
+	HocPhi decimal not null,
+	MienGiam decimal
 )
 
 Create Table DANGKY
