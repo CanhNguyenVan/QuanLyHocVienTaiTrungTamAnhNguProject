@@ -13,9 +13,6 @@ namespace GUI
 {
     public partial class frmMain : DevComponents.DotNetBar.Office2007RibbonForm
     {
-        frmGioiThieu frmGT = new frmGioiThieu();
-        frmQuanLyDangKy frmQuanLyDangKy = new frmQuanLyDangKy();
-
         public frmMain()
         {
             InitializeComponent();
@@ -23,21 +20,62 @@ namespace GUI
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            frmGT.MdiParent = this;
-            frmGT.Show();
+            if (checkTab("Giơi thiệu") == false)
+            {
+                TabItem tab = tabControl.CreateTab("Giơi thiệu");
+                tab.CloseButtonVisible = false;
+                frmGioiThieu frm01 = new frmGioiThieu();
+                frm01.Dock = DockStyle.Fill;
+                frm01.FormBorderStyle = FormBorderStyle.None;
+                frm01.TopLevel = false;
+                tab.AttachedControl.Controls.Add(frm01);
+                frm01.Show();
+                tabControl.SelectedTabIndex = tabControl.Tabs.Count - 1;
+            }
         }
 
-        private void ribbonPanel4_Click(object sender, EventArgs e)
+        public void AddTabControl(Form form, string nameTab)
+        {
+            TabItem tab = tabControl.CreateTab(nameTab);
+            form.Dock = DockStyle.Fill;
+            form.AutoScroll = true;
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.TopLevel = false;
+            tab.AttachedControl.Controls.Add(form);
+            form.Show();
+            tabControl.SelectedTabIndex = tabControl.Tabs.Count - 1;           
+        }
+
+        private bool checkTab(string name)
+        {
+            for (int i = 0; i < tabControl.Tabs.Count; i++)
+            {
+                if (tabControl.Tabs[i].Text == name)
+                {
+                    tabControl.SelectedTabIndex = i;
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private void tabControl_TabItemClose(object sender, TabStripActionEventArgs e)
+        {
+            tabControl.Tabs.Remove(tabControl.SelectedTab);
+        }
+
+        private void ribbonTabItem3_Click(object sender, EventArgs e)
         {
 
         }
 
         private void btnQLDangKy_Click(object sender, EventArgs e)
         {
-            frmQuanLyDangKy.MdiParent = this;
-            frmQuanLyDangKy.Show();
+            if (checkTab("Quản Lý Đăng Ký") == false)
+            {
+                frmQuanLyDangKy form = new frmQuanLyDangKy();
+                AddTabControl(form, "Quản Lý Đăng Ký");
+            }
         }
-       
-       
     }
 }
