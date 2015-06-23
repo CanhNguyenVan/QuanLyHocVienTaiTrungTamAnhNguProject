@@ -54,7 +54,11 @@
             // 
             // cbx_GioiTinh
             // 
+            this.cbx_GioiTinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_GioiTinh.FormattingEnabled = true;
+            this.cbx_GioiTinh.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
             this.cbx_GioiTinh.Location = new System.Drawing.Point(113, 130);
             this.cbx_GioiTinh.Name = "cbx_GioiTinh";
             this.cbx_GioiTinh.Size = new System.Drawing.Size(314, 21);
@@ -107,6 +111,7 @@
             this.txt_SoDienThoai.Name = "txt_SoDienThoai";
             this.txt_SoDienThoai.Size = new System.Drawing.Size(314, 20);
             this.txt_SoDienThoai.TabIndex = 39;
+            this.txt_SoDienThoai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_SoDienThoai_KeyPress);
             // 
             // label4
             // 
@@ -177,6 +182,7 @@
             // 
             // cbx_KhoaHoc
             // 
+            this.cbx_KhoaHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_KhoaHoc.FormattingEnabled = true;
             this.cbx_KhoaHoc.Location = new System.Drawing.Point(113, 272);
             this.cbx_KhoaHoc.Name = "cbx_KhoaHoc";
@@ -185,6 +191,7 @@
             // 
             // cbx_Lớp
             // 
+            this.cbx_Lớp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_Lớp.FormattingEnabled = true;
             this.cbx_Lớp.Location = new System.Drawing.Point(113, 316);
             this.cbx_Lớp.Name = "cbx_Lớp";

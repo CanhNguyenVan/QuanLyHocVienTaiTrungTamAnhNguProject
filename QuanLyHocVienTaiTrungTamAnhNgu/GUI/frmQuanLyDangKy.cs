@@ -16,5 +16,13 @@ namespace GUI
         {
             InitializeComponent();
         }
+
+        private void txt_SoDienThoai_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
