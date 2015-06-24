@@ -29,14 +29,12 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.MaHocVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenHocVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgaySinh = new DevComponents.DotNetBar.Controls.DataGridViewDateTimeInputColumn();
-            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgheNghiep = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoDienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Lop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiemThi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.XepLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,15 +44,22 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaHocVien,
             this.TenHocVien,
-            this.NgaySinh,
-            this.GioiTinh,
-            this.NgheNghiep,
-            this.SoDienThoai,
-            this.DiaChi});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.Lop,
+            this.DiemThi,
+            this.XepLoai});
+            this.dataGridView1.Location = new System.Drawing.Point(15, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(745, 219);
+            this.dataGridView1.Size = new System.Drawing.Size(543, 219);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(459, 237);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "In";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // MaHocVien
             // 
@@ -66,76 +71,26 @@
             this.TenHocVien.HeaderText = "Tên Học Viên";
             this.TenHocVien.Name = "TenHocVien";
             // 
-            // NgaySinh
+            // Lop
             // 
+            this.Lop.HeaderText = "Lớp";
+            this.Lop.Name = "Lop";
             // 
+            // DiemThi
             // 
+            this.DiemThi.HeaderText = "Điểm Thi";
+            this.DiemThi.Name = "DiemThi";
             // 
-            this.NgaySinh.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
-            this.NgaySinh.BackgroundStyle.Class = "DataGridViewDateTimeBorder";
-            this.NgaySinh.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.NgaySinh.BackgroundStyle.TextColor = System.Drawing.SystemColors.ControlText;
-            this.NgaySinh.HeaderText = "Ngày Sinh";
-            this.NgaySinh.InputHorizontalAlignment = DevComponents.Editors.eHorizontalAlignment.Left;
+            // XepLoai
             // 
-            // 
-            // 
-            this.NgaySinh.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.NgaySinh.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.NgaySinh.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
-            // 
-            // 
-            // 
-            this.NgaySinh.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.NgaySinh.MonthCalendar.DisplayMonth = new System.DateTime(2015, 6, 1, 0, 0, 0, 0);
-            this.NgaySinh.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.NgaySinh.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.NgaySinh.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.NgaySinh.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
-            this.NgaySinh.Name = "NgaySinh";
-            this.NgaySinh.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // GioiTinh
-            // 
-            this.GioiTinh.HeaderText = "Giới Tính";
-            this.GioiTinh.Name = "GioiTinh";
-            this.GioiTinh.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // NgheNghiep
-            // 
-            this.NgheNghiep.HeaderText = "Nghề Nghiệp";
-            this.NgheNghiep.Name = "NgheNghiep";
-            // 
-            // SoDienThoai
-            // 
-            this.SoDienThoai.HeaderText = "Số Điện Thoại";
-            this.SoDienThoai.Name = "SoDienThoai";
-            // 
-            // DiaChi
-            // 
-            this.DiaChi.HeaderText = "Địa Chỉ";
-            this.DiaChi.Name = "DiaChi";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(667, 237);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "In";
-            this.button1.UseVisualStyleBackColor = true;
+            this.XepLoai.HeaderText = "Xếp Loại";
+            this.XepLoai.Name = "XepLoai";
             // 
             // frmBaoCaoHocVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(769, 269);
+            this.ClientSize = new System.Drawing.Size(568, 269);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "frmBaoCaoHocVien";
@@ -151,10 +106,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaHocVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenHocVien;
-        private DevComponents.DotNetBar.Controls.DataGridViewDateTimeInputColumn NgaySinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgheNghiep;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoDienThoai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Lop;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiemThi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn XepLoai;
     }
 }
