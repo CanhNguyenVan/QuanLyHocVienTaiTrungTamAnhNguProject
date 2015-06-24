@@ -58,18 +58,6 @@
     <Compile Include="frmBaoCaoHocVien.Designer.cs">
       <DependentUpon>frmBaoCaoHocVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBaoCaoKetQua.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmBaoCaoKetQua.Designer.cs">
-      <DependentUpon>frmBaoCaoKetQua.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmBaoCaoLop.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmBaoCaoLop.Designer.cs">
-      <DependentUpon>frmBaoCaoLop.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,12 +173,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBaoCaoHocVien.resx">
       <DependentUpon>frmBaoCaoHocVien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmBaoCaoKetQua.resx">
-      <DependentUpon>frmBaoCaoKetQua.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmBaoCaoLop.resx">
-      <DependentUpon>frmBaoCaoLop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>

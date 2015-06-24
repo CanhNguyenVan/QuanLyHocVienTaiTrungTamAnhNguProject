@@ -271,15 +271,6 @@ namespace GUI
             }
         }
 
-        private void btnBCLop_Click(object sender, EventArgs e)
-        {
-            if (checkTab("Báo Cáo Lớp") == false)
-            {
-                frmBaoCaoLop form = new frmBaoCaoLop();
-                AddTabControl(form, "Báo Cáo Lớp");
-            }
-        }
-
         private void btnBCDoanhThu_Click(object sender, EventArgs e)
         {
             if (checkTab("Báo Cáo Doanh Thu") == false)
@@ -289,14 +280,6 @@ namespace GUI
             }
         }
 
-        private void btnKQHocTap_Click(object sender, EventArgs e)
-        {
-            if (checkTab("Báo Cáo Ket Qua") == false)
-            {
-                frmBaoCaoKetQua form = new frmBaoCaoKetQua();
-                AddTabControl(form, "Báo Cáo Ket Qua");
-            }
-        }
 
         private void btnThongTin_Click(object sender, EventArgs e)
         {
