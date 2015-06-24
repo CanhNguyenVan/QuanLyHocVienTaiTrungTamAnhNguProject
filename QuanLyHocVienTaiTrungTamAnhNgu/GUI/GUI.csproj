@@ -46,6 +46,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmBaoCaoDoanhThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBaoCaoDoanhThu.Designer.cs">
+      <DependentUpon>frmBaoCaoDoanhThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBaoCaoHocVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBaoCaoHocVien.Designer.cs">
+      <DependentUpon>frmBaoCaoHocVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBaoCaoKetQua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBaoCaoKetQua.Designer.cs">
+      <DependentUpon>frmBaoCaoKetQua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBaoCaoLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBaoCaoLop.Designer.cs">
+      <DependentUpon>frmBaoCaoLop.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,12 +99,14 @@
     </Compile>
     <Compile Include="frmQuanLyCapLop.Designer.cs">
       <DependentUpon>frmQuanLyCapLop.cs</DependentUpon>
-    </Compile>    <Compile Include="frmPhanQuyen.cs">
+    </Compile>
+    <Compile Include="frmPhanQuyen.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPhanQuyen.designer.cs">
       <DependentUpon>frmPhanQuyen.cs</DependentUpon>
-    </Compile>    <Compile Include="frmQuanLyDangKy.cs">
+    </Compile>
+    <Compile Include="frmQuanLyDangKy.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmQuanLyDangKy.Designer.cs">
@@ -128,8 +154,24 @@
     <Compile Include="frmQuanLyLop.Designer.cs">
       <DependentUpon>frmQuanLyLop.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTroGiupThongTin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTroGiupThongTin.Designer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmBaoCaoDoanhThu.resx">
+      <DependentUpon>frmBaoCaoDoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBaoCaoHocVien.resx">
+      <DependentUpon>frmBaoCaoHocVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBaoCaoKetQua.resx">
+      <DependentUpon>frmBaoCaoKetQua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBaoCaoLop.resx">
+      <DependentUpon>frmBaoCaoLop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,11 +184,13 @@
     <EmbeddedResource Include="frmNhapThongTinHocVien.resx">
       <DependentUpon>frmNhapThongTinHocVien.cs</DependentUpon>
     </EmbeddedResource>
-	<EmbeddedResource Include="frmQuanLyCapLop.resx">
+    <EmbeddedResource Include="frmQuanLyCapLop.resx">
       <DependentUpon>frmQuanLyCapLop.cs</DependentUpon>
-    </EmbeddedResource>	<EmbeddedResource Include="frmPhanQuyen.resx">
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPhanQuyen.resx">
       <DependentUpon>frmPhanQuyen.cs</DependentUpon>
-    </EmbeddedResource>    <EmbeddedResource Include="frmQuanLyDangKy.resx">
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanLyDangKy.resx">
       <DependentUpon>frmQuanLyDangKy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmQuanLyDiem.resx">
@@ -170,6 +214,7 @@
     <EmbeddedResource Include="frmQuanLyLop.resx">
       <DependentUpon>frmQuanLyLop.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmTroGiupThongTin.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
