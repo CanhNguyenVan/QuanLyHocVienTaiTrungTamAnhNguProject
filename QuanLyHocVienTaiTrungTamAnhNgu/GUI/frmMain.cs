@@ -77,5 +77,19 @@ namespace GUI
                 AddTabControl(form, "Quản Lý Đăng Ký");
             }
         }
+
+        private void btnQLHocVien_Click(object sender, EventArgs e)
+        {
+            if (checkTab("Quản Lý Học Viên") == false)
+            {
+                frmQuanLyHocVien form = new frmQuanLyHocVien();
+                AddTabControl(form, "Quản Lý Học Viên");
+            }
+        }
+
+        private void btnQLLop_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
