@@ -42,7 +42,6 @@
     <Compile Include="BangCapDTO.cs" />
     <Compile Include="BienLaiDTO.cs" />
     <Compile Include="CapLopDTO.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="DangKyDTO.cs" />
     <Compile Include="DiemThiDTO.cs" />
