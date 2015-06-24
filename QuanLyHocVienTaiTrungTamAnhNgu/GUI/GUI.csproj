@@ -35,6 +35,7 @@
     <Reference Include="DevComponents.DotNetBar2, Version=11.2.0.1, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDangNhap.designer.cs">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGioiThieu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +69,12 @@
     </Compile>
     <Compile Include="frmNhapThongTinHocVien.Designer.cs">
       <DependentUpon>frmNhapThongTinHocVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPhanQuyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhanQuyen.designer.cs">
+      <DependentUpon>frmPhanQuyen.cs</DependentUpon>
     </Compile>
     <Compile Include="frmQuanLyDangKy.cs">
       <SubType>Form</SubType>
@@ -83,6 +96,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmDangNhap.resx">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmGioiThieu.resx">
       <DependentUpon>frmGioiThieu.cs</DependentUpon>
     </EmbeddedResource>
@@ -91,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNhapThongTinHocVien.resx">
       <DependentUpon>frmNhapThongTinHocVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPhanQuyen.resx">
+      <DependentUpon>frmPhanQuyen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmQuanLyDangKy.resx">
       <DependentUpon>frmQuanLyDangKy.cs</DependentUpon>
@@ -170,6 +189,24 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phan quyen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1435014375_red-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1435018304_green-11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login_green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout_green.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
