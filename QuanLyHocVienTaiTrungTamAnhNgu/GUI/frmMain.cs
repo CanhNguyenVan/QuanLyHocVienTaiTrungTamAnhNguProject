@@ -300,6 +300,11 @@ namespace GUI
 
         private void btnThongTin_Click(object sender, EventArgs e)
         {
+            if (checkTab("Thông Tin") == false)
+            {
+                frmThongTin form = new frmThongTin();
+                AddTabControl(form, "Thông Tin");
+            }
                        
         }
 
@@ -309,6 +314,38 @@ namespace GUI
             {
                 frmQuanLyKyThi form = new frmQuanLyKyThi();
                 AddTabControl(form, "Quản Lý Kỳ Thi");
+            }
+        }
+
+        private void ribbonPanel3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTraCuuHocVien_Click(object sender, EventArgs e)
+        {
+            if (checkTab("Tra Cứu Học Viên") == false)
+            {
+                frmTraCuuHocVien form = new frmTraCuuHocVien();
+                AddTabControl(form, "Tra Cứu Học Viên");
+            }
+        }
+
+        private void btnTraCuuLop_Click(object sender, EventArgs e)
+        {
+            if (checkTab("Tra Cứu Lớp") == false)
+            {
+                frmTraCuuLop form = new frmTraCuuLop();
+                AddTabControl(form, "Tra Cứu Lớp");
+            }
+        }
+
+        private void btnDSThoiKhoaBieu_Click(object sender, EventArgs e)
+        {
+            if (checkTab("Thời Khóa Biểu") == false)
+            {
+                frmThoiKhoaBieu form = new frmThoiKhoaBieu();
+                AddTabControl(form, "Thời Khóa Biểu");
             }
         }
     }

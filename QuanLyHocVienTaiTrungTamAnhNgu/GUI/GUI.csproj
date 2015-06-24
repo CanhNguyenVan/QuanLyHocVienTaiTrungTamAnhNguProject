@@ -154,6 +154,30 @@
     <Compile Include="frmQuanLyLop.Designer.cs">
       <DependentUpon>frmQuanLyLop.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmThoiKhoaBieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThoiKhoaBieu.Designer.cs">
+      <DependentUpon>frmThoiKhoaBieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThongTin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThongTin.Designer.cs">
+      <DependentUpon>frmThongTin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTraCuuHocVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTraCuuHocVien.Designer.cs">
+      <DependentUpon>frmTraCuuHocVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTraCuuLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTraCuuLop.Designer.cs">
+      <DependentUpon>frmTraCuuLop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmBaoCaoDoanhThu.resx">
@@ -209,6 +233,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmQuanLyLop.resx">
       <DependentUpon>frmQuanLyLop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThoiKhoaBieu.resx">
+      <DependentUpon>frmThoiKhoaBieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThongTin.resx">
+      <DependentUpon>frmThongTin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTraCuuHocVien.resx">
+      <DependentUpon>frmTraCuuHocVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTraCuuLop.resx">
+      <DependentUpon>frmTraCuuLop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
