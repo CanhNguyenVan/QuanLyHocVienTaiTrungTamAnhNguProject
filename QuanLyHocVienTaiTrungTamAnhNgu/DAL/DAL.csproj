@@ -45,20 +45,31 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DTO">
-      <HintPath>..\DTO\bin\Debug\DTO.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.Linq" />
-    <Reference Include="System.Xml.Linq" />
+	<Reference Include="System.Windows.Forms" />
+	<Reference Include="System.Data.Linq" />    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="BangCapDAL.cs" />
+    <Compile Include="BienLaiDAL.cs" />
+    <Compile Include="CapLopDAL.cs" />
+    <Compile Include="GiaoVienDAL.cs" />
+    <Compile Include="HocVienDAL.cs" />
+    <Compile Include="DangKyDAL.cs" />
+    <Compile Include="DataConnecter.cs" />
+    <Compile Include="DiemThiDAL.cs" />
+    <Compile Include="HoSoHocVienDAL.cs" />
+    <Compile Include="KhoaHocDAL.cs" />
+    <Compile Include="KyThiDAL.cs" />
+    <Compile Include="LoaiLopDAL.cs" />
+    <Compile Include="LopDAL.cs" />
+    <Compile Include="PhanCongDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -71,7 +82,12 @@
       <DependentUpon>TaiKhoan.dbml</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
+<ItemGroup>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{3dcd1666-4183-46b6-a7aa-ce434412dc1f}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+  </ItemGroup><ItemGroup>
     <Content Include="APPDATA.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -116,8 +132,7 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  </ItemGroup>  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

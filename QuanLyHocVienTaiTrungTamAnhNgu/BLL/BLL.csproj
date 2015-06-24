@@ -40,7 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="BangCapBLL.cs" />
+    <Compile Include="BienLaiBLL.cs" />
+    <Compile Include="CapLopBLL.cs" />
+    <Compile Include="DangKyBLL.cs" />
+    <Compile Include="DiemThiBLL.cs" />
+    <Compile Include="GiaoVienBLL.cs" />
+    <Compile Include="HocVienBLL.cs" />
+    <Compile Include="HoSoHocVienBLL.cs" />
+    <Compile Include="KhoaHocBLL.cs" />
+    <Compile Include="KyThiBLL.cs" />
+    <Compile Include="LoaiLopBLL.cs" />
+    <Compile Include="LopBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TaiKhoanBLL.cs" />
   </ItemGroup>

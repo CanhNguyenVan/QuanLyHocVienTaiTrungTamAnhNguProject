@@ -39,7 +39,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BangCapDTO.cs" />
+    <Compile Include="BienLaiDTO.cs" />
+    <Compile Include="CapLopDTO.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="DangKyDTO.cs" />
+    <Compile Include="DiemThiDTO.cs" />
+    <Compile Include="GiaoVienDTO.cs" />
+    <Compile Include="HocVienDTO.cs" />
+    <Compile Include="HoSoHocVienDTO.cs" />
+    <Compile Include="KhoaHocDTO.cs" />
+    <Compile Include="KyThiDTO.cs" />
+    <Compile Include="LoaiLopDTO.cs" />
+    <Compile Include="LopDTO.cs" />
+    <Compile Include="PhanCongDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
