@@ -28,11 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.MyDataGridView = new System.Windows.Forms.DataGridView();
-            this.btn_Huy = new System.Windows.Forms.Button();
-            this.btn_Sua = new System.Windows.Forms.Button();
-            this.btn_Xoa = new System.Windows.Forms.Button();
-            this.btn_Them = new System.Windows.Forms.Button();
+            this.dataGridViewQuanLyHocVien = new System.Windows.Forms.DataGridView();
             this.MaHocVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenHocVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgaySinh = new DevComponents.DotNetBar.Controls.DataGridViewDateTimeInputColumn();
@@ -40,14 +36,18 @@
             this.NgheNghiep = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoDienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.MyDataGridView)).BeginInit();
+            this.btn_Huy = new System.Windows.Forms.Button();
+            this.btn_Sua = new System.Windows.Forms.Button();
+            this.btn_Xoa = new System.Windows.Forms.Button();
+            this.btn_Them = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQuanLyHocVien)).BeginInit();
             this.SuspendLayout();
             // 
-            // MyDataGridView
+            // dataGridViewQuanLyHocVien
             // 
-            this.MyDataGridView.AllowUserToOrderColumns = true;
-            this.MyDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.MyDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewQuanLyHocVien.AllowUserToOrderColumns = true;
+            this.dataGridViewQuanLyHocVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewQuanLyHocVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaHocVien,
             this.TenHocVien,
             this.NgaySinh,
@@ -55,46 +55,10 @@
             this.NgheNghiep,
             this.SoDienThoai,
             this.DiaChi});
-            this.MyDataGridView.Location = new System.Drawing.Point(12, 12);
-            this.MyDataGridView.Name = "MyDataGridView";
-            this.MyDataGridView.Size = new System.Drawing.Size(818, 387);
-            this.MyDataGridView.TabIndex = 0;
-            // 
-            // btn_Huy
-            // 
-            this.btn_Huy.Location = new System.Drawing.Point(755, 405);
-            this.btn_Huy.Name = "btn_Huy";
-            this.btn_Huy.Size = new System.Drawing.Size(75, 23);
-            this.btn_Huy.TabIndex = 1;
-            this.btn_Huy.Text = "Hủy";
-            this.btn_Huy.UseVisualStyleBackColor = true;
-            // 
-            // btn_Sua
-            // 
-            this.btn_Sua.Location = new System.Drawing.Point(573, 405);
-            this.btn_Sua.Name = "btn_Sua";
-            this.btn_Sua.Size = new System.Drawing.Size(75, 23);
-            this.btn_Sua.TabIndex = 2;
-            this.btn_Sua.Text = "Sửa";
-            this.btn_Sua.UseVisualStyleBackColor = true;
-            // 
-            // btn_Xoa
-            // 
-            this.btn_Xoa.Location = new System.Drawing.Point(664, 405);
-            this.btn_Xoa.Name = "btn_Xoa";
-            this.btn_Xoa.Size = new System.Drawing.Size(75, 23);
-            this.btn_Xoa.TabIndex = 2;
-            this.btn_Xoa.Text = "Xóa";
-            this.btn_Xoa.UseVisualStyleBackColor = true;
-            // 
-            // btn_Them
-            // 
-            this.btn_Them.Location = new System.Drawing.Point(482, 405);
-            this.btn_Them.Name = "btn_Them";
-            this.btn_Them.Size = new System.Drawing.Size(75, 23);
-            this.btn_Them.TabIndex = 3;
-            this.btn_Them.Text = "Thêm";
-            this.btn_Them.UseVisualStyleBackColor = true;
+            this.dataGridViewQuanLyHocVien.Location = new System.Drawing.Point(12, 12);
+            this.dataGridViewQuanLyHocVien.Name = "dataGridViewQuanLyHocVien";
+            this.dataGridViewQuanLyHocVien.Size = new System.Drawing.Size(818, 387);
+            this.dataGridViewQuanLyHocVien.TabIndex = 0;
             // 
             // MaHocVien
             // 
@@ -178,6 +142,42 @@
             this.DiaChi.HeaderText = "Địa Chỉ";
             this.DiaChi.Name = "DiaChi";
             // 
+            // btn_Huy
+            // 
+            this.btn_Huy.Location = new System.Drawing.Point(755, 405);
+            this.btn_Huy.Name = "btn_Huy";
+            this.btn_Huy.Size = new System.Drawing.Size(75, 23);
+            this.btn_Huy.TabIndex = 1;
+            this.btn_Huy.Text = "Hủy";
+            this.btn_Huy.UseVisualStyleBackColor = true;
+            // 
+            // btn_Sua
+            // 
+            this.btn_Sua.Location = new System.Drawing.Point(573, 405);
+            this.btn_Sua.Name = "btn_Sua";
+            this.btn_Sua.Size = new System.Drawing.Size(75, 23);
+            this.btn_Sua.TabIndex = 2;
+            this.btn_Sua.Text = "Sửa";
+            this.btn_Sua.UseVisualStyleBackColor = true;
+            // 
+            // btn_Xoa
+            // 
+            this.btn_Xoa.Location = new System.Drawing.Point(664, 405);
+            this.btn_Xoa.Name = "btn_Xoa";
+            this.btn_Xoa.Size = new System.Drawing.Size(75, 23);
+            this.btn_Xoa.TabIndex = 2;
+            this.btn_Xoa.Text = "Xóa";
+            this.btn_Xoa.UseVisualStyleBackColor = true;
+            // 
+            // btn_Them
+            // 
+            this.btn_Them.Location = new System.Drawing.Point(482, 405);
+            this.btn_Them.Name = "btn_Them";
+            this.btn_Them.Size = new System.Drawing.Size(75, 23);
+            this.btn_Them.TabIndex = 3;
+            this.btn_Them.Text = "Thêm";
+            this.btn_Them.UseVisualStyleBackColor = true;
+            // 
             // frmQuanLyHocVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -187,19 +187,19 @@
             this.Controls.Add(this.btn_Xoa);
             this.Controls.Add(this.btn_Sua);
             this.Controls.Add(this.btn_Huy);
-            this.Controls.Add(this.MyDataGridView);
+            this.Controls.Add(this.dataGridViewQuanLyHocVien);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "frmQuanLyHocVien";
             this.Text = "Quản Lý Học Viên";
-            ((System.ComponentModel.ISupportInitialize)(this.MyDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQuanLyHocVien)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView MyDataGridView;
+        private System.Windows.Forms.DataGridView dataGridViewQuanLyHocVien;
         private System.Windows.Forms.Button btn_Huy;
         private System.Windows.Forms.Button btn_Sua;
         private System.Windows.Forms.Button btn_Xoa;
