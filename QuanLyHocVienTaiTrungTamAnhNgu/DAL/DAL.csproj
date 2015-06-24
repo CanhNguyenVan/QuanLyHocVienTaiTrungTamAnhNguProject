@@ -48,8 +48,9 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
-	<Reference Include="System.Windows.Forms" />
-	<Reference Include="System.Data.Linq" />    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
@@ -76,45 +77,21 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="TaiKhoan.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TaiKhoan.dbml</DependentUpon>
-    </Compile>
   </ItemGroup>
-<ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{3dcd1666-4183-46b6-a7aa-ce434412dc1f}</Project>
       <Name>DTO</Name>
     </ProjectReference>
-  </ItemGroup><ItemGroup>
-    <Content Include="APPDATA.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="APPDATA_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>APPDATA.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="TaiKhoan.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>TaiKhoan.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="TaiKhoan.dbml.layout">
-      <DependentUpon>TaiKhoan.dbml</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
@@ -132,7 +109,8 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

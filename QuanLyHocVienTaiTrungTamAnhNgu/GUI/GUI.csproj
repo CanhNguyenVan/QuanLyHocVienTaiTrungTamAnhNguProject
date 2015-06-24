@@ -256,10 +256,6 @@
       <Project>{621305dd-d148-4486-bfd9-6fe456a1e739}</Project>
       <Name>BLL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{cbca111d-0bab-4b6a-a41c-7cd07d5d2ac9}</Project>
-      <Name>DAL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{3dcd1666-4183-46b6-a7aa-ce434412dc1f}</Project>
       <Name>DTO</Name>
@@ -327,6 +323,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\1435147184_rank.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1435174206_green-37.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

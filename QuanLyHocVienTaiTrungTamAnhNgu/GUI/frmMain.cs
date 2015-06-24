@@ -44,7 +44,7 @@ namespace GUI
 
             frmDangNhap dangNhap = new frmDangNhap();
             dangNhap.ShowDialog();
-            Quyen = dangNhap._quyen;
+            //Quyen = dangNhap._quyen;
             KhoiTaoChucNang();
             laydulieu();
 
@@ -95,7 +95,7 @@ namespace GUI
         {
             frmDangNhap dangNhap = new frmDangNhap();
             dangNhap.ShowDialog();
-            Quyen = dangNhap._quyen;
+            //Quyen = dangNhap._quyen;
             laydulieu();
             KhoiTaoChucNang();
         }
@@ -146,7 +146,8 @@ namespace GUI
             form.TopLevel = false;
             tab.AttachedControl.Controls.Add(form);
             form.Show();
-            tabControl.SelectedTabIndex = tabControl.Tabs.Count - 1;           
+            tabControl.SelectedTabIndex = tabControl.Tabs.Count - 1;
+            m_Tab = tabControl;
         }
 
         private bool checkTab(string name)
