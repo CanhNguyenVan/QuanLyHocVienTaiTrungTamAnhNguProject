@@ -192,7 +192,11 @@ namespace GUI
 
         private void btnQLLop_Click(object sender, EventArgs e)
         {
-
+            if (checkTab("Quản Lý Lớp") == false)
+            {
+                frmQuanLyLop form = new frmQuanLyLop();
+                AddTabControl(form, "Quản Lý Lớp");
+            }
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)
@@ -219,6 +223,92 @@ namespace GUI
             {
                 frmPhanQuyen form = new frmPhanQuyen();
                 AddTabControl(form, "Phân Quyền");
+            }
+        }
+
+        private void btnQLDiem_Click(object sender, EventArgs e)
+        {
+            if (checkTab("Quản Lý Điểm") == false)
+            {
+                frmQuanLyDiem form = new frmQuanLyDiem();
+                AddTabControl(form, "Quản Lý Điểm");
+            }
+        }
+
+        private void btnQLKhoaHoc_Click(object sender, EventArgs e)
+        {
+            if (checkTab("Quản Lý Khóa Học") == false)
+            {
+                frmQuanLyKhoaHoc form = new frmQuanLyKhoaHoc();
+                AddTabControl(form, "Quản Lý Khóa Học");
+            }
+        }
+
+        private void btnQLLoaiLop_Click(object sender, EventArgs e)
+        {
+            if (checkTab("Quản Lý Loại Lớp") == false)
+            {
+                frmQuanLyLoaiLop form = new frmQuanLyLoaiLop();
+                AddTabControl(form, "Quản Lý Loại Lớp");
+            }
+        }
+
+        private void btnQLCapLop_Click(object sender, EventArgs e)
+        {
+            if (checkTab("Quản Lý Cấp Lớp") == false)
+            {
+                frmQuanLyCapLop form = new frmQuanLyCapLop();
+                AddTabControl(form, "Quản Lý Cấp Lớp");
+            }
+        }
+
+        private void btnBCHocVien_Click(object sender, EventArgs e)
+        {
+            if (checkTab("Báo Cáo Học Viên") == false)
+            {
+                frmBaoCaoHocVien form = new frmBaoCaoHocVien();
+                AddTabControl(form, "Báo Cáo Học Viên");
+            }
+        }
+
+        private void btnBCLop_Click(object sender, EventArgs e)
+        {
+            if (checkTab("Báo Cáo Lớp") == false)
+            {
+                frmBaoCaoLop form = new frmBaoCaoLop();
+                AddTabControl(form, "Báo Cáo Lớp");
+            }
+        }
+
+        private void btnBCDoanhThu_Click(object sender, EventArgs e)
+        {
+            if (checkTab("Báo Cáo Doanh Thu") == false)
+            {
+                frmBaoCaoDoanhThu form = new frmBaoCaoDoanhThu();
+                AddTabControl(form, "Báo Cáo Doanh Thu");
+            }
+        }
+
+        private void btnKQHocTap_Click(object sender, EventArgs e)
+        {
+            if (checkTab("Báo Cáo Ket Qua") == false)
+            {
+                frmBaoCaoKetQua form = new frmBaoCaoKetQua();
+                AddTabControl(form, "Báo Cáo Ket Qua");
+            }
+        }
+
+        private void btnThongTin_Click(object sender, EventArgs e)
+        {
+                       
+        }
+
+        private void btnKyThi_Click(object sender, EventArgs e)
+        {
+            if (checkTab("Quản Lý Kỳ Thi") == false)
+            {
+                frmQuanLyKyThi form = new frmQuanLyKyThi();
+                AddTabControl(form, "Quản Lý Kỳ Thi");
             }
         }
     }

@@ -154,10 +154,6 @@
     <Compile Include="frmQuanLyLop.Designer.cs">
       <DependentUpon>frmQuanLyLop.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTroGiupThongTin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmTroGiupThongTin.Designer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmBaoCaoDoanhThu.resx">
@@ -214,7 +210,6 @@
     <EmbeddedResource Include="frmQuanLyLop.resx">
       <DependentUpon>frmQuanLyLop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTroGiupThongTin.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -302,6 +297,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logout_green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1435145661_education_course_training.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1435146275_Education.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1435147072_Untitled-2-12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1435147184_rank.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
