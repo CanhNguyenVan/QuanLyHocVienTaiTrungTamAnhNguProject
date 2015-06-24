@@ -61,7 +61,7 @@
             this.DoanhThu});
             this.dataGridView1.Location = new System.Drawing.Point(16, 37);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(244, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(294, 184);
             this.dataGridView1.TabIndex = 2;
             // 
             // HocKy
@@ -73,12 +73,13 @@
             // 
             this.DoanhThu.HeaderText = "DoanhThu";
             this.DoanhThu.Name = "DoanhThu";
+            this.DoanhThu.Width = 150;
             // 
             // frmBaoCaoDoanhThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(273, 203);
+            this.ClientSize = new System.Drawing.Size(321, 231);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
