@@ -112,6 +112,14 @@ Create Table PHANCONG
 	constraint PK_PHANCONG primary key (MaGiaoVien,MaLop)
 )
 
+Create Table TAIKHOAN
+(
+	MaTK int identity(1,1) primary key,
+	TenTK nchar(30) not null,
+	MatKhau varchar(30) not null,
+	LoaiTK int
+)
+
 GO
 
 --Select All--
@@ -841,6 +849,72 @@ BEGIN
 END
 GO
 
+CREATE PROCEDURE TaiKhoan_Delete
+@TenTK int
+AS
+
+SET NOCOUNT ON
+
+DELETE FROM TAIKHOAN
+WHERE
+	TenTK = @TenTK
+
+Go
+
+CREATE PROCEDURE TaiKhoan_Insert
+	@TenTK nchar(30), @MatKhau varchar(30), @LoaiTK int
+AS
+
+SET NOCOUNT ON
+
+INSERT INTO TAIKHOAN ( TenTK, MatKhau,  LoaiTK) 
+VALUES ( @TenTK, @MatKhau, @LoaiTK)
+
+Go
+
+CREATE PROCEDURE TaiKhoan_SelectLastMaTK
+AS
+
+SET NOCOUNT ON
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED
+
+SELECT TOP 1 MaTK
+FROM	TAIKHOAN
+ORDER BY 
+	MaTK DESC
+
+Go
+
+CREATE PROCEDURE TaiKhoan_SelectAll
+	@MaTK int
+AS
+
+SET NOCOUNT ON
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED
+
+SELECT  MaTK,	TenTK, MatKhau,	LoaiTK
+FROM
+	TAIKHOAN
+WHERE
+	MaTK = @MaTK
+
+Go
+
+CREATE PROCEDURE TaiKhoan_Update
+	@TenTK nchar(30), @MatKhau varchar(30), @LoaiTK int
+AS
+
+SET NOCOUNT ON
+
+UPDATE TAIKHOAN SET
+	
+	MatKhau=@MatKhau,
+	LoaiTK=@LoaiTK
+WHERE
+	TenTK = @TenTK
+
+Go
+
 insert into BANGCAP (MaBangCap, TenBangCap) values ('BC1', N'Thạc Sĩ')
 insert into BANGCAP (MaBangCap, TenBangCap) values ('BC2', N'Tiến Sĩ')
 insert into BANGCAP (MaBangCap, TenBangCap) values ('BC3', N'Cử Nhân')
@@ -910,3 +984,7 @@ insert into HOSOHOCVIEN (MaHoSo, MaHocVien, MaLop, DiemThi, XepLoai) values ('HS
 insert into HOSOHOCVIEN (MaHoSo, MaHocVien, MaLop, DiemThi, XepLoai) values ('HS2', 'HV2', 'L3', 6, N'Trung bình')
 insert into HOSOHOCVIEN (MaHoSo, MaHocVien, MaLop, DiemThi, XepLoai) values ('HS3', 'HV3', 'L2', 7.5, N'Khá')
 insert into HOSOHOCVIEN (MaHoSo, MaHocVien, MaLop, DiemThi, XepLoai) values ('HS4', 'HV4', 'L1', 9, N'Giỏi')
+
+insert into TAIKHOAN(TenTK,MatKhau,LoaiTK)values('Admin','123456',1)
+insert into TAIKHOAN(TenTK,MatKhau,LoaiTK)values('NhanVien','123456',2)
+insert into TAIKHOAN(TenTK,MatKhau,LoaiTK)values('GiaoVien','123456',3)
