@@ -20,6 +20,8 @@ namespace GUI
         public frmMain()
         {
             InitializeComponent();
+            BatTat(false);
+            btnDangNhap.Enabled = true;
         }
 
         public void laydulieu()
@@ -44,7 +46,7 @@ namespace GUI
 
             frmDangNhap dangNhap = new frmDangNhap();
             dangNhap.ShowDialog();
-            //Quyen = dangNhap._quyen;
+            Quyen = dangNhap._quyen;
             KhoiTaoChucNang();
             laydulieu();
 
@@ -55,7 +57,9 @@ namespace GUI
         {
             btnDangNhap.Enabled = temp;
             btnDangXuat.Enabled = temp;
-            btnPhanQuyen.Enabled = temp;
+            btnPhanQuyen.Enabled = temp;  
+            rtNghiepVu.Enabled = temp;
+            rtBaoCao.Enabled = temp;
         }
 
         private void KhoiTaoChucNang()
@@ -68,24 +72,31 @@ namespace GUI
                         BatTat(false);
                         btnDangNhap.Enabled = true;
                         break;
-                    case 0:// Quan tri vien
+                    case 1:// Quan tri vien
                         BatTat(false);
                         btnDangXuat.Enabled = true;
                         btnPhanQuyen.Enabled = true;
-
                         break;
-                    case 1://Giao vu
-                        BatTat(false);
-
+                    case 2://Nhan vien
+                        BatTat(true);
+                        btnDangNhap.Enabled = false;
+                        btnPhanQuyen.Enabled = false;
+                        btnQLDiem.Enabled = false;
                         break;
-                    case 2://Giang vien
-                        BatTat(false);
-
-                        break;
-                    case 3://Nhan vien
-                        BatTat(false);
-
-                        break;
+                    case 3://Giao vien
+                        BatTat(true);
+                        btnDangNhap.Enabled = false;
+                        btnPhanQuyen.Enabled = false;
+                        rtBaoCao.Enabled = false;
+                        btnQLDangKy.Enabled = false;
+                        btnQLHocVien.Enabled = false;
+                        btnQLKhoaHoc.Enabled = false;
+                        btnQLLoaiLop.Enabled = false;
+                        btnQLLop.Enabled = false;
+                        btnQLCapLop.Enabled = false;
+                        btnKyThi.Enabled = false;
+                        btnQLDiem.Enabled = true;
+                        break;                    
                 }
             }
             catch { }
@@ -95,7 +106,7 @@ namespace GUI
         {
             frmDangNhap dangNhap = new frmDangNhap();
             dangNhap.ShowDialog();
-            //Quyen = dangNhap._quyen;
+            Quyen = dangNhap._quyen;
             laydulieu();
             KhoiTaoChucNang();
         }
@@ -111,10 +122,7 @@ namespace GUI
                 if (MessageBox.Show("Bạn có muốn đăng xuất không", "Đăng xuất", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                 {
                     BatTat(false);
-                    lbTenDangNhap.Text = "Chưa đăng nhập";
-                    //for (int i = 0; i < TabCtrl_main.Tabs.Count-1; i++)
-                    //{
-                    // TabCtrl_main.Tabs.Remove(TabCtrl_main.SelectedTab);
+                    lbTenDangNhap.Text = "Chưa đăng nhập";                
                     tabControl.Tabs.Clear();
                     //}
 
@@ -330,6 +338,15 @@ namespace GUI
             {
                 frmThoiKhoaBieu form = new frmThoiKhoaBieu();
                 AddTabControl(form, "Thời Khóa Biểu");
+            }
+        }
+
+        private void btnBCLop_Click(object sender, EventArgs e)
+        {
+            if (checkTab("Báo Cáo Lớp") == false)
+            {
+                frmBaoCaoLop form = new frmBaoCaoLop();
+                AddTabControl(form, "Báo Cáo Lớp");
             }
         }
     }

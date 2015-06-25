@@ -31,9 +31,11 @@ namespace DAL
                 for (int i = 0; i < row; i++)
                 {
                     TaiKhoanDTO taiKhoanDTO = new TaiKhoanDTO();
+                    taiKhoanDTO.MaTK = int.Parse(dataTable.Rows[i].ItemArray[0].ToString());
                     taiKhoanDTO.TenTK = dataTable.Rows[i].ItemArray[1].ToString();
                     taiKhoanDTO.MatKhau = dataTable.Rows[i].ItemArray[2].ToString();
                     taiKhoanDTO.LoaiTK = int.Parse(dataTable.Rows[i].ItemArray[3].ToString());
+                    list.Add(taiKhoanDTO);
                 }
 
                     return list;
@@ -59,9 +61,11 @@ namespace DAL
                 for (int i = 0; i < row; i++)
                 {
                     TaiKhoanDTO taiKhoanDTO = new TaiKhoanDTO();
-                    taiKhoanDTO.TenTK = dataTable.Rows[i].ItemArray[1].ToString();
-                    taiKhoanDTO.MatKhau = dataTable.Rows[i].ItemArray[2].ToString();
-                    taiKhoanDTO.LoaiTK = int.Parse(dataTable.Rows[i].ItemArray[3].ToString());
+                    taiKhoanDTO.MaTK = int.Parse(dataTable.Rows[i].ItemArray[0].ToString());
+                    //taiKhoanDTO.TenTK = dataTable.Rows[i].ItemArray[1].ToString();
+                    //taiKhoanDTO.MatKhau = dataTable.Rows[i].ItemArray[2].ToString();
+                    //taiKhoanDTO.LoaiTK = int.Parse(dataTable.Rows[i].ItemArray[3].ToString());
+                    list.Add(taiKhoanDTO);
                 }
 
                 return list;
@@ -75,34 +79,38 @@ namespace DAL
 
         public void InsertTaiKhoan(TaiKhoanDTO taiKhoanDTO)
         {
-            int param = 3;
+            int param = 4;
             string[] names = new string[param];
             object[] values = new object[param];
 
-            names[0] = "@TenTK";
-            names[1] = "@MatKhau";
-            names[2] = "@LoaiTK";
+            names[0] = "@MaTK";
+            names[1] = "@TenTK";
+            names[2] = "@MatKhau";
+            names[3] = "@LoaiTK";
 
-            values[0] = taiKhoanDTO.TenTK;
-            values[1] = taiKhoanDTO.MatKhau;
-            values[2] = taiKhoanDTO.LoaiTK;
+            values[0] = taiKhoanDTO.MaTK;
+            values[1] = taiKhoanDTO.TenTK;
+            values[2] = taiKhoanDTO.MatKhau;
+            values[3] = taiKhoanDTO.LoaiTK;
 
             connect.ExcuteNonQuery("TaiKhoan_Insert", names, values, param);
         }
 
         public void UpdateTaiKhoan(TaiKhoanDTO taiKhoanDTO)
         {
-            int param = 3;
+            int param = 4;
             string[] names = new string[param];
             object[] values = new object[param];
 
-            names[0] = "@TenTK";
-            names[1] = "@MatKhau";
-            names[2] = "@LoaiTK";
+            names[0] = "@MaTK";
+            names[1] = "@TenTK";
+            names[2] = "@MatKhau";
+            names[3] = "@LoaiTK";
 
-            values[0] = taiKhoanDTO.TenTK;
-            values[1] = taiKhoanDTO.MatKhau;
-            values[2] = taiKhoanDTO.LoaiTK;
+            values[0] = taiKhoanDTO.MaTK;
+            values[1] = taiKhoanDTO.TenTK;
+            values[2] = taiKhoanDTO.MatKhau;
+            values[3] = taiKhoanDTO.LoaiTK;
 
             connect.ExcuteNonQuery("TaiKhoan_Update", names, values, param);
         }
@@ -113,9 +121,9 @@ namespace DAL
             string[] names = new string[param];
             object[] values = new object[param];
 
-            names[0] = "@TenTK";
+            names[0] = "@MaTK";
 
-            values[0] = taiKhoanDTO.TenTK;
+            values[0] = taiKhoanDTO.MaTK;
 
             connect.ExcuteNonQuery("TaiKhoan_Delete", names, values, param);
         }

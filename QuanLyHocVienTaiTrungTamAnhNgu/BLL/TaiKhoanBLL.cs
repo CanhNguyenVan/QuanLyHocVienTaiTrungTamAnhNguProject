@@ -8,7 +8,7 @@ using DAL;
 
 namespace BLL
 {
-    public class TaiKhoan1BLL
+    public class TaiKhoanBLL
     {
         TaiKhoanDAL taiKhoanDAL = new TaiKhoanDAL();
 

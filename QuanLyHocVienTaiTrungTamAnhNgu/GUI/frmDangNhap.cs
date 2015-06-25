@@ -1,4 +1,5 @@
 ﻿using BLL;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,38 +15,16 @@ namespace GUI
 {
     public partial class frmDangNhap : Form
     {
-        //private TaiKhoanBLL _taikhoan = new TaiKhoanBLL();
-        //private List<TAIKHOAN> ListTK;
-        //public int _quyen;
+        private TaiKhoanBLL _taikhoan = new TaiKhoanBLL();
+        private List<TaiKhoanDTO> ListTK = new List<TaiKhoanDTO>();
+        public int _quyen;
 
         public frmDangNhap()
         {
             InitializeComponent();
-            //ListTK = _taikhoan.LayTatCaTaiKhoan();
-            //KiemTra();
+            ListTK = _taikhoan.SelectAll();
             frmMain.TenDangNhap = "Chưa đăng nhập";
         }
-
-        //private void KiemTra()
-        //{
-        //    try
-        //    {
-        //        foreach (TAIKHOAN newTK in ListTK)
-        //        {
-        //            if (newTK.LOAITK == 0)
-        //            {
-        //                return;
-        //            }
-        //        }
-        //        TaiKhoanBLL _taikhoan = new TaiKhoanBLL();
-        //        _taikhoan.Them(0, "admin", MaHoaMD5(MaHoaMD5("admin")), 0);
-        //        ListTK = _taikhoan.LayTatCaTaiKhoan();
-        //    }
-        //    catch
-        //    {
-
-        //    }
-        //}
 
         private string MaHoaMD5(string str)
         {
@@ -59,42 +38,42 @@ namespace GUI
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    if (textTen.Text.Trim() != "" && textMatKhau.Text.Trim() != "")
-            //    {
-            //        foreach (TAIKHOAN newtk in ListTK)
-            //        {
-            //            if (newtk.TENTK == textTen.Text && newtk.MATKHAU == MaHoaMD5(MaHoaMD5(textMatKhau.Text)))
-            //            {
-            //                MessageBox.Show("Đăng nhập thành công","Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //                _quyen = newtk.LOAITK;
-            //                frmMain.TenDangNhap = textTen.Text;
-            //                this.Close();
-            //                return;
-            //            }
-            //        }
-            //    }
-            //    MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng", "Đăng nhập thất bại", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    _quyen = -1;
-            //}
-            //catch { }
+            try
+            {
+                if (textTen.Text.Trim() != "" && textMatKhau.Text.Trim() != "")
+                {
+                    foreach (TaiKhoanDTO newtk in ListTK)
+                    {
+                        if (newtk.TenTK.Equals(textTen.Text) && newtk.MatKhau.Equals(textMatKhau.Text))
+                        {
+                            MessageBox.Show("Đăng nhập thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            _quyen = newtk.LoaiTK;
+                            frmMain.TenDangNhap = textTen.Text;
+                            this.Close();
+                            return;
+                        }
+                    }
+                }
+                MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng", "Đăng nhập thất bại", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _quyen = -1;
+            }
+            catch { }
         }
 
         private void buttonX1_Click(object sender, EventArgs e)
         {
             if (DialogResult.OK == MessageBox.Show("Bạn có muốn thoát!", "THOÁT ỨNG DỤNG", MessageBoxButtons.OKCancel, MessageBoxIcon.Question))
             {
-                //_quyen = -1;
+                _quyen = -1;
                 this.Close();
             }
         }
 
         #region Trả về giá trị quyền
-        //public int Quyen()
-        //{
-        //    //return _quyen;
-        //}
+        public int Quyen()
+        {
+            return _quyen;
+        }
         #endregion
 
         private void checkMK_CheckedChanged(object sender, EventArgs e)
@@ -125,11 +104,6 @@ namespace GUI
                 }
             }
             catch { }
-        }
-
-        private void frmDangNhap_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            //_quyen = -1;
         }
     }
 }

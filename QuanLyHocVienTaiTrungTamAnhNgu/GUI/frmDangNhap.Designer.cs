@@ -32,9 +32,9 @@
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.checkMK = new System.Windows.Forms.CheckBox();
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
+            this.btnDangNhap = new DevComponents.DotNetBar.ButtonX();
             this.textMatKhau = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.textTen = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.btnDangNhap = new DevComponents.DotNetBar.ButtonX();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelEx1.SuspendLayout();
             this.groupPanel1.SuspendLayout();
@@ -129,6 +129,20 @@
             this.buttonX1.Text = "Thoát";
             this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
             // 
+            // btnDangNhap
+            // 
+            this.btnDangNhap.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnDangNhap.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnDangNhap.Image = global::GUI.Properties.Resources.login_green;
+            this.btnDangNhap.ImageFixedSize = new System.Drawing.Size(32, 32);
+            this.btnDangNhap.Location = new System.Drawing.Point(100, 100);
+            this.btnDangNhap.Name = "btnDangNhap";
+            this.btnDangNhap.Size = new System.Drawing.Size(96, 38);
+            this.btnDangNhap.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnDangNhap.TabIndex = 3;
+            this.btnDangNhap.Text = "Đăng nhập";
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
+            // 
             // textMatKhau
             // 
             // 
@@ -155,20 +169,6 @@
             this.textTen.Size = new System.Drawing.Size(198, 20);
             this.textTen.TabIndex = 1;
             this.textTen.WatermarkText = "Tên đăng nhập";
-            // 
-            // btnDangNhap
-            // 
-            this.btnDangNhap.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnDangNhap.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnDangNhap.Image = global::GUI.Properties.Resources.login_green;
-            this.btnDangNhap.ImageFixedSize = new System.Drawing.Size(32, 32);
-            this.btnDangNhap.Location = new System.Drawing.Point(100, 100);
-            this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(96, 38);
-            this.btnDangNhap.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnDangNhap.TabIndex = 3;
-            this.btnDangNhap.Text = "Đăng nhập";
-            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
             // pictureBox1
             // 

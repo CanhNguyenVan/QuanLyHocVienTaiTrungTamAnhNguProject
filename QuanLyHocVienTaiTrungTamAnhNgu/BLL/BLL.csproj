@@ -53,6 +53,10 @@
     <Compile Include="LoaiLopBLL.cs" />
     <Compile Include="LopBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaiKhoanBLL.cs" />
+    <Compile Include="ThoiKhoaBieuBLL.cs" />
+    <Compile Include="TraCuuHocVienBLL.cs" />
+    <Compile Include="TraCuuLopBLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">

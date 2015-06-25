@@ -32,7 +32,11 @@
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.groupPanel3 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.dataPhanQuyen = new System.Windows.Forms.DataGridView();
             this.gpPhanQuyen = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.radioNhanVien = new System.Windows.Forms.RadioButton();
+            this.radioGiaoVien = new System.Windows.Forms.RadioButton();
+            this.radioAmin = new System.Windows.Forms.RadioButton();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this._HienMatKhau = new System.Windows.Forms.CheckBox();
             this.btnThoat = new DevComponents.DotNetBar.ButtonX();
@@ -50,21 +54,16 @@
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.dataPhanQuyen = new System.Windows.Forms.DataGridView();
             this.MaTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LoaiTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.radioAmin = new System.Windows.Forms.RadioButton();
-            this.radioGiaoVu = new System.Windows.Forms.RadioButton();
-            this.radioGiangVien = new System.Windows.Forms.RadioButton();
-            this.radioNhanVien = new System.Windows.Forms.RadioButton();
+            this.LoaiTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelEx1.SuspendLayout();
             this.panelEx2.SuspendLayout();
             this.groupPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataPhanQuyen)).BeginInit();
             this.gpPhanQuyen.SuspendLayout();
             this.groupPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataPhanQuyen)).BeginInit();
             this.SuspendLayout();
             // 
             // panelEx1
@@ -165,6 +164,24 @@
             this.groupPanel3.TabIndex = 1;
             this.groupPanel3.Text = "Danh sách tài khoản";
             // 
+            // dataPhanQuyen
+            // 
+            this.dataPhanQuyen.AllowUserToAddRows = false;
+            this.dataPhanQuyen.AllowUserToDeleteRows = false;
+            this.dataPhanQuyen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataPhanQuyen.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaTK,
+            this.TenTK,
+            this.MatKhau,
+            this.LoaiTK});
+            this.dataPhanQuyen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataPhanQuyen.Location = new System.Drawing.Point(0, 0);
+            this.dataPhanQuyen.Name = "dataPhanQuyen";
+            this.dataPhanQuyen.ReadOnly = true;
+            this.dataPhanQuyen.Size = new System.Drawing.Size(485, 404);
+            this.dataPhanQuyen.TabIndex = 0;
+            this.dataPhanQuyen.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataPhanQuyen_CellClick);
+            // 
             // gpPhanQuyen
             // 
             this.gpPhanQuyen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -173,8 +190,7 @@
             this.gpPhanQuyen.CanvasColor = System.Drawing.SystemColors.Control;
             this.gpPhanQuyen.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.gpPhanQuyen.Controls.Add(this.radioNhanVien);
-            this.gpPhanQuyen.Controls.Add(this.radioGiangVien);
-            this.gpPhanQuyen.Controls.Add(this.radioGiaoVu);
+            this.gpPhanQuyen.Controls.Add(this.radioGiaoVien);
             this.gpPhanQuyen.Controls.Add(this.radioAmin);
             this.gpPhanQuyen.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.gpPhanQuyen.Location = new System.Drawing.Point(358, 87);
@@ -210,6 +226,39 @@
             this.gpPhanQuyen.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.gpPhanQuyen.TabIndex = 1;
             this.gpPhanQuyen.Text = "Phân quyền";
+            // 
+            // radioNhanVien
+            // 
+            this.radioNhanVien.AutoSize = true;
+            this.radioNhanVien.Location = new System.Drawing.Point(20, 67);
+            this.radioNhanVien.Name = "radioNhanVien";
+            this.radioNhanVien.Size = new System.Drawing.Size(95, 23);
+            this.radioNhanVien.TabIndex = 2;
+            this.radioNhanVien.TabStop = true;
+            this.radioNhanVien.Text = "Nhân viên";
+            this.radioNhanVien.UseVisualStyleBackColor = true;
+            // 
+            // radioGiaoVien
+            // 
+            this.radioGiaoVien.AutoSize = true;
+            this.radioGiaoVien.Location = new System.Drawing.Point(20, 106);
+            this.radioGiaoVien.Name = "radioGiaoVien";
+            this.radioGiaoVien.Size = new System.Drawing.Size(91, 23);
+            this.radioGiaoVien.TabIndex = 2;
+            this.radioGiaoVien.TabStop = true;
+            this.radioGiaoVien.Text = "Giáo viên";
+            this.radioGiaoVien.UseVisualStyleBackColor = true;
+            // 
+            // radioAmin
+            // 
+            this.radioAmin.AutoSize = true;
+            this.radioAmin.Location = new System.Drawing.Point(20, 29);
+            this.radioAmin.Name = "radioAmin";
+            this.radioAmin.Size = new System.Drawing.Size(114, 23);
+            this.radioAmin.TabIndex = 2;
+            this.radioAmin.TabStop = true;
+            this.radioAmin.Text = "Quản trị viên";
+            this.radioAmin.UseVisualStyleBackColor = true;
             // 
             // groupPanel1
             // 
@@ -468,24 +517,6 @@
             this.labelX2.TabIndex = 0;
             this.labelX2.Text = "Tài khoản:";
             // 
-            // dataPhanQuyen
-            // 
-            this.dataPhanQuyen.AllowUserToAddRows = false;
-            this.dataPhanQuyen.AllowUserToDeleteRows = false;
-            this.dataPhanQuyen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataPhanQuyen.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaTK,
-            this.TenTK,
-            this.LoaiTK,
-            this.MatKhau});
-            this.dataPhanQuyen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataPhanQuyen.Location = new System.Drawing.Point(0, 0);
-            this.dataPhanQuyen.Name = "dataPhanQuyen";
-            this.dataPhanQuyen.ReadOnly = true;
-            this.dataPhanQuyen.Size = new System.Drawing.Size(485, 404);
-            this.dataPhanQuyen.TabIndex = 0;
-            this.dataPhanQuyen.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataPhanQuyen_CellClick);
-            // 
             // MaTK
             // 
             this.MaTK.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -502,6 +533,13 @@
             this.TenTK.Name = "TenTK";
             this.TenTK.ReadOnly = true;
             // 
+            // MatKhau
+            // 
+            this.MatKhau.DataPropertyName = "MatKhau";
+            this.MatKhau.HeaderText = "Mật khẩu";
+            this.MatKhau.Name = "MatKhau";
+            this.MatKhau.ReadOnly = true;
+            // 
             // LoaiTK
             // 
             this.LoaiTK.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -509,58 +547,6 @@
             this.LoaiTK.HeaderText = "Loai tài khoản";
             this.LoaiTK.Name = "LoaiTK";
             this.LoaiTK.ReadOnly = true;
-            // 
-            // MatKhau
-            // 
-            this.MatKhau.DataPropertyName = "MatKhau";
-            this.MatKhau.HeaderText = "Mật khẩu";
-            this.MatKhau.Name = "MatKhau";
-            this.MatKhau.ReadOnly = true;
-            this.MatKhau.Visible = false;
-            // 
-            // radioAmin
-            // 
-            this.radioAmin.AutoSize = true;
-            this.radioAmin.Location = new System.Drawing.Point(20, 29);
-            this.radioAmin.Name = "radioAmin";
-            this.radioAmin.Size = new System.Drawing.Size(114, 23);
-            this.radioAmin.TabIndex = 2;
-            this.radioAmin.TabStop = true;
-            this.radioAmin.Text = "Quản trị viên";
-            this.radioAmin.UseVisualStyleBackColor = true;
-            // 
-            // radioGiaoVu
-            // 
-            this.radioGiaoVu.AutoSize = true;
-            this.radioGiaoVu.Location = new System.Drawing.Point(20, 69);
-            this.radioGiaoVu.Name = "radioGiaoVu";
-            this.radioGiaoVu.Size = new System.Drawing.Size(79, 23);
-            this.radioGiaoVu.TabIndex = 2;
-            this.radioGiaoVu.TabStop = true;
-            this.radioGiaoVu.Text = "Giáo vụ";
-            this.radioGiaoVu.UseVisualStyleBackColor = true;
-            // 
-            // radioGiangVien
-            // 
-            this.radioGiangVien.AutoSize = true;
-            this.radioGiangVien.Location = new System.Drawing.Point(20, 110);
-            this.radioGiangVien.Name = "radioGiangVien";
-            this.radioGiangVien.Size = new System.Drawing.Size(99, 23);
-            this.radioGiangVien.TabIndex = 2;
-            this.radioGiangVien.TabStop = true;
-            this.radioGiangVien.Text = "Giảng viên";
-            this.radioGiangVien.UseVisualStyleBackColor = true;
-            // 
-            // radioNhanVien
-            // 
-            this.radioNhanVien.AutoSize = true;
-            this.radioNhanVien.Location = new System.Drawing.Point(20, 154);
-            this.radioNhanVien.Name = "radioNhanVien";
-            this.radioNhanVien.Size = new System.Drawing.Size(95, 23);
-            this.radioNhanVien.TabIndex = 2;
-            this.radioNhanVien.TabStop = true;
-            this.radioNhanVien.Text = "Nhân viên";
-            this.radioNhanVien.UseVisualStyleBackColor = true;
             // 
             // frmPhanQuyen
             // 
@@ -574,11 +560,11 @@
             this.panelEx1.PerformLayout();
             this.panelEx2.ResumeLayout(false);
             this.groupPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataPhanQuyen)).EndInit();
             this.gpPhanQuyen.ResumeLayout(false);
             this.gpPhanQuyen.PerformLayout();
             this.groupPanel1.ResumeLayout(false);
             this.groupPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataPhanQuyen)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -608,13 +594,12 @@
         private DevComponents.DotNetBar.LabelX labelX2;
         private System.Windows.Forms.CheckBox _HienMatKhau;
         private System.Windows.Forms.DataGridView dataPhanQuyen;
+        private System.Windows.Forms.RadioButton radioNhanVien;
+        private System.Windows.Forms.RadioButton radioGiaoVien;
+        private System.Windows.Forms.RadioButton radioAmin;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaTK;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenTK;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LoaiTK;
         private System.Windows.Forms.DataGridViewTextBoxColumn MatKhau;
-        private System.Windows.Forms.RadioButton radioNhanVien;
-        private System.Windows.Forms.RadioButton radioGiangVien;
-        private System.Windows.Forms.RadioButton radioGiaoVu;
-        private System.Windows.Forms.RadioButton radioAmin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LoaiTK;
     }
 }
