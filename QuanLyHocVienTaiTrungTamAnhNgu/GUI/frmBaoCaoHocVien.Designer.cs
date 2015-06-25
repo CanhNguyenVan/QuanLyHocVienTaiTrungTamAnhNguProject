@@ -73,7 +73,7 @@
             // 
             // Lop
             // 
-            this.Lop.HeaderText = "Lớp";
+            this.Lop.HeaderText = "Tên Lớp";
             this.Lop.Name = "Lop";
             // 
             // DiemThi
