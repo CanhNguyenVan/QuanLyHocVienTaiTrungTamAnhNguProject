@@ -31,7 +31,7 @@ namespace DAL
                 {
                     BangCapDTO bangCapDTO = new BangCapDTO();
                     bangCapDTO.MaBangCap = dataTable.Rows[i].ItemArray[0].ToString();
-                    bangCapDTO.MaBangCap = dataTable.Rows[i].ItemArray[1].ToString();
+                    bangCapDTO.TenBangCap = dataTable.Rows[i].ItemArray[1].ToString();
 
                     list.Add(bangCapDTO);
                 }

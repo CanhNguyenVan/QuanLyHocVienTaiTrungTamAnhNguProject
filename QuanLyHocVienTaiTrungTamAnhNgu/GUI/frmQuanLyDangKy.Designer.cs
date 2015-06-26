@@ -44,12 +44,13 @@
             this.txt_MaHocVien = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.cbx_KhoaHoc = new System.Windows.Forms.ComboBox();
-            this.cbx_Lớp = new System.Windows.Forms.ComboBox();
+            this.cbx_Lop = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txt_HocPhi = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_ChapNhan = new System.Windows.Forms.Button();
+            this.txt_MienGiam = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cbx_GioiTinh
@@ -189,14 +190,16 @@
             this.cbx_KhoaHoc.Size = new System.Drawing.Size(314, 21);
             this.cbx_KhoaHoc.TabIndex = 48;
             // 
-            // cbx_Lớp
+            // cbx_Lop
             // 
-            this.cbx_Lớp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbx_Lớp.FormattingEnabled = true;
-            this.cbx_Lớp.Location = new System.Drawing.Point(113, 316);
-            this.cbx_Lớp.Name = "cbx_Lớp";
-            this.cbx_Lớp.Size = new System.Drawing.Size(314, 21);
-            this.cbx_Lớp.TabIndex = 50;
+            this.cbx_Lop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_Lop.FormattingEnabled = true;
+            this.cbx_Lop.Location = new System.Drawing.Point(113, 316);
+            this.cbx_Lop.Name = "cbx_Lop";
+            this.cbx_Lop.Size = new System.Drawing.Size(314, 21);
+            this.cbx_Lop.TabIndex = 50;
+            this.cbx_Lop.SelectedIndexChanged += new System.EventHandler(this.cbx_Lop_SelectedIndexChanged);
+            this.cbx_Lop.SelectionChangeCommitted += new System.EventHandler(this.cbx_Lop_SelectionChangeCommitted);
             // 
             // label9
             // 
@@ -223,35 +226,48 @@
             this.txt_HocPhi.Name = "txt_HocPhi";
             this.txt_HocPhi.Size = new System.Drawing.Size(314, 20);
             this.txt_HocPhi.TabIndex = 51;
+            this.txt_HocPhi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dauPhayDongTextBox_KeyPress);
             // 
-            // button1
+            // btn_ChapNhan
             // 
-            this.button1.Location = new System.Drawing.Point(27, 403);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 53;
-            this.button1.Text = "Chấp Nhận";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_ChapNhan.Location = new System.Drawing.Point(188, 429);
+            this.btn_ChapNhan.Name = "btn_ChapNhan";
+            this.btn_ChapNhan.Size = new System.Drawing.Size(75, 23);
+            this.btn_ChapNhan.TabIndex = 53;
+            this.btn_ChapNhan.Text = "Chấp Nhận";
+            this.btn_ChapNhan.UseVisualStyleBackColor = true;
+            this.btn_ChapNhan.Click += new System.EventHandler(this.btn_ChapNhan_Click);
             // 
-            // button2
+            // txt_MienGiam
             // 
-            this.button2.Location = new System.Drawing.Point(352, 403);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 53;
-            this.button2.Text = "Hủy";
-            this.button2.UseVisualStyleBackColor = true;
+            this.txt_MienGiam.Enabled = false;
+            this.txt_MienGiam.Location = new System.Drawing.Point(113, 392);
+            this.txt_MienGiam.Name = "txt_MienGiam";
+            this.txt_MienGiam.Size = new System.Drawing.Size(314, 20);
+            this.txt_MienGiam.TabIndex = 51;
+            this.txt_MienGiam.Text = "0";
+            this.txt_MienGiam.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dauPhayDongTextBox_KeyPress);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(24, 401);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(57, 13);
+            this.label11.TabIndex = 52;
+            this.label11.Text = "Miễn Giảm";
             // 
             // frmQuanLyDangKy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(443, 436);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(443, 464);
+            this.Controls.Add(this.btn_ChapNhan);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
+            this.Controls.Add(this.txt_MienGiam);
             this.Controls.Add(this.txt_HocPhi);
-            this.Controls.Add(this.cbx_Lớp);
+            this.Controls.Add(this.cbx_Lop);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.cbx_KhoaHoc);
             this.Controls.Add(this.label8);
@@ -271,6 +287,7 @@
             this.Controls.Add(this.txt_MaHocVien);
             this.Name = "frmQuanLyDangKy";
             this.Text = "Đăng ký";
+            this.Load += new System.EventHandler(this.frmQuanLyDangKy_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,12 +311,13 @@
         private System.Windows.Forms.TextBox txt_MaHocVien;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cbx_KhoaHoc;
-        private System.Windows.Forms.ComboBox cbx_Lớp;
+        private System.Windows.Forms.ComboBox cbx_Lop;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txt_HocPhi;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_ChapNhan;
+        private System.Windows.Forms.TextBox txt_MienGiam;
+        private System.Windows.Forms.Label label11;
 
 
     }

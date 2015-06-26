@@ -33,6 +33,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevComponents.DotNetBar2, Version=11.2.0.1, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v13.1, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v13.1.Core, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v13.1.Core, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v13.1, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v13.1, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
@@ -75,6 +80,12 @@
     </Compile>
     <Compile Include="frmGioiThieu.Designer.cs">
       <DependentUpon>frmGioiThieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHoSoHocVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHoSoHocVien.Designer.cs">
+      <DependentUpon>frmHoSoHocVien.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -172,6 +183,7 @@
     <Compile Include="frmTraCuuLop.Designer.cs">
       <DependentUpon>frmTraCuuLop.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoaiLops.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmBaoCaoDoanhThu.resx">
@@ -188,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmGioiThieu.resx">
       <DependentUpon>frmGioiThieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHoSoHocVien.resx">
+      <DependentUpon>frmHoSoHocVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -268,6 +283,10 @@
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{3dcd1666-4183-46b6-a7aa-ce434412dc1f}</Project>
       <Name>DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyTools\MyTools.csproj">
+      <Project>{949716a1-280f-479c-ae57-24d71dd654d3}</Project>
+      <Name>MyTools</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

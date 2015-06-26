@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration.Internal;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -21,7 +22,8 @@ namespace DAL
         // Contructor
         public DataConnecter()
         {
-            strConnect = ConfigurationManager.ConnectionStrings["QuanLyHocVienTaiTrungTamAnhNguConnectionString"].ConnectionString;
+            strConnect = ConfigurationManager.ConnectionStrings[1].ConnectionString;
+            
             sqlConnect.ConnectionString = strConnect;
             if (sqlConnect.State == ConnectionState.Closed)
                 try

@@ -29,99 +29,120 @@
         private void InitializeComponent()
         {
             this.dataGridViewQuanLyCapLop = new System.Windows.Forms.DataGridView();
-            this.MaCapLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenCapLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btn_Xoa = new System.Windows.Forms.Button();
+            this.btn_Sua = new System.Windows.Forms.Button();
+            this.btn_Them = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txt_MaCapLop = new System.Windows.Forms.TextBox();
+            this.txt_TenLop = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQuanLyCapLop)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewQuanLyCapLop
             // 
+            this.dataGridViewQuanLyCapLop.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewQuanLyCapLop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewQuanLyCapLop.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaCapLop,
-            this.TenCapLop});
-            this.dataGridViewQuanLyCapLop.Location = new System.Drawing.Point(12, 12);
+            this.dataGridViewQuanLyCapLop.Location = new System.Drawing.Point(12, 77);
             this.dataGridViewQuanLyCapLop.Name = "dataGridViewQuanLyCapLop";
+            this.dataGridViewQuanLyCapLop.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewQuanLyCapLop.Size = new System.Drawing.Size(399, 266);
             this.dataGridViewQuanLyCapLop.TabIndex = 0;
             // 
-            // MaCapLop
+            // btn_Xoa
             // 
-            this.MaCapLop.HeaderText = "Mã Cấp Lớp";
-            this.MaCapLop.Name = "MaCapLop";
-            this.MaCapLop.ReadOnly = true;
+            this.btn_Xoa.Location = new System.Drawing.Point(336, 349);
+            this.btn_Xoa.Name = "btn_Xoa";
+            this.btn_Xoa.Size = new System.Drawing.Size(75, 23);
+            this.btn_Xoa.TabIndex = 1;
+            this.btn_Xoa.Text = "Xóa";
+            this.btn_Xoa.UseVisualStyleBackColor = true;
+            this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
             // 
-            // TenCapLop
+            // btn_Sua
             // 
-            this.TenCapLop.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TenCapLop.HeaderText = "Tên Cấp Lớp";
-            this.TenCapLop.Name = "TenCapLop";
+            this.btn_Sua.Location = new System.Drawing.Point(255, 349);
+            this.btn_Sua.Name = "btn_Sua";
+            this.btn_Sua.Size = new System.Drawing.Size(75, 23);
+            this.btn_Sua.TabIndex = 1;
+            this.btn_Sua.Text = "Sửa";
+            this.btn_Sua.UseVisualStyleBackColor = true;
+            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
             // 
-            // button1
+            // btn_Them
             // 
-            this.button1.Location = new System.Drawing.Point(335, 295);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Hủy";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_Them.Location = new System.Drawing.Point(174, 349);
+            this.btn_Them.Name = "btn_Them";
+            this.btn_Them.Size = new System.Drawing.Size(75, 23);
+            this.btn_Them.TabIndex = 1;
+            this.btn_Them.Text = "Thêm";
+            this.btn_Them.UseVisualStyleBackColor = true;
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
-            // button2
+            // label1
             // 
-            this.button2.Location = new System.Drawing.Point(254, 295);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Xóa";
-            this.button2.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Mã Cấp Lớp";
             // 
-            // button3
+            // label2
             // 
-            this.button3.Location = new System.Drawing.Point(173, 295);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Sửa";
-            this.button3.UseVisualStyleBackColor = true;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 41);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Tên Cấp Lớp";
             // 
-            // button4
+            // txt_MaCapLop
             // 
-            this.button4.Location = new System.Drawing.Point(92, 295);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "Thêm";
-            this.button4.UseVisualStyleBackColor = true;
+            this.txt_MaCapLop.Enabled = false;
+            this.txt_MaCapLop.Location = new System.Drawing.Point(85, 13);
+            this.txt_MaCapLop.Name = "txt_MaCapLop";
+            this.txt_MaCapLop.Size = new System.Drawing.Size(326, 20);
+            this.txt_MaCapLop.TabIndex = 3;
+            // 
+            // txt_TenLop
+            // 
+            this.txt_TenLop.Location = new System.Drawing.Point(85, 41);
+            this.txt_TenLop.Name = "txt_TenLop";
+            this.txt_TenLop.Size = new System.Drawing.Size(326, 20);
+            this.txt_TenLop.TabIndex = 3;
             // 
             // frmQuanLyCapLop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(424, 333);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(423, 382);
+            this.Controls.Add(this.txt_TenLop);
+            this.Controls.Add(this.txt_MaCapLop);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btn_Them);
+            this.Controls.Add(this.btn_Sua);
+            this.Controls.Add(this.btn_Xoa);
             this.Controls.Add(this.dataGridViewQuanLyCapLop);
             this.Name = "frmQuanLyCapLop";
             this.Text = "Quản Lý Cấp Lớp";
+            this.Load += new System.EventHandler(this.frmQuanLyCapLop_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQuanLyCapLop)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridViewQuanLyCapLop;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaCapLop;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenCapLop;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btn_Xoa;
+        private System.Windows.Forms.Button btn_Sua;
+        private System.Windows.Forms.Button btn_Them;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txt_MaCapLop;
+        private System.Windows.Forms.TextBox txt_TenLop;
     }
 }

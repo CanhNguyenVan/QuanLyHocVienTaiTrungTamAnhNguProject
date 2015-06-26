@@ -34,7 +34,7 @@ namespace DAL
                     hocVienDTO.MaHocVien = dataTable.Rows[i].ItemArray[0].ToString();
                     hocVienDTO.TenHocVien = dataTable.Rows[i].ItemArray[1].ToString();
                     hocVienDTO.NgaySinh = DateTime.Parse(dataTable.Rows[2].ItemArray[2].ToString());
-                    hocVienDTO.GioiTinh = dataTable.Rows[i].ItemArray[3].ToString();
+                    hocVienDTO.GioiTinh = dataTable.Rows[i].ItemArray[3].ToString().Trim();
                     hocVienDTO.NgheNghiep = dataTable.Rows[i].ItemArray[4].ToString();
                     hocVienDTO.SoDienThoai = dataTable.Rows[i].ItemArray[5].ToString();
                     hocVienDTO.DiaChi = dataTable.Rows[i].ItemArray[6].ToString();
