@@ -38,7 +38,7 @@ namespace DAL
             return list;
         }
 
-        public void InsertGiaoVien(GiaoVienDTO giaoVienDTO)
+        public int InsertGiaoVien(GiaoVienDTO giaoVienDTO)
         {
             int param = 3;
             string[] names = new string[param];
@@ -52,10 +52,10 @@ namespace DAL
             values[1] = giaoVienDTO.TenGiaoVien;
             values[2] = giaoVienDTO.MaBangCap;
 
-            connect.ExcuteNonQuery("GiaoVien_Insert", names, values, param);
+            return connect.ExcuteNonQuery("GiaoVien_Insert", names, values, param);
         }
 
-        public void UpdateGiaoVien(GiaoVienDTO giaoVienDTO)
+        public int UpdateGiaoVien(GiaoVienDTO giaoVienDTO)
         {
             int param = 3;
             string[] names = new string[param];
@@ -69,10 +69,10 @@ namespace DAL
             values[1] = giaoVienDTO.TenGiaoVien;
             values[2] = giaoVienDTO.MaBangCap;
 
-            connect.ExcuteNonQuery("GiaoVien_Update", names, values, param);
+            return connect.ExcuteNonQuery("GiaoVien_Update", names, values, param);
         }
 
-        public void DeleteGiaoVien(GiaoVienDTO giaoVienDTO)
+        public int DeleteGiaoVien(GiaoVienDTO giaoVienDTO)
         {
             int param = 3;
             string[] names = new string[param];
@@ -81,7 +81,7 @@ namespace DAL
             names[0] = "@MaGiaoVien";
             values[0] = giaoVienDTO.MaGiaoVien;
 
-            connect.ExcuteNonQuery("GiaoVien_Delete", names, values, param);
+            return connect.ExcuteNonQuery("GiaoVien_Delete", names, values, param);
         }
     }
 }

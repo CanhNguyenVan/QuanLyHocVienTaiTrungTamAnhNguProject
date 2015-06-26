@@ -16,18 +16,18 @@ namespace BLL
             return giaoVienDAL.SelectAll();
         }
 
-        public void InsertGiaoVien(GiaoVienDTO giaoVienDTO)
+        public int  InsertGiaoVien(GiaoVienDTO giaoVienDTO)
         {
-            giaoVienDAL.InsertGiaoVien(giaoVienDTO);
+            return giaoVienDAL.InsertGiaoVien(giaoVienDTO);
         }
-        public void UpdateGiaoVien(GiaoVienDTO giaoVienDTO)
+        public int UpdateGiaoVien(GiaoVienDTO giaoVienDTO)
         {
-            giaoVienDAL.UpdateGiaoVien(giaoVienDTO);
+            return giaoVienDAL.UpdateGiaoVien(giaoVienDTO);
         }
 
-        public void DeleteGiaoVien(GiaoVienDTO giaoVienDTO)
+        public int DeleteGiaoVien(GiaoVienDTO giaoVienDTO)
         {
-            giaoVienDAL.DeleteGiaoVien(giaoVienDTO);
+            return giaoVienDAL.DeleteGiaoVien(giaoVienDTO);
         }
     }
 }

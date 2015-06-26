@@ -41,7 +41,7 @@ namespace DAL
             return list;
         }
 
-        public void InsertHoSoHocVien(HoSoHocVienDTO hoSoHocVienDTO)
+        public int InsertHoSoHocVien(HoSoHocVienDTO hoSoHocVienDTO)
         {
             int param = 5;
             string[] names = new string[param];
@@ -59,10 +59,10 @@ namespace DAL
             values[3] = hoSoHocVienDTO.DiemThi;
             values[4] = hoSoHocVienDTO.XepLoai;
 
-            connect.ExcuteNonQuery("HoSoHocVien_Insert", names, values, param);
+            return connect.ExcuteNonQuery("HoSoHocVien_Insert", names, values, param);
         }
 
-        public void UpdateHoSoHocVien(HoSoHocVienDTO hoSoHocVienDTO)
+        public int UpdateHoSoHocVien(HoSoHocVienDTO hoSoHocVienDTO)
         {
             int param = 5;
             string[] names = new string[param];
@@ -80,10 +80,10 @@ namespace DAL
             values[3] = hoSoHocVienDTO.DiemThi;
             values[4] = hoSoHocVienDTO.XepLoai;
 
-            connect.ExcuteNonQuery("HoSoHocVien_Update", names, values, param);
+            return connect.ExcuteNonQuery("HoSoHocVien_Update", names, values, param);
         }
 
-        public void DeleteHoSoHocVien(HoSoHocVienDTO hoSoHocVienDTO)
+        public int DeleteHoSoHocVien(HoSoHocVienDTO hoSoHocVienDTO)
         {
             int param = 1;
             string[] names = new string[param];
@@ -92,7 +92,7 @@ namespace DAL
             names[0] = "@MaHoSo";
             values[0] = hoSoHocVienDTO.MaHoSo;
 
-            connect.ExcuteNonQuery("HoSoHocVien_Delete", names, values, param);
+            return connect.ExcuteNonQuery("HoSoHocVien_Delete", names, values, param);
         }
     }
 }

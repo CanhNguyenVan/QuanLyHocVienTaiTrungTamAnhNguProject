@@ -16,19 +16,19 @@ namespace BLL
             return bienLaiDAL.SelectAll();
         }
 
-        public void InsertBienLai(BienLaiDTO bienLaiDTO)
+        public int InsertBienLai(BienLaiDTO bienLaiDTO)
         {
-            bienLaiDAL.InsertBienLai(bienLaiDTO);
+            return bienLaiDAL.InsertBienLai(bienLaiDTO);
         }
 
-        public void UpdateBienLai(BienLaiDTO bienLaiDTO)
+        public int UpdateBienLai(BienLaiDTO bienLaiDTO)
         {
-            bienLaiDAL.UpdateBienLai(bienLaiDTO);
+            return bienLaiDAL.UpdateBienLai(bienLaiDTO);
         }
 
-        public void DeleteBienLai(BienLaiDTO bienLaiDTO)
+        public int DeleteBienLai(BienLaiDTO bienLaiDTO)
         {
-            bienLaiDAL.DeleteByMaBienLai(bienLaiDTO);
+            return bienLaiDAL.DeleteByMaBienLai(bienLaiDTO);
         }
     }
 }

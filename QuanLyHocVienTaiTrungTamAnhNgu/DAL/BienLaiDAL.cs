@@ -48,7 +48,7 @@ namespace DAL
             }
         }
 
-        public void InsertBienLai(BienLaiDTO bienLaiDTO)
+        public int InsertBienLai(BienLaiDTO bienLaiDTO)
         {
             int param = 3;
             string [] names = new string[param];
@@ -62,10 +62,10 @@ namespace DAL
             values[1] = bienLaiDTO.HocPhi;
             values[2] = bienLaiDTO.MienGiam;
 
-            connect.ExcuteNonQuery("BienLai_Insert",names,values,param);
+            return connect.ExcuteNonQuery("BienLai_Insert",names,values,param);
         }
 
-        public void UpdateBienLai(BienLaiDTO bienLaiDTO)
+        public int UpdateBienLai(BienLaiDTO bienLaiDTO)
         {
             int param = 3;
             string[] names = new string[param];
@@ -79,10 +79,10 @@ namespace DAL
             values[1] = bienLaiDTO.HocPhi;
             values[2] = bienLaiDTO.MienGiam;
 
-            connect.ExcuteNonQuery("BienLai_Update", names, values, param);
+            return connect.ExcuteNonQuery("BienLai_Update", names, values, param);
         }
 
-        public void DeleteByMaBienLai(BienLaiDTO bienLaiDTO)
+        public int DeleteByMaBienLai(BienLaiDTO bienLaiDTO)
         {
             int param = 1;
             string[] names = new string[param];
@@ -91,7 +91,7 @@ namespace DAL
             names[0] = "@MaBienLai";
             values[0] = bienLaiDTO.MaBienLai;
 
-            connect.ExcuteNonQuery("BienLai_Delete", names, values, param);
+            return connect.ExcuteNonQuery("BienLai_Delete", names, values, param);
         }
     }
 }

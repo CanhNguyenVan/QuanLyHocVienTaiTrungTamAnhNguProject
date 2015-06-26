@@ -17,19 +17,19 @@ namespace BLL
             return hoSoHocVienDAL.SelectAll();
         }
 
-        public void InsertHoSoHocVien(HoSoHocVienDTO hoSoHocVienDTO)
+        public int InsertHoSoHocVien(HoSoHocVienDTO hoSoHocVienDTO)
         {
-            hoSoHocVienDAL.InsertHoSoHocVien(hoSoHocVienDTO);
+            return hoSoHocVienDAL.InsertHoSoHocVien(hoSoHocVienDTO);
         }
 
-        public void UpdateHoSoHocVien(HoSoHocVienDTO hoSoHocVienDTO)
+        public int UpdateHoSoHocVien(HoSoHocVienDTO hoSoHocVienDTO)
         {
-            hoSoHocVienDAL.UpdateHoSoHocVien(hoSoHocVienDTO);
+            return hoSoHocVienDAL.UpdateHoSoHocVien(hoSoHocVienDTO);
         }
 
-        public void DeleteHoSoHocVien(HoSoHocVienDTO hoSoHocVienDTO)
+        public int DeleteHoSoHocVien(HoSoHocVienDTO hoSoHocVienDTO)
         {
-            hoSoHocVienDAL.DeleteHoSoHocVien(hoSoHocVienDTO);
+            return hoSoHocVienDAL.DeleteHoSoHocVien(hoSoHocVienDTO);
         }
     }
 }
