@@ -28,86 +28,63 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.MaHocVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenHocVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Lop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiemThi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.XepLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.BaoCao_HocVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.QuanLyHocVienTrungTamAnhNgu_DataSet = new GUI.QuanLyHocVienTrungTamAnhNgu_DataSet();
+            this.reportViewerBaoCaoHocVien = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.BaoCao_HocVienTableAdapter = new GUI.QuanLyHocVienTrungTamAnhNgu_DataSetTableAdapters.BaoCao_HocVienTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.BaoCao_HocVienBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QuanLyHocVienTrungTamAnhNgu_DataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // BaoCao_HocVienBindingSource
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaHocVien,
-            this.TenHocVien,
-            this.Lop,
-            this.DiemThi,
-            this.XepLoai});
-            this.dataGridView1.Location = new System.Drawing.Point(15, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(543, 219);
-            this.dataGridView1.TabIndex = 0;
+            this.BaoCao_HocVienBindingSource.DataMember = "BaoCao_HocVien";
+            this.BaoCao_HocVienBindingSource.DataSource = this.QuanLyHocVienTrungTamAnhNgu_DataSet;
             // 
-            // button1
+            // QuanLyHocVienTrungTamAnhNgu_DataSet
             // 
-            this.button1.Location = new System.Drawing.Point(459, 237);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "In";
-            this.button1.UseVisualStyleBackColor = true;
+            this.QuanLyHocVienTrungTamAnhNgu_DataSet.DataSetName = "QuanLyHocVienTrungTamAnhNgu_DataSet";
+            this.QuanLyHocVienTrungTamAnhNgu_DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // MaHocVien
+            // reportViewerBaoCaoHocVien
             // 
-            this.MaHocVien.HeaderText = "Mã Học Viên";
-            this.MaHocVien.Name = "MaHocVien";
+            this.reportViewerBaoCaoHocVien.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "DataSet_BaoCaoHocVien";
+            reportDataSource1.Value = this.BaoCao_HocVienBindingSource;
+            this.reportViewerBaoCaoHocVien.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewerBaoCaoHocVien.LocalReport.ReportEmbeddedResource = "GUI.BaoCaoHocVien.rdlc";
+            this.reportViewerBaoCaoHocVien.Location = new System.Drawing.Point(0, 0);
+            this.reportViewerBaoCaoHocVien.Name = "reportViewerBaoCaoHocVien";
+            this.reportViewerBaoCaoHocVien.Size = new System.Drawing.Size(729, 323);
+            this.reportViewerBaoCaoHocVien.TabIndex = 0;
             // 
-            // TenHocVien
+            // BaoCao_HocVienTableAdapter
             // 
-            this.TenHocVien.HeaderText = "Tên Học Viên";
-            this.TenHocVien.Name = "TenHocVien";
-            // 
-            // Lop
-            // 
-            this.Lop.HeaderText = "Tên Lớp";
-            this.Lop.Name = "Lop";
-            // 
-            // DiemThi
-            // 
-            this.DiemThi.HeaderText = "Điểm Thi";
-            this.DiemThi.Name = "DiemThi";
-            // 
-            // XepLoai
-            // 
-            this.XepLoai.HeaderText = "Xếp Loại";
-            this.XepLoai.Name = "XepLoai";
+            this.BaoCao_HocVienTableAdapter.ClearBeforeFill = true;
             // 
             // frmBaoCaoHocVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(568, 269);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(729, 323);
+            this.Controls.Add(this.reportViewerBaoCaoHocVien);
             this.Name = "frmBaoCaoHocVien";
             this.Text = "Báo Cáo Học Viên";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.frmBaoCaoHocVien_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.BaoCao_HocVienBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QuanLyHocVienTrungTamAnhNgu_DataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaHocVien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenHocVien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Lop;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DiemThi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn XepLoai;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewerBaoCaoHocVien;
+        private System.Windows.Forms.BindingSource BaoCao_HocVienBindingSource;
+        private QuanLyHocVienTrungTamAnhNgu_DataSet QuanLyHocVienTrungTamAnhNgu_DataSet;
+        private QuanLyHocVienTrungTamAnhNgu_DataSetTableAdapters.BaoCao_HocVienTableAdapter BaoCao_HocVienTableAdapter;
+
     }
 }

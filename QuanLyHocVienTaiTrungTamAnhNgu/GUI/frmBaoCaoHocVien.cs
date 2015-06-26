@@ -16,5 +16,13 @@ namespace GUI
         {
             InitializeComponent();
         }
+
+        private void frmBaoCaoHocVien_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'QuanLyHocVienTrungTamAnhNgu_DataSet.BaoCao_HocVien' table. You can move, or remove it, as needed.
+            this.BaoCao_HocVienTableAdapter.Fill(this.QuanLyHocVienTrungTamAnhNgu_DataSet.BaoCao_HocVien);
+
+            this.reportViewerBaoCaoHocVien.RefreshReport();
+        }
     }
 }

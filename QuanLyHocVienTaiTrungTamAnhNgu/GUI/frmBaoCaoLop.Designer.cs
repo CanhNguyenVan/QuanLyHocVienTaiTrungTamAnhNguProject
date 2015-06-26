@@ -28,66 +28,63 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.MaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ToiDa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DaDangKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.reportViewerBaoCaoLop = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.QuanLyHocVienTrungTamAnhNgu_DataSet = new GUI.QuanLyHocVienTrungTamAnhNgu_DataSet();
+            this.BaoCao_LopBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.BaoCao_LopTableAdapter = new GUI.QuanLyHocVienTrungTamAnhNgu_DataSetTableAdapters.BaoCao_LopTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.QuanLyHocVienTrungTamAnhNgu_DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BaoCao_LopBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // reportViewerBaoCaoLop
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaLop,
-            this.TenLop,
-            this.ToiDa,
-            this.DaDangKy});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(443, 189);
-            this.dataGridView1.TabIndex = 0;
+            this.reportViewerBaoCaoLop.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "DataSet_BaoCaoLop";
+            reportDataSource1.Value = this.BaoCao_LopBindingSource;
+            this.reportViewerBaoCaoLop.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewerBaoCaoLop.LocalReport.ReportEmbeddedResource = "GUI.BaoCaoLop.rdlc";
+            this.reportViewerBaoCaoLop.Location = new System.Drawing.Point(0, 0);
+            this.reportViewerBaoCaoLop.Name = "reportViewerBaoCaoLop";
+            this.reportViewerBaoCaoLop.Size = new System.Drawing.Size(724, 366);
+            this.reportViewerBaoCaoLop.TabIndex = 0;
             // 
-            // MaLop
+            // QuanLyHocVienTrungTamAnhNgu_DataSet
             // 
-            this.MaLop.HeaderText = "Mã Lớp";
-            this.MaLop.Name = "MaLop";
+            this.QuanLyHocVienTrungTamAnhNgu_DataSet.DataSetName = "QuanLyHocVienTrungTamAnhNgu_DataSet";
+            this.QuanLyHocVienTrungTamAnhNgu_DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // TenLop
+            // BaoCao_LopBindingSource
             // 
-            this.TenLop.HeaderText = "Tên Lớp";
-            this.TenLop.Name = "TenLop";
+            this.BaoCao_LopBindingSource.DataMember = "BaoCao_Lop";
+            this.BaoCao_LopBindingSource.DataSource = this.QuanLyHocVienTrungTamAnhNgu_DataSet;
             // 
-            // ToiDa
+            // BaoCao_LopTableAdapter
             // 
-            this.ToiDa.HeaderText = "Tối Đa";
-            this.ToiDa.Name = "ToiDa";
-            // 
-            // DaDangKy
-            // 
-            this.DaDangKy.HeaderText = "Đã Đăng Ký";
-            this.DaDangKy.Name = "DaDangKy";
+            this.BaoCao_LopTableAdapter.ClearBeforeFill = true;
             // 
             // frmBaoCaoLop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(467, 213);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(724, 366);
+            this.Controls.Add(this.reportViewerBaoCaoLop);
             this.Name = "frmBaoCaoLop";
             this.Text = "Báo Cáo Lớp";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.frmBaoCaoLop_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.QuanLyHocVienTrungTamAnhNgu_DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BaoCao_LopBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaLop;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenLop;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ToiDa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DaDangKy;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewerBaoCaoLop;
+        private System.Windows.Forms.BindingSource BaoCao_LopBindingSource;
+        private QuanLyHocVienTrungTamAnhNgu_DataSet QuanLyHocVienTrungTamAnhNgu_DataSet;
+        private QuanLyHocVienTrungTamAnhNgu_DataSetTableAdapters.BaoCao_LopTableAdapter BaoCao_LopTableAdapter;
+
     }
 }
