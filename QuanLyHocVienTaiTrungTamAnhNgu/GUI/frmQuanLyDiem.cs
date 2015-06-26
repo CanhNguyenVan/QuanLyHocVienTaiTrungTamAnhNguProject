@@ -72,13 +72,14 @@ namespace GUI
                 diemThiDto.MaKyThi = (cbx_MaKyThi.SelectedItem as KyThiDTO).MaKyThi;
                 diemThiDto.Diem = int.Parse(txt_Diem.Text);
 
-                _diemThiBll.InsertDiemThi(diemThiDto);
+                if (1 == _diemThiBll.InsertDiemThi(diemThiDto))
+                {
+                    MessageBox.Show("Thêm thành công!");
 
-                LoadData();
+                    LoadData();
 
-                Binding();
-
-                MessageBox.Show("Thêm thành công!");
+                    Binding();
+                }
             }
             catch (Exception ex)
             {
@@ -95,13 +96,14 @@ namespace GUI
                 diemThiDto.MaKyThi = (cbx_MaKyThi.SelectedItem as KyThiDTO).MaKyThi;
                 diemThiDto.Diem = int.Parse(txt_Diem.Text);
 
-                _diemThiBll.UpdateDiemThi(diemThiDto);
+                if (1 == _diemThiBll.UpdateDiemThi(diemThiDto))
+                {
+                    MessageBox.Show("Sửa thành công!");
 
-                LoadData();
+                    LoadData();
 
-                Binding();
-
-                MessageBox.Show("Sửa thành công!");
+                    Binding();
+                }
             }
             catch (Exception ex)
             {
@@ -118,13 +120,15 @@ namespace GUI
                 diemThiDto.MaKyThi = (cbx_MaKyThi.SelectedItem as KyThiDTO).MaKyThi;
                 diemThiDto.Diem = int.Parse(txt_Diem.Text);
 
-                _diemThiBll.DeleteDiemThi(diemThiDto);
+                if (1 == _diemThiBll.DeleteDiemThi(diemThiDto))
+                {
+                    MessageBox.Show("Sửa thành công!");
 
-                LoadData();
+                    LoadData();
 
-                Binding();
+                    Binding();
 
-                MessageBox.Show("Sửa thành công!");
+                }
             }
             catch (Exception ex)
             {

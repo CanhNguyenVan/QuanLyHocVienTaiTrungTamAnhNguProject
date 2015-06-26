@@ -41,10 +41,13 @@
             // 
             // dataGridViewQuanLyCapLop
             // 
+            this.dataGridViewQuanLyCapLop.AllowUserToAddRows = false;
+            this.dataGridViewQuanLyCapLop.AllowUserToDeleteRows = false;
             this.dataGridViewQuanLyCapLop.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewQuanLyCapLop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewQuanLyCapLop.Location = new System.Drawing.Point(12, 77);
             this.dataGridViewQuanLyCapLop.Name = "dataGridViewQuanLyCapLop";
+            this.dataGridViewQuanLyCapLop.ReadOnly = true;
             this.dataGridViewQuanLyCapLop.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewQuanLyCapLop.Size = new System.Drawing.Size(399, 266);
             this.dataGridViewQuanLyCapLop.TabIndex = 0;

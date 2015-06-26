@@ -65,13 +65,15 @@ namespace GUI
                 loaiLopDto.NgayHoc = dTime_NgayHoc.Value;
                 loaiLopDto.GioHoc = dTime_GioHoc.EditValue.ToString();
 
-                _loaiLopBll.InsertLoaiLop(loaiLopDto);
+                if (1 == _loaiLopBll.InsertLoaiLop(loaiLopDto))
+                {
 
-                MessageBox.Show("Thêm thành công!");
+                    MessageBox.Show("Thêm thành công!");
 
-                LoadData();
+                    LoadData();
 
-                Binding();
+                    Binding();
+                }
             }
             catch (Exception ex)
             {
@@ -91,13 +93,15 @@ namespace GUI
                 loaiLopDto.NgayHoc = dTime_NgayHoc.Value;
                 loaiLopDto.GioHoc = dTime_GioHoc.EditValue.ToString();
 
-                _loaiLopBll.UpdateLoaiLop(loaiLopDto);
+                if (1 == _loaiLopBll.UpdateLoaiLop(loaiLopDto))
+                {
 
-                MessageBox.Show("Sửa thành công!");
+                    MessageBox.Show("Sửa thành công!");
 
-                LoadData();
+                    LoadData();
 
-                Binding();
+                    Binding();
+                }
             }
             catch (Exception ex)
             {
@@ -116,13 +120,15 @@ namespace GUI
                 loaiLopDto.NgayHoc = dTime_NgayHoc.Value;
                 loaiLopDto.GioHoc = dTime_GioHoc.EditValue.ToString();
 
-                _loaiLopBll.DeleteLoaiLop(loaiLopDto);
+                if (1 == _loaiLopBll.DeleteLoaiLop(loaiLopDto))
+                {
 
-                MessageBox.Show("Xóa thành công!");
+                    MessageBox.Show("Xóa thành công!");
 
-                LoadData();
+                    LoadData();
 
-                Binding();
+                    Binding();
+                }
             }
             catch (Exception ex)
             {

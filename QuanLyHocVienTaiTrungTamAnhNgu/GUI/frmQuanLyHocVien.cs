@@ -90,13 +90,15 @@ namespace GUI
                 hocVienDto.SoDienThoai = txt_SoDienThoai.Text;
                 hocVienDto.DiaChi = txt_DiaChi.Text;
 
-                _hocVienBll.UpdateHocVien(hocVienDto);
+                if (1 == _hocVienBll.UpdateHocVien(hocVienDto))
+                {
 
-                MessageBox.Show("Chỉnh sửa thành công!");
+                    MessageBox.Show("Chỉnh sửa thành công!");
 
-                LoadData();
+                    LoadData();
 
-                Binding();
+                    Binding();
+                }
             }
             catch (SqlException ex)
             {
@@ -116,13 +118,15 @@ namespace GUI
                 HocVienDTO hocVienDto = new HocVienDTO();
                 hocVienDto.MaHocVien = txt_MaHocVien.Text;
 
-                _hocVienBll.DeleteHocVien(hocVienDto);
+                if (_hocVienBll.DeleteHocVien(hocVienDto) == 1)
+                {
 
-                MessageBox.Show("Xóa thành công!");
+                    MessageBox.Show("Xóa thành công!");
 
-                LoadData();
+                    LoadData();
 
-                Binding();
+                    Binding();
+                }
             }
             catch (Exception ex)
             {
@@ -136,7 +140,7 @@ namespace GUI
             if (_hoSoHocVien == null)
             {
                 _hoSoHocVien = new frmHoSoHocVien();
-                _hoSoHocVien.Show();
+                _hoSoHocVien.ShowDialog();
                 _hoSoHocVien.FormClosed += _hoSoHocVien_FormClosed;
             }
             else
