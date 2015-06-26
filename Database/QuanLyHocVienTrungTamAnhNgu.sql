@@ -1000,7 +1000,6 @@ GO
 
 --
 Create Procedure BaoCao_DoanhThu
-@NienHoc int
 As
 Begin
 Select k.NienHoc, k.HocKy, (sum(b.HocPhi)-SUM(b.MienGiam))as DoanhThu
