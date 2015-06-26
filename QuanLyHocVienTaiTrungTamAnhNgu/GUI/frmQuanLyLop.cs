@@ -22,10 +22,6 @@ namespace GUI
 
         private KhoaHocBLL _khoaHocBll = new KhoaHocBLL();
 
-        private frmQuanLyCapLop _frmCapLop = null;
-
-        private frmQuanLyLoaiLop _frmLoaiLop = null;
-
         public frmQuanLyLop()
         {
             InitializeComponent();
