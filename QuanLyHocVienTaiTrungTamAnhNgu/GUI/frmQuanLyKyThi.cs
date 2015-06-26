@@ -75,13 +75,15 @@ namespace GUI
                 kyThiDto.NgayThi = dTime_NgayThi.Value;
                 kyThiDto.GioThi = tEd_GioThi.EditValue.ToString();
 
-                _kyThiBll.InsertKyThi(kyThiDto);
+                if (1 == _kyThiBll.InsertKyThi(kyThiDto))
+                {
 
-                MessageBox.Show("Thêm thành công!");
+                    MessageBox.Show("Thêm thành công!");
 
-                LoadData();
+                    LoadData();
 
-                Binding();
+                    Binding();
+                }
 
             }
             catch (Exception ex)
@@ -101,13 +103,14 @@ namespace GUI
                 kyThiDto.NgayThi = dTime_NgayThi.Value;
                 kyThiDto.GioThi = tEd_GioThi.EditValue.ToString();
 
-                _kyThiBll.UpdateKyThi(kyThiDto);
+                if (1 == _kyThiBll.UpdateKyThi(kyThiDto))
+                {
+                    MessageBox.Show("Sửa thành công!");
 
-                MessageBox.Show("Sửa thành công!");
+                    LoadData();
 
-                LoadData();
-
-                Binding();
+                    Binding();
+                }
 
             }
             catch (Exception ex)
@@ -127,13 +130,15 @@ namespace GUI
                 kyThiDto.NgayThi = dTime_NgayThi.Value;
                 kyThiDto.GioThi = tEd_GioThi.EditValue.ToString();
 
-                _kyThiBll.DeleteKyThi(kyThiDto);
+                if (1 == _kyThiBll.DeleteKyThi(kyThiDto))
+                {
 
-                MessageBox.Show("Xóa thành công!");
+                    MessageBox.Show("Xóa thành công!");
 
-                LoadData();
+                    LoadData();
 
-                Binding();
+                    Binding();
+                }
 
             }
             catch (Exception ex)

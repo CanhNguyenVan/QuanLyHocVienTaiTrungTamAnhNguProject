@@ -59,13 +59,15 @@ namespace GUI
                 khoaHOcDto.HocKy = int.Parse(txt_HocKy.Text);
                 khoaHOcDto.NienHoc = int.Parse(txt_NienHoc.Text);
 
-                _khoaHocBll.InsertKhoaHoc(khoaHOcDto);
+                if (1 == _khoaHocBll.InsertKhoaHoc(khoaHOcDto))
+                {
 
-                MessageBox.Show("Thêm thành công!");
+                    MessageBox.Show("Thêm thành công!");
 
-                LoadData();
+                    LoadData();
 
-                Binding();
+                    Binding();
+                }
             }
             catch (Exception ex)
             {
@@ -84,13 +86,15 @@ namespace GUI
                 khoaHOcDto.HocKy = int.Parse(txt_HocKy.Text);
                 khoaHOcDto.NienHoc = int.Parse(txt_NienHoc.Text);
 
-                _khoaHocBll.UpdateKhoaHoc(khoaHOcDto);
+                if (1 == _khoaHocBll.UpdateKhoaHoc(khoaHOcDto))
+                {
 
-                MessageBox.Show("Sửa thành công!");
+                    MessageBox.Show("Sửa thành công!");
 
-                LoadData();
+                    LoadData();
 
-                Binding();
+                    Binding();
+                }
             }
             catch (Exception ex)
             {
@@ -109,13 +113,15 @@ namespace GUI
                 khoaHOcDto.HocKy = int.Parse(txt_HocKy.Text);
                 khoaHOcDto.NienHoc = int.Parse(txt_NienHoc.Text);
 
-                _khoaHocBll.DeleteKhoaHoc(khoaHOcDto);
+                if (1 == _khoaHocBll.DeleteKhoaHoc(khoaHOcDto))
+                {
 
-                MessageBox.Show("Xóa thành công!");
+                    MessageBox.Show("Xóa thành công!");
 
-                LoadData();
+                    LoadData();
 
-                Binding();
+                    Binding();
+                }
             }
             catch (Exception ex)
             {

@@ -53,13 +53,14 @@ namespace GUI
                 capLopDto.MaCapLop = MyTools.Utility.PhatSinhMaCapLop();
                 capLopDto.TenCapLop = txt_TenLop.Text;
 
-                _capLopBll.InsertCapLop(capLopDto);
+                if (1 == _capLopBll.InsertCapLop(capLopDto))
+                {
+                    MessageBox.Show("Thêm thành công!");
 
-                MessageBox.Show("Thêm thành công!");
+                    LoadData();
 
-                LoadData();
-
-                Binding();
+                    Binding();
+                }
             }
             catch (Exception ex)
             {
@@ -76,13 +77,14 @@ namespace GUI
                 capLopDto.MaCapLop = txt_MaCapLop.Text;
                 capLopDto.TenCapLop = txt_TenLop.Text;
 
-                _capLopBll.UpdateCapLop(capLopDto);
+                if (1 == _capLopBll.UpdateCapLop(capLopDto))
+                {
+                    MessageBox.Show("Sửa thành công!");
 
-                MessageBox.Show("Sửa thành công!");
+                    LoadData();
 
-                LoadData();
-
-                Binding();
+                    Binding();
+                }
             }
             catch (Exception ex)
             {
@@ -98,13 +100,15 @@ namespace GUI
                 capLopDto.MaCapLop = txt_MaCapLop.Text;
                 capLopDto.TenCapLop = txt_TenLop.Text;
 
-                _capLopBll.DeleteCapLop(capLopDto);
+                if (1 ==_capLopBll.DeleteCapLop(capLopDto))
+                {
 
-                MessageBox.Show("Xóa thành công!");
+                    MessageBox.Show("Xóa thành công!");
 
-                LoadData();
+                    LoadData();
 
-                Binding();
+                    Binding();
+                }
             }
             catch (Exception ex)
             {

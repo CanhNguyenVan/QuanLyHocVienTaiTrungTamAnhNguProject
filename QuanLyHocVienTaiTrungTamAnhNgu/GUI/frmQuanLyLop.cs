@@ -98,13 +98,15 @@ namespace GUI
                 lopDto.TenLop = txt_TenLop.Text;
                 lopDto.SiSo = int.Parse(txt_SiSo.Text);
 
-                _lopBll.InsertLop(lopDto);
+                if (1 == _lopBll.InsertLop(lopDto))
+                {
 
-                MessageBox.Show("Thêm thành công!");
+                    MessageBox.Show("Thêm thành công!");
 
-                LoadData();
+                    LoadData();
 
-                Binding();
+                    Binding();
+                }
 
             }
             catch (Exception ex)
@@ -125,13 +127,15 @@ namespace GUI
                 lopDto.TenLop = txt_TenLop.Text;
                 lopDto.SiSo = int.Parse(txt_SiSo.Text);
 
-                _lopBll.UpdateLop(lopDto);
+                if (1 == _lopBll.UpdateLop(lopDto))
+                {
 
-                MessageBox.Show("Sửa thành công!");
+                    MessageBox.Show("Sửa thành công!");
 
-                LoadData();
+                    LoadData();
 
-                Binding();
+                    Binding();
+                }
 
             }
             catch (Exception ex)
@@ -152,13 +156,15 @@ namespace GUI
                 lopDto.TenLop = txt_TenLop.Text;
                 lopDto.SiSo = int.Parse(txt_SiSo.Text);
 
-                _lopBll.DeleteLop(lopDto);
+                if (1 == _lopBll.DeleteLop(lopDto))
+                {
 
-                MessageBox.Show("Xóa thành công!");
+                    MessageBox.Show("Xóa thành công!");
 
-                LoadData();
+                    LoadData();
 
-                Binding();
+                    Binding();
+                }
             }
             catch (Exception ex)
             {

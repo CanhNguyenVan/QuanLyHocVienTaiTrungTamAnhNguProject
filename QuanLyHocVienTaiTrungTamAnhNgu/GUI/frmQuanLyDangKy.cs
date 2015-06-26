@@ -85,12 +85,15 @@ namespace GUI
                 hoSoHocVienDto.XepLoai = "Chưa xếp loại";
 
                 // Insert vào cơ sở dữ liệu
-                _hocVienBll.InsertHocVien(hocVienDto);
-                _bienLaiBll.InsertBienLai(bienLaiDto);
-                _dangKyBll.InsertDangKy(dangKyDto);
-                _hoSoHocVienBll.InsertHoSoHocVien(hoSoHocVienDto);
+                if (1 == _hocVienBll.InsertHocVien(hocVienDto) &&
+                    1 == _dangKyBll.InsertDangKy(dangKyDto)
+                    )
+                {
+                    _bienLaiBll.InsertBienLai(bienLaiDto);
+                    _hoSoHocVienBll.InsertHoSoHocVien(hoSoHocVienDto);
 
-                MessageBox.Show("Đăng ký thành công!");
+                    MessageBox.Show("Đăng ký thành công!");
+                }
 
             }
             catch (SqlException sqlEx)
