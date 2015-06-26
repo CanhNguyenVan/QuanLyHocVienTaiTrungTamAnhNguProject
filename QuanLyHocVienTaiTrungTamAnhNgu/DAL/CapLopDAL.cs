@@ -45,7 +45,7 @@ namespace DAL
             }
         }
 
-        public void InsertCapLop(CapLopDTO capLopDTO)
+        public int InsertCapLop(CapLopDTO capLopDTO)
         {
             int param = 2;
             string[] names = new string[param];
@@ -57,10 +57,10 @@ namespace DAL
             values[0] = capLopDTO.MaCapLop;
             values[1] = capLopDTO.TenCapLop;
 
-            connect.ExcuteNonQuery("CapLop_Insert", names, values, param);
+            return connect.ExcuteNonQuery("CapLop_Insert", names, values, param);
         }
 
-        public void UpdateCapLop(CapLopDTO capLopDTO)
+        public int UpdateCapLop(CapLopDTO capLopDTO)
         {
             int param = 2;
             string[] names = new string[param];
@@ -72,10 +72,10 @@ namespace DAL
             values[0] = capLopDTO.MaCapLop;
             values[1] = capLopDTO.TenCapLop;
 
-            connect.ExcuteNonQuery("CapLop_Update", names, values, param);
+            return connect.ExcuteNonQuery("CapLop_Update", names, values, param);
         }
 
-        public void DeleteCapLop(CapLopDTO capLopDTO)
+        public int DeleteCapLop(CapLopDTO capLopDTO)
         {
             int param = 1;
             string[] names = new string[param];
@@ -84,7 +84,7 @@ namespace DAL
             names[0] = "@MaCapLop";
             values[0] = capLopDTO.MaCapLop;
 
-            connect.ExcuteNonQuery("CapLop_Delete", names, values, param);
+            return connect.ExcuteNonQuery("CapLop_Delete", names, values, param);
         }
     }
 }

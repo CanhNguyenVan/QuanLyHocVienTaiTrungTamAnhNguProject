@@ -16,18 +16,18 @@ namespace BLL
             return diemThiDAL.SelectAll();
         }
 
-        public void InsertDiemThi(DiemThiDTO diemThiDTO)
+        public int InsertDiemThi(DiemThiDTO diemThiDTO)
         {
-            diemThiDAL.InsertDiemThi(diemThiDTO);
+            return  diemThiDAL.InsertDiemThi(diemThiDTO);
         }
 
-        public void UpdateDiemThi(DiemThiDTO diemThiDTO)
+        public int UpdateDiemThi(DiemThiDTO diemThiDTO)
         {
-            diemThiDAL.UpdateDiemThi(diemThiDTO);
+            return diemThiDAL.UpdateDiemThi(diemThiDTO);
         }
-        public void DeleteDiemThi(DiemThiDTO diemThiDTO)
+        public int DeleteDiemThi(DiemThiDTO diemThiDTO)
         {
-            diemThiDAL.DeleteDiemThi(diemThiDTO);
+            return diemThiDAL.DeleteDiemThi(diemThiDTO);
         }
     }
 }

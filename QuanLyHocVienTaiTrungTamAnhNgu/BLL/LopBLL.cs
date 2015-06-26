@@ -16,18 +16,18 @@ namespace BLL
             return lopDAL.SelectAll();
         }
 
-        public void InsertLop(LopDTO lopDTO)
+        public int InsertLop(LopDTO lopDTO)
         {
-            lopDAL.InsertLop(lopDTO);
+            return lopDAL.InsertLop(lopDTO);
         }
 
-        public void UpdateLop(LopDTO lopDTO)
+        public int UpdateLop(LopDTO lopDTO)
         {
-            lopDAL.UpdateLop(lopDTO);
+            return lopDAL.UpdateLop(lopDTO);
         }
-        public void DeleteLop(LopDTO lopDTO)
+        public int DeleteLop(LopDTO lopDTO)
         {
-            lopDAL.DeleteLop(lopDTO);
+            return lopDAL.DeleteLop(lopDTO);
         }
     }
 }

@@ -16,19 +16,19 @@ namespace BLL
             return dangKyDAL.SelectAll();
         }
 
-        public void InsertDangKy(DangKyDTO dangKyDTO)
+        public int InsertDangKy(DangKyDTO dangKyDTO)
         {
-            dangKyDAL.InsertDangKy(dangKyDTO);
+            return dangKyDAL.InsertDangKy(dangKyDTO);
         }
 
-        public void UpdateDangKy(DangKyDTO dangKyDTO)
+        public int UpdateDangKy(DangKyDTO dangKyDTO)
         {
-            dangKyDAL.UpdateDangKy(dangKyDTO);
+            return dangKyDAL.UpdateDangKy(dangKyDTO);
         }
 
-        public void DeleteDangKy(DangKyDTO dangKyDTO)
+        public int DeleteDangKy(DangKyDTO dangKyDTO)
         {
-            dangKyDAL.DeleteByMaDangKy(dangKyDTO);
+            return dangKyDAL.DeleteByMaDangKy(dangKyDTO);
         }
     }
 }

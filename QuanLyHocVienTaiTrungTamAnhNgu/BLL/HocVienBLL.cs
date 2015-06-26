@@ -16,19 +16,19 @@ namespace BLL
             return hocVienDAL.SelectAll();
         }
 
-        public void InsertHocVien(HocVienDTO hocVienDTO)
+        public int InsertHocVien(HocVienDTO hocVienDTO)
         {
-            hocVienDAL.InsertHocVien(hocVienDTO);
+            return hocVienDAL.InsertHocVien(hocVienDTO);
         }
 
-        public void UpdateHocVien(HocVienDTO hocVienDTO)
+        public int UpdateHocVien(HocVienDTO hocVienDTO)
         {
-            hocVienDAL.UpdateHocVien(hocVienDTO);
+            return hocVienDAL.UpdateHocVien(hocVienDTO);
         }
 
-        public void DeleteHocVien(HocVienDTO hocVienDTO)
+        public int DeleteHocVien(HocVienDTO hocVienDTO)
         {
-            hocVienDAL.DeleteHocVien(hocVienDTO);
+            return hocVienDAL.DeleteHocVien(hocVienDTO);
         }
     }
 }

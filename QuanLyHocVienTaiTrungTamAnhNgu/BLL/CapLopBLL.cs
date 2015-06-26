@@ -16,19 +16,19 @@ namespace BLL
             return capLopDAL.SelectAll();
         }
 
-        public void InsertCapLop(CapLopDTO capLopDTO)
+        public int InsertCapLop(CapLopDTO capLopDTO)
         {
-            capLopDAL.InsertCapLop(capLopDTO);
+            return capLopDAL.InsertCapLop(capLopDTO);
         }
 
-        public void UpdateCapLop(CapLopDTO capLopDTO)
+        public int UpdateCapLop(CapLopDTO capLopDTO)
         {
-            capLopDAL.UpdateCapLop(capLopDTO);
+            return capLopDAL.UpdateCapLop(capLopDTO);
         }
 
-        public void DeleteCapLop(CapLopDTO capLopDTO)
+        public int DeleteCapLop(CapLopDTO capLopDTO)
         {
-            capLopDAL.DeleteCapLop(capLopDTO);
+            return capLopDAL.DeleteCapLop(capLopDTO);
         }
     }
 }

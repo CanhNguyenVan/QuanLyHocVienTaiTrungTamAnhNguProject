@@ -16,18 +16,18 @@ namespace BLL
             return khoaHocDAL.SelectAll();
         }
 
-        public void InsertKhoaHoc(KhoaHocDTO khoaHocDTO)
+        public int InsertKhoaHoc(KhoaHocDTO khoaHocDTO)
         {
-            khoaHocDAL.InsertKhoaHoc(khoaHocDTO);
+            return khoaHocDAL.InsertKhoaHoc(khoaHocDTO);
         }
-        public void UpdateKhoaHoc(KhoaHocDTO khoaHocDTO)
+        public int UpdateKhoaHoc(KhoaHocDTO khoaHocDTO)
         {
-            khoaHocDAL.UpdateKhoaHoc(khoaHocDTO);
+            return khoaHocDAL.UpdateKhoaHoc(khoaHocDTO);
         }
 
-        public void DeleteKhoaHoc(KhoaHocDTO khoaHocDTO)
+        public int DeleteKhoaHoc(KhoaHocDTO khoaHocDTO)
         {
-            khoaHocDAL.DeleteKhoaHoc(khoaHocDTO);
+            return khoaHocDAL.DeleteKhoaHoc(khoaHocDTO);
         }
     }
 }

@@ -11,104 +11,104 @@ Set DateFormat DMY
 
 Create Table HOCVIEN
 (
-	MaHocVien char(10) primary key,
-	TenHocVien nvarchar(30) not null,
+	MaHocVien varchar(10) primary key,
+	TenHocVien varchar(30) not null,
 	NgaySinh date not null,
-	GioiTinh nchar(5) not null,
-	NgheNghiep nvarchar(50) not null,
+	GioiTinh varchar(5) not null,
+	NgheNghiep varchar(50) not null,
 	SoDienThoai varchar(20) not null,
-	DiaChi nvarchar(100) not null
+	DiaChi varchar(100) not null
 )
 
 Create Table CAPLOP
 (
-	MaCapLop char(10) primary key,
-	TenCapLop nchar(20) not null
+	MaCapLop varchar(10) primary key,
+	TenCapLop varchar(20) not null
 )
 
 Create Table LOAILOP
 (
-	MaLoaiLop char(10) primary key,
-	TenLoaiLop nchar(20) not null,
+	MaLoaiLop varchar(10) primary key,
+	TenLoaiLop varchar(20) not null,
 	NgayHoc date not null,
 	GioHoc time not null
 )
 
 Create Table KHOAHOC
 (
-	MaKhoaHoc char(10) primary key,
+	MaKhoaHoc varchar(10) primary key,
 	NienHoc int not null,	
 	HocKy int not null
 )
 
 Create Table LOP
 (
-	MaLop char(10) primary key,
-	MaCapLop char(10) foreign key references CAPLOP(MaCapLop),
-	MaLoaiLop char(10) foreign key references LOAILOP(MaLoaiLop),
-	MaKhoaHoc char(10) foreign key references KHOAHOC(MaKhoaHoc),
-	TenLop nchar(20) not null,
+	MaLop varchar(10) primary key,
+	MaCapLop varchar(10) foreign key references CAPLOP(MaCapLop),
+	MaLoaiLop varchar(10) foreign key references LOAILOP(MaLoaiLop),
+	MaKhoaHoc varchar(10) foreign key references KHOAHOC(MaKhoaHoc),
+	TenLop varchar(20) not null,
 	SiSo int not null 
 )
 
 Create Table HOSOHOCVIEN
 (
-	MaHoSo char(10) primary key,
-	MaHocVien char(10) foreign key references HOCVIEN(MaHocVien),
-	MaLop char(10) foreign key references LOP(MaLop),
+	MaHoSo varchar(10) primary key,
+	MaHocVien varchar(10) foreign key references HOCVIEN(MaHocVien),
+	MaLop varchar(10) foreign key references LOP(MaLop),
 	DiemThi float not null,
-	XepLoai nvarchar(50) not null
+	XepLoai varchar(50) not null
 )
 
 Create Table BIENLAI
 (
-	MaBienLai char(10) primary key,
+	MaBienLai varchar(10) primary key,
 	HocPhi decimal not null,
 	MienGiam decimal
 )
 
 Create Table DANGKY
 (
-	MaDangKy char(10) primary key,
-	MaKhoaHoc char(10) foreign key references KHOAHOC(MaKhoaHoc),
-	MaLop char(10) foreign key references LOP(MaLop),
-	MaHocVien char(10) foreign key references HOCVIEN(MaHocVien),
-	MaBienLai char(10) foreign key references BIENLAI(MaBienLai)
+	MaDangKy varchar(10) primary key,
+	MaKhoaHoc varchar(10) foreign key references KHOAHOC(MaKhoaHoc),
+	MaLop varchar(10) foreign key references LOP(MaLop),
+	MaHocVien varchar(10) foreign key references HOCVIEN(MaHocVien),
+	MaBienLai varchar(10) foreign key references BIENLAI(MaBienLai)
 )
 
 Create Table KYTHI
 (
-	MaKyThi char(10) primary key,
-	MaKhoaHoc char(10) foreign key references KHOAHOC(MaKhoaHoc),
+	MaKyThi varchar(10) primary key,
+	MaKhoaHoc varchar(10) foreign key references KHOAHOC(MaKhoaHoc),
 	NgayThi date not null,
 	GioThi time not null
 )
 
 Create Table DIEMTHI
 (
-	MaHocVien char(10) foreign key references HOCVIEN(MaHocVien),
-	MaKyThi char(10) foreign key references KYTHI(MaKyThi),
+	MaHocVien varchar(10) foreign key references HOCVIEN(MaHocVien),
+	MaKyThi varchar(10) foreign key references KYTHI(MaKyThi),
 	Diem float not null,
 	constraint PK_DIEMTHI primary key (MaHocVien,MaKyThi)
 )
 
 Create Table BANGCAP
 (
-	MaBangCap char(10) primary key,
-	TenBangCap nvarchar(30) not null
+	MaBangCap varchar(10) primary key,
+	TenBangCap varchar(30) not null
 )
 
 Create Table GIAOVIEN
 (
-	MaGiaoVien char(10) primary key,
-	TenGiaoVien nvarchar(30) not null,
-	MaBangCap char(10) foreign key references BANGCAP(MaBangCap),
+	MaGiaoVien varchar(10) primary key,
+	TenGiaoVien varchar(30) not null,
+	MaBangCap varchar(10) foreign key references BANGCAP(MaBangCap),
 )
 
 Create Table PHANCONG
 (
-	MaGiaoVien char(10) foreign key references GIAOVIEN(MaGiaoVien),
-	MaLop char(10) foreign key references LOP(MaLop),
+	MaGiaoVien varchar(10) foreign key references GIAOVIEN(MaGiaoVien),
+	MaLop varchar(10) foreign key references LOP(MaLop),
 	constraint PK_PHANCONG primary key (MaGiaoVien,MaLop)
 )
 
@@ -230,7 +230,7 @@ GO
 --Select By Id--
 ---
 CREATE PROCEDURE BangCap_SelectById
-@MaBangCap char(10)
+@MaBangCap varchar(10)
 AS
 BEGIN
 	select * from BANGCAP where MaBangCap = @MaBangCap
@@ -239,7 +239,7 @@ GO
 
 ---
 CREATE PROCEDURE BienLai_SelectById
-@MaBienLai char(10)
+@MaBienLai varchar(10)
 AS
 BEGIN
 	select * from BIENLAI where MaBienLai = @MaBienLai
@@ -248,7 +248,7 @@ GO
 
 ---
 CREATE PROCEDURE CapLop_SelectById
-@MaCapLop char(10)
+@MaCapLop varchar(10)
 AS
 BEGIN
 	select * from CAPLOP where MaCapLop = @MaCapLop
@@ -257,7 +257,7 @@ GO
 
 ---
 CREATE PROCEDURE DangKy_SelectById
-@MaDangKy char(10)
+@MaDangKy varchar(10)
 AS
 BEGIN
 	select * from DANGKY where MaDangKy = @MaDangKy
@@ -266,8 +266,8 @@ GO
 
 ---
 CREATE PROCEDURE DiemThi_SelectById
-@MaHocVien char(10),
-@MaKyThi char(10)
+@MaHocVien varchar(10),
+@MaKyThi varchar(10)
 AS
 BEGIN
 	select * from DIEMTHI where (MaHocVien = @MaHocVien and MaKyThi = @MaKyThi)
@@ -276,7 +276,7 @@ GO
 
 ---
 CREATE PROCEDURE GiaoVien_SelectById
-@MaGiaoVien char(10)
+@MaGiaoVien varchar(10)
 AS
 BEGIN
 	select * from GIAOVIEN where MaGiaoVien = @MaGiaoVien
@@ -285,7 +285,7 @@ GO
 
 ---
 CREATE PROCEDURE HocVien_SelectById
-@MaHocVien char(10)
+@MaHocVien varchar(10)
 AS
 BEGIN
 	select * from HOCVIEN where MaHocVien = @MaHocVien
@@ -294,7 +294,7 @@ GO
 
 ---
 CREATE PROCEDURE HoSoHocVien_SelectById
-@MaHoSo char(10)
+@MaHoSo varchar(10)
 AS
 BEGIN
 	select * from HOSOHOCVIEN where MaHoSo = @MaHoSo
@@ -303,7 +303,7 @@ GO
 
 ---
 CREATE PROCEDURE KhoaHoc_SelectById
-@MaKhoaHoc char(10)
+@MaKhoaHoc varchar(10)
 AS
 BEGIN
 	select * from KHOAHOC where MaKhoaHoc = @MaKhoaHoc
@@ -312,7 +312,7 @@ GO
 
 ---
 CREATE PROCEDURE KyThi_SelectById
-@MaKyThi char(10)
+@MaKyThi varchar(10)
 AS
 BEGIN
 	select * from KYTHI where MaKyThi = @MaKyThi
@@ -321,7 +321,7 @@ GO
 
 ---
 CREATE PROCEDURE LoaiLop_SelectById
-@MaLoaiLop char(10)
+@MaLoaiLop varchar(10)
 AS
 BEGIN
 	select * from LOAILOP where MaLoaiLop = @MaLoaiLop
@@ -330,7 +330,7 @@ GO
 
 ---
 CREATE PROCEDURE Lop_SelectById
-@MaLop char(10)
+@MaLop varchar(10)
 AS
 BEGIN
 	select * from LOP where MaLop = @MaLop
@@ -339,8 +339,8 @@ GO
 
 ---
 CREATE PROCEDURE PhanCong_SelectById
-@MaGiaoVien char(10),
-@MaLop char(10)
+@MaGiaoVien varchar(10),
+@MaLop varchar(10)
 AS
 BEGIN
 	select * from PHANCONG where (MaGiaoVien = @MaGiaoVien and MaLop = @MaLop)
@@ -350,8 +350,8 @@ GO
 --Insert--
 ---
 CREATE PROCEDURE BangCap_Insert
-@MaBangCap char(10),
-@TenBangCap nvarchar(30)
+@MaBangCap varchar(10),
+@TenBangCap varchar(30)
 AS
 BEGIN
 	insert into BANGCAP (MaBangCap, TenBangCap)
@@ -361,7 +361,7 @@ GO
 
 ---
 CREATE PROCEDURE BienLai_Insert
-@MaBienLai char(10),
+@MaBienLai varchar(10),
 @HocPhi float,
 @MienGiam float
 AS
@@ -373,8 +373,8 @@ GO
 
 ---
 CREATE PROCEDURE CapLop_Insert
-@MaCapLop char(10),
-@TenCapLop nchar(20)
+@MaCapLop varchar(10),
+@TenCapLop varchar(20)
 AS
 BEGIN
 	insert into CAPLOP (MaCapLop, TenCapLop)
@@ -384,11 +384,11 @@ GO
 
 ---
 CREATE PROCEDURE DangKy_Insert
-@MaDangKy char(10),
-@MaKhoaHoc char(10),
-@MaLop char(10),
-@MaHocVien char(10),
-@MaBienLai char(10)
+@MaDangKy varchar(10),
+@MaKhoaHoc varchar(10),
+@MaLop varchar(10),
+@MaHocVien varchar(10),
+@MaBienLai varchar(10)
 AS
 BEGIN
 	insert into DANGKY (MaDangKy, MaKhoaHoc, MaLop, MaHocVien, MaBienLai)
@@ -398,8 +398,8 @@ GO
 
 ---
 CREATE PROCEDURE DiemThi_Insert
-@MaHocVien char(10),
-@MaKyThi char(10),
+@MaHocVien varchar(10),
+@MaKyThi varchar(10),
 @Diem float
 AS
 BEGIN
@@ -410,9 +410,9 @@ GO
 
 ---
 CREATE PROCEDURE GiaoVien_Insert
-@MaGiaoVien char(10),
-@TenGiaoVien nvarchar(30),
-@MaBangCap char(10)
+@MaGiaoVien varchar(10),
+@TenGiaoVien varchar(30),
+@MaBangCap varchar(10)
 AS
 BEGIN
 	insert into GiaoVien (MaGiaoVien, TenGiaoVien, MaBangCap)
@@ -422,13 +422,13 @@ GO
 
 ---
 CREATE PROCEDURE HocVien_Insert
-@MaHocVien char(10),
-@TenHocVien nvarchar(30),
+@MaHocVien varchar(10),
+@TenHocVien varchar(30),
 @NgaySinh date,
-@GioiTinh nchar(5),
-@NgheNghiep nvarchar(50),
+@GioiTinh varchar(5),
+@NgheNghiep varchar(50),
 @SoDienThoai varchar(20),
-@DiaChi nvarchar(100)
+@DiaChi varchar(100)
 AS
 BEGIN
 	insert into HOCVIEN (MaHocVien, TenHocVien, NgaySinh, GioiTinh,NgheNghiep, SoDienThoai, DiaChi)
@@ -438,11 +438,11 @@ GO
 
 ---
 CREATE PROCEDURE HoSoHocVien_Insert
-@MaHoSo char(10),
-@MaHocVien char(10),
-@MaLop char(10),
+@MaHoSo varchar(10),
+@MaHocVien varchar(10),
+@MaLop varchar(10),
 @DiemThi float,
-@XepLoai nvarchar(50)
+@XepLoai varchar(50)
 AS
 BEGIN
 	insert into HOSOHOCVIEN (MaHoSo, MaHocVien, MaLop, DiemThi, XepLoai)
@@ -452,7 +452,7 @@ GO
 
 ---
 CREATE PROCEDURE KhoaHoc_Insert
-@MaKhoaHoc char(10),
+@MaKhoaHoc varchar(10),
 @NienHoc int,
 @HocKy int
 AS
@@ -464,8 +464,8 @@ GO
 
 ---
 CREATE PROCEDURE KyThi_Insert
-@MaKyThi char(10),
-@MaKhoaHoc char(10),
+@MaKyThi varchar(10),
+@MaKhoaHoc varchar(10),
 @NgayThi date,
 @GioThi time(7)
 AS
@@ -477,8 +477,8 @@ GO
 
 ---
 CREATE PROCEDURE LoaiLop_Insert
-@MaLoaiLop char(10),
-@TenLoaiLop nchar(20),
+@MaLoaiLop varchar(10),
+@TenLoaiLop varchar(20),
 @NgayHoc date,
 @GioHoc time(7)
 AS
@@ -490,11 +490,11 @@ GO
 
 ---
 CREATE PROCEDURE Lop_Insert
-@MaLop char(10),
-@MaCapLop char(10),
-@MaLoaiLop char(10),
-@MaKhoaHoc char(10),
-@TenLop nchar(20),
+@MaLop varchar(10),
+@MaCapLop varchar(10),
+@MaLoaiLop varchar(10),
+@MaKhoaHoc varchar(10),
+@TenLop varchar(20),
 @SiSo int
 AS 
 BEGIN
@@ -505,8 +505,8 @@ GO
 
 ---
 CREATE PROCEDURE PhanCong_Insert
-@MaGiaoVien char(10),
-@MaLop char(10)
+@MaGiaoVien varchar(10),
+@MaLop varchar(10)
 AS 
 BEGIN
 	insert into PHANCONG (MaGiaoVien, MaLop)
@@ -517,8 +517,8 @@ GO
 --Update--
 ---
 CREATE PROCEDURE BangCap_Update
-@MaBangCap char(10),
-@TenBangCap nvarchar(30)
+@MaBangCap varchar(10),
+@TenBangCap varchar(30)
 AS
 BEGIN
 	update BANGCAP
@@ -530,7 +530,7 @@ GO
 
 ---
 CREATE PROCEDURE BienLai_Update
-@MaBienLai char(10),
+@MaBienLai varchar(10),
 @HocPhi float,
 @MienGiam float
 AS
@@ -545,8 +545,8 @@ GO
 
 ---
 CREATE PROCEDURE CapLop_Update
-@MaCapLop char(10),
-@TenCapLop nchar(20)
+@MaCapLop varchar(10),
+@TenCapLop varchar(20)
 AS
 BEGIN
 	update CAPLOP
@@ -558,11 +558,11 @@ GO
 
 ---
 CREATE PROCEDURE DangKy_Update
-@MaDangKy char(10),
-@MaKhoaHoc char(10),
-@MaLop char(10),
-@MaHocVien char(10),
-@MaBienLai char(10)
+@MaDangKy varchar(10),
+@MaKhoaHoc varchar(10),
+@MaLop varchar(10),
+@MaHocVien varchar(10),
+@MaBienLai varchar(10)
 AS
 BEGIN
 	update DANGKY
@@ -577,8 +577,8 @@ GO
 
 ---
 CREATE PROCEDURE DiemThi_Update
-@MaHocVien char(10),
-@MaKyThi char(10),
+@MaHocVien varchar(10),
+@MaKyThi varchar(10),
 @Diem float
 AS
 BEGIN
@@ -591,9 +591,9 @@ GO
 
 ---
 CREATE PROCEDURE GiaoVien_Update
-@MaGiaoVien char(10),
-@TenGiaoVien nvarchar(30),
-@MaBangCap char(10)
+@MaGiaoVien varchar(10),
+@TenGiaoVien varchar(30),
+@MaBangCap varchar(10)
 AS
 BEGIN
 	update GIAOVIEN
@@ -606,13 +606,13 @@ GO
 
 ---
 CREATE PROCEDURE HocVien_Update
-@MaHocVien char(10),
-@TenHocVien nvarchar(30),
+@MaHocVien varchar(10),
+@TenHocVien varchar(30),
 @NgaySinh date,
-@GioiTinh nchar(5),
-@NgheNghiep nvarchar(50),
+@GioiTinh varchar(5),
+@NgheNghiep varchar(50),
 @SoDienThoai varchar(20),
-@DiaChi nvarchar(100)
+@DiaChi varchar(100)
 AS
 BEGIN
 	update HOCVIEN
@@ -629,11 +629,11 @@ GO
 
 ---
 CREATE PROCEDURE HoSoHocVien_Update
-@MaHoSo char(10),
-@MaHocVien char(10),
-@MaLop char(10),
+@MaHoSo varchar(10),
+@MaHocVien varchar(10),
+@MaLop varchar(10),
 @DiemThi float,
-@XepLoai nvarchar(50)
+@XepLoai varchar(50)
 AS
 BEGIN
 	update HOSOHOCVIEN
@@ -648,13 +648,14 @@ GO
 
 ---
 CREATE PROCEDURE KhoaHoc_Update
-@MaKhoaHoc char(10),
+@MaKhoaHoc varchar(10),
 @NienHoc int,
 @HocKy int
 AS
 BEGIN
 	update KHOAHOC
 	set
+		MaKhoaHoc = @MaKhoaHoc,
 		NienHoc = @NienHoc,
 		HocKy = HocKy
 	where MaKhoaHoc = @MaKhoaHoc
@@ -663,8 +664,8 @@ GO
 
 ---
 CREATE PROCEDURE KyThi_Update
-@MaKyThi char(10),
-@MaKhoaHoc char(10),
+@MaKyThi varchar(10),
+@MaKhoaHoc varchar(10),
 @NgayThi date,
 @GioThi time(7)
 AS
@@ -680,8 +681,8 @@ GO
 
 ---
 CREATE PROCEDURE LoaiLop_Update
-@MaLoaiLop char(10),
-@TenLoaiLop nchar(20),
+@MaLoaiLop varchar(10),
+@TenLoaiLop varchar(20),
 @NgayHoc date,
 @GioHoc time(7)
 AS
@@ -697,11 +698,11 @@ GO
 
 ---
 CREATE PROCEDURE Lop_Update
-@MaLop char(10),
-@MaCapLop char(10),
-@MaLoaiLop char(10),
-@MaKhoaHoc char(10),
-@TenLop nchar(20),
+@MaLop varchar(10),
+@MaCapLop varchar(10),
+@MaLoaiLop varchar(10),
+@MaKhoaHoc varchar(10),
+@TenLop varchar(20),
 @SiSo int
 AS 
 BEGIN
@@ -718,8 +719,8 @@ GO
 
 ---
 CREATE PROCEDURE PhanCong_Update
-@MaGiaoVien char(10),
-@MaLop char(10)
+@MaGiaoVien varchar(10),
+@MaLop varchar(10)
 AS 
 BEGIN
 	update PHANCONG
@@ -732,7 +733,7 @@ GO
 --Delete--
 ---
 CREATE PROCEDURE BangCap_Delete
-@MaBangCap char(10)
+@MaBangCap varchar(10)
 AS
 BEGIN
 	delete from BANGCAP where MaBangCap = @MaBangCap
@@ -741,7 +742,7 @@ GO
 
 ---
 CREATE PROCEDURE BienLai_Delete
-@MaBienLai char(10)
+@MaBienLai varchar(10)
 AS
 BEGIN
 	delete from BIENLAI where MaBienLai = @MaBienLai
@@ -750,7 +751,7 @@ GO
 
 ---
 CREATE PROCEDURE CapLop_Delete
-@MaCapLop char(10)
+@MaCapLop varchar(10)
 AS
 BEGIN
 	delete from CAPLOP where MaCapLop = @MaCapLop
@@ -759,7 +760,7 @@ GO
 
 ---
 CREATE PROCEDURE DangKy_Delete
-@MaDangKy char(10)
+@MaDangKy varchar(10)
 AS
 BEGIN
 	delete from DANGKY where MaDangKy = @MaDangKy
@@ -768,8 +769,8 @@ GO
 
 ---
 CREATE PROCEDURE DiemThi_Delete
-@MaHocVien char(10),
-@MaKyThi char(10)
+@MaHocVien varchar(10),
+@MaKyThi varchar(10)
 AS
 BEGIN
 	delete from DIEMTHI where (MaHocVien = @MaHocVien and MaKyThi = @MaKyThi)
@@ -778,7 +779,7 @@ GO
 
 ---
 CREATE PROCEDURE GiaoVien_Delete
-@MaGiaoVien char(10)
+@MaGiaoVien varchar(10)
 AS
 BEGIN
 	delete from GIAOVIEN where MaGiaoVien = @MaGiaoVien
@@ -787,7 +788,7 @@ GO
 
 ---
 CREATE PROCEDURE HocVien_Delete
-@MaHocVien char(10)
+@MaHocVien varchar(10)
 AS
 BEGIN
 	delete from HOCVIEN where MaHocVien = @MaHocVien
@@ -796,7 +797,7 @@ GO
 
 ---
 CREATE PROCEDURE HoSoHocVien_Delete
-@MaHoSo char(10)
+@MaHoSo varchar(10)
 AS
 BEGIN
 	delete from HOSOHOCVIEN where MaHoSo = @MaHoSo
@@ -805,7 +806,7 @@ GO
 
 ---
 CREATE PROCEDURE KhoaHoc_Delete
-@MaKhoaHoc char(10)
+@MaKhoaHoc varchar(10)
 AS
 BEGIN
 	delete from KHOAHOC where MaKhoaHoc = @MaKhoaHoc
@@ -814,7 +815,7 @@ GO
 
 ---
 CREATE PROCEDURE KyThi_Delete
-@MaKyThi char(10)
+@MaKyThi varchar(10)
 AS
 BEGIN
 	delete from KYTHI where MaKyThi = @MaKyThi
@@ -823,7 +824,7 @@ GO
 
 ---
 CREATE PROCEDURE LoaiLop_Delete
-@MaLoaiLop char(10)
+@MaLoaiLop varchar(10)
 AS
 BEGIN
 	delete from LOAILOP where MaLoaiLop = @MaLoaiLop
@@ -832,7 +833,7 @@ GO
 
 ---
 CREATE PROCEDURE Lop_Delete
-@MaLop char(10)
+@MaLop varchar(10)
 AS
 BEGIN
 	delete from LOP where MaLop = @MaLop
@@ -841,8 +842,8 @@ GO
 
 ---
 CREATE PROCEDURE PhanCong_Delete
-@MaGiaoVien char(10),
-@MaLop char(10)
+@MaGiaoVien varchar(10),
+@MaLop varchar(10)
 AS
 BEGIN
 	delete from PHANCONG where (MaGiaoVien = @MaGiaoVien and MaLop = @MaLop)
@@ -915,7 +916,7 @@ WHERE
 Go
 
 CREATE PROCEDURE TraCuuHocVienTheoMa
-	@MaHocVien char(10)
+	@MaHocVien varchar(10)
 AS
 BEGIN
 	SELECT a.MaHocVien, TenHocVien, NgaySinh, GioiTinh, TenLop, TenLoaiLop, TenCapLop, DiemThi, XepLoai
@@ -945,7 +946,7 @@ END
 GO
 
 CREATE PROCEDURE TraCuuLopTheoMa
-	@MaLop char(10)
+	@MaLop varchar(10)
 AS
 BEGIN
 	SELECT MaLop, TenLop, TenLoaiLop, TenCapLop, NgayHoc, GioHoc, SiSo
@@ -965,7 +966,7 @@ END
 GO
 
 CREATE PROCEDURE TraCuuTKBTheoMa
-	@MaLop char(10)
+	@MaLop varchar(10)
 AS
 BEGIN
 	SELECT LOP.MaLop, TenLop, TenLoaiLop, TenCapLop, NgayHoc, GioHoc, GIAOVIEN.TenGiaoVien

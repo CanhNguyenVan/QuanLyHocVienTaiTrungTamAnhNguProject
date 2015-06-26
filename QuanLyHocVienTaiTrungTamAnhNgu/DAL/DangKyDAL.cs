@@ -50,7 +50,7 @@ namespace DAL
             }
         }
 
-        public void InsertDangKy(DangKyDTO dangKyDTO)
+        public int InsertDangKy(DangKyDTO dangKyDTO)
         {
             int param = 5;
             string [] names = new string[param];
@@ -68,10 +68,10 @@ namespace DAL
             values[3] = dangKyDTO.MaHocVien;
             values[4] = dangKyDTO.MaBienLai;
 
-            connect.ExcuteNonQuery("DangKy_Insert",names,values,param);
+            return connect.ExcuteNonQuery("DangKy_Insert",names,values,param);
         }
 
-        public void UpdateDangKy(DangKyDTO dangKyDTO)
+        public int UpdateDangKy(DangKyDTO dangKyDTO)
         {
             int param = 5;
             string[] names = new string[param];
@@ -89,10 +89,10 @@ namespace DAL
             values[3] = dangKyDTO.MaHocVien;
             values[4] = dangKyDTO.MaBienLai;
 
-            connect.ExcuteNonQuery("DangKy_Update", names, values, param);
+            return connect.ExcuteNonQuery("DangKy_Update", names, values, param);
         }
 
-        public void DeleteByMaDangKy(DangKyDTO dangKyDTO)
+        public int DeleteByMaDangKy(DangKyDTO dangKyDTO)
         {
             int param = 1;
             string[] names = new string[param];
@@ -101,7 +101,7 @@ namespace DAL
             names[0] = "@MaDangKy";
             values[0] = dangKyDTO.MaDangKy;
 
-            connect.ExcuteNonQuery("DangKy_Delete", names, values, param);
+            return connect.ExcuteNonQuery("DangKy_Delete", names, values, param);
         }
     }
 }

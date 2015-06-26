@@ -52,7 +52,7 @@ namespace DAL
             }
         }
 
-        public void InsertHocVien(HocVienDTO hocVienDTO)
+        public int InsertHocVien(HocVienDTO hocVienDTO)
         {
             int param = 7;
             string[] names = new string[param];
@@ -74,10 +74,10 @@ namespace DAL
             values[5] = hocVienDTO.SoDienThoai;
             values[6] = hocVienDTO.DiaChi;
 
-            connect.ExcuteNonQuery("HocVien_Insert", names, values, param);
+            return connect.ExcuteNonQuery("HocVien_Insert", names, values, param);
         }
 
-        public void UpdateHocVien(HocVienDTO hocVienDTO)
+        public int UpdateHocVien(HocVienDTO hocVienDTO)
         {
             int param = 7;
             string[] names = new string[param];
@@ -99,10 +99,10 @@ namespace DAL
             values[5] = hocVienDTO.SoDienThoai;
             values[6] = hocVienDTO.DiaChi;
 
-            connect.ExcuteNonQuery("HocVien_Update", names, values, param);
+            return connect.ExcuteNonQuery("HocVien_Update", names, values, param);
         }
 
-        public void DeleteHocVien(HocVienDTO hocVienDTO)
+        public int DeleteHocVien(HocVienDTO hocVienDTO)
         {
             int param = 1;
             string[] names = new string[param];
@@ -111,7 +111,7 @@ namespace DAL
             names[0] = "@MaHocVien";
             values[0] = hocVienDTO.MaHocVien;
 
-            connect.ExcuteNonQuery("HocVien_Delete", names, values, param);
+            return connect.ExcuteNonQuery("HocVien_Delete", names, values, param);
         }
     }
 }

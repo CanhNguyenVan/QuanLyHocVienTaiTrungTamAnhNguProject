@@ -49,7 +49,7 @@ namespace DAL
             }
         }
 
-        public void InsertLoaiLop(LoaiLopDTO loaiLopDTO)
+        public int InsertLoaiLop(LoaiLopDTO loaiLopDTO)
         {
             int param = 4;
             string[] names = new string[param];
@@ -65,10 +65,10 @@ namespace DAL
             values[2] = loaiLopDTO.NgayHoc;
             values[3] = loaiLopDTO.GioHoc;
 
-            connect.ExcuteNonQuery("LoaiLop_Insert", names, values, param);
+            return connect.ExcuteNonQuery("LoaiLop_Insert", names, values, param);
         }
 
-        public void UpdateLoaiLop(LoaiLopDTO loaiLopDTO)
+        public int UpdateLoaiLop(LoaiLopDTO loaiLopDTO)
         {
             int param = 4;
             string[] names = new string[param];
@@ -84,10 +84,10 @@ namespace DAL
             values[2] = loaiLopDTO.NgayHoc;
             values[3] = loaiLopDTO.GioHoc;
 
-            connect.ExcuteNonQuery("LoaiLop_Update", names, values, param);
+            return connect.ExcuteNonQuery("LoaiLop_Update", names, values, param);
         }
 
-        public void DeleteLoaiLop(LoaiLopDTO loaiLopDTO)
+        public int DeleteLoaiLop(LoaiLopDTO loaiLopDTO)
         {
             int param = 1;
             string[] names = new string[param];
@@ -95,7 +95,7 @@ namespace DAL
             names[0] = "@MaLoaiLop";
             values[0] = loaiLopDTO.MaLoaiLop;
 
-            connect.ExcuteNonQuery("LoaiLop_Delete", names, values, param);
+            return connect.ExcuteNonQuery("LoaiLop_Delete", names, values, param);
         }
     }
 }

@@ -48,7 +48,7 @@ namespace DAL
             }
         }
 
-        public void InsertDiemThi(DiemThiDTO diemThiDTO)
+        public int InsertDiemThi(DiemThiDTO diemThiDTO)
         {
             int param = 3;
             string[] names = new string[param];
@@ -62,10 +62,10 @@ namespace DAL
             values[1] = diemThiDTO.MaKyThi;
             values[2] = diemThiDTO.Diem;
 
-            connect.ExcuteNonQuery("DiemThi_Insert", names, values, param);
+            return connect.ExcuteNonQuery("DiemThi_Insert", names, values, param);
         }
 
-        public void UpdateDiemThi(DiemThiDTO diemThiDTO)
+        public int UpdateDiemThi(DiemThiDTO diemThiDTO)
         {
             int param = 3;
             string[] names = new string[param];
@@ -79,10 +79,10 @@ namespace DAL
             values[1] = diemThiDTO.MaKyThi;
             values[2] = diemThiDTO.Diem;
 
-            connect.ExcuteNonQuery("DiemThi_Update", names, values, param);
+            return connect.ExcuteNonQuery("DiemThi_Update", names, values, param);
         }
 
-        public void DeleteDiemThi(DiemThiDTO diemThiDTO)
+        public int DeleteDiemThi(DiemThiDTO diemThiDTO)
         {
             int param = 2;
             string[] names = new string[param];
@@ -94,7 +94,7 @@ namespace DAL
             values[0] = diemThiDTO.MaHocVien;
             values[1] = diemThiDTO.MaKyThi;
 
-            connect.ExcuteNonQuery("DiemThi_Delete", names, values, param);
+            return connect.ExcuteNonQuery("DiemThi_Delete", names, values, param);
         }
     }
 }

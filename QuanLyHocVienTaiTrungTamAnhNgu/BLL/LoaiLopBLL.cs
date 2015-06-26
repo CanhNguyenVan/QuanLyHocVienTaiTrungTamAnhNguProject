@@ -16,17 +16,17 @@ namespace BLL
             return loaiLopDAL.SelectAll();
         }
 
-        public void InsertLoaiLop(LoaiLopDTO loaiLopDTO)
+        public int InsertLoaiLop(LoaiLopDTO loaiLopDTO)
         {
-            loaiLopDAL.InsertLoaiLop(loaiLopDTO);
+            return loaiLopDAL.InsertLoaiLop(loaiLopDTO);
         }
-        public void UpdateLoaiLop(LoaiLopDTO loaiLopDTO)
+        public int UpdateLoaiLop(LoaiLopDTO loaiLopDTO)
         {
-            loaiLopDAL.UpdateLoaiLop(loaiLopDTO);
+            return loaiLopDAL.UpdateLoaiLop(loaiLopDTO);
         }
-        public void DeleteLoaiLop(LoaiLopDTO loaiLopDTO)
+        public int DeleteLoaiLop(LoaiLopDTO loaiLopDTO)
         {
-            loaiLopDAL.DeleteLoaiLop(loaiLopDTO);
+            return loaiLopDAL.DeleteLoaiLop(loaiLopDTO);
         }
     }
 }

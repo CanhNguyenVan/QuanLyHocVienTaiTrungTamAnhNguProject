@@ -41,7 +41,7 @@ namespace DAL
             return list;
         }
 
-        public void InsertLop(LopDTO lopDTO)
+        public int InsertLop(LopDTO lopDTO)
         {
             int param = 6;
             string[] names = new string[param];
@@ -61,10 +61,10 @@ namespace DAL
             values[4] = lopDTO.TenLop;
             values[5] = lopDTO.SiSo;
 
-            connect.ExcuteNonQuery("Lop_Insert", names, values, param);
+            return connect.ExcuteNonQuery("Lop_Insert", names, values, param);
         }
 
-        public void UpdateLop(LopDTO lopDTO)
+        public int UpdateLop(LopDTO lopDTO)
         {
             int param = 6;
             string[] names = new string[param];
@@ -84,10 +84,10 @@ namespace DAL
             values[4] = lopDTO.TenLop;
             values[5] = lopDTO.SiSo;
 
-            connect.ExcuteNonQuery("Lop_Update", names, values, param);
+            return connect.ExcuteNonQuery("Lop_Update", names, values, param);
         }
 
-        public void DeleteLop(LopDTO lopDTO)
+        public int DeleteLop(LopDTO lopDTO)
         {
             int param = 1;
             string[] names = new string[param];
@@ -96,7 +96,7 @@ namespace DAL
             names[0] = "@MaLop";
             values[0] = lopDTO.MaLop;
 
-            connect.ExcuteNonQuery("Lop_Delete", names, values, param);
+            return connect.ExcuteNonQuery("Lop_Delete", names, values, param);
         }
     }
 }

@@ -16,18 +16,18 @@ namespace BLL
             return kyThiDAL.SelectAll();
         }
 
-        public void InsertKyThi(KyThiDTO kyThiDTO)
+        public int InsertKyThi(KyThiDTO kyThiDTO)
         {
-            kyThiDAL.InsertKyThi(kyThiDTO);
+            return kyThiDAL.InsertKyThi(kyThiDTO);
         }
-        public void UpdateKyThi(KyThiDTO kyThiDTO)
+        public int UpdateKyThi(KyThiDTO kyThiDTO)
         {
-            kyThiDAL.UpdateKyThi(kyThiDTO);
+            return kyThiDAL.UpdateKyThi(kyThiDTO);
         }
 
-        public void DeleteKyThi(KyThiDTO kyThiDTO)
+        public int DeleteKyThi(KyThiDTO kyThiDTO)
         {
-            kyThiDAL.DeleteKyThi(kyThiDTO);
+            return kyThiDAL.DeleteKyThi(kyThiDTO);
         }
     }
 }

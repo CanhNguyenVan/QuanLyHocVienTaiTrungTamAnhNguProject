@@ -38,7 +38,7 @@ namespace DAL
             return list;
         }
 
-        public void InsertKhoaHoc(KhoaHocDTO khoaHocDTO)
+        public int InsertKhoaHoc(KhoaHocDTO khoaHocDTO)
         {
             int param = 3;
             string[] names = new string[param];
@@ -52,10 +52,10 @@ namespace DAL
             values[1] = khoaHocDTO.NienHoc;
             values[2] = khoaHocDTO.HocKy;
 
-            connect.ExcuteNonQuery("KhoaHoc_Insert", names, values, param);
+            return connect.ExcuteNonQuery("KhoaHoc_Insert", names, values, param);
         }
 
-        public void UpdateKhoaHoc(KhoaHocDTO khoaHocDTO)
+        public int UpdateKhoaHoc(KhoaHocDTO khoaHocDTO)
         {
             int param = 3;
             string[] names = new string[param];
@@ -69,10 +69,10 @@ namespace DAL
             values[1] = khoaHocDTO.NienHoc;
             values[2] = khoaHocDTO.HocKy;
 
-            connect.ExcuteNonQuery("KhoaHoc_Update", names, values, param);
+           return connect.ExcuteNonQuery("KhoaHoc_Update", names, values, param);
         }
 
-        public void DeleteKhoaHoc(KhoaHocDTO khoaHocDTO)
+        public int DeleteKhoaHoc(KhoaHocDTO khoaHocDTO)
         {
             int param = 1;
             string[] names = new string[param];
@@ -80,7 +80,7 @@ namespace DAL
             names[0] = "@MaKhoaHoc";
             values[0] = khoaHocDTO.MaKhoaHoc;
 
-            connect.ExcuteNonQuery("KhoaHoc_Delete", names, values, param);
+            return connect.ExcuteNonQuery("KhoaHoc_Delete", names, values, param);
         }
     }
 }

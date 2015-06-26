@@ -49,7 +49,7 @@ namespace DAL
             }
         }
 
-        public void InsertKyThi(KyThiDTO kyThiDTO)
+        public int InsertKyThi(KyThiDTO kyThiDTO)
         {
             int param = 4;
             string[] names = new string[param];
@@ -65,10 +65,10 @@ namespace DAL
             values[2] = kyThiDTO.NgayThi;
             values[3] = kyThiDTO.GioThi;
 
-            connect.ExcuteNonQuery("KyThi_Insert", names, values, param);
+            return connect.ExcuteNonQuery("KyThi_Insert", names, values, param);
         }
 
-        public void UpdateKyThi(KyThiDTO kyThiDTO)
+        public int UpdateKyThi(KyThiDTO kyThiDTO)
         {
             int param = 4;
             string[] names = new string[param];
@@ -84,10 +84,10 @@ namespace DAL
             values[2] = kyThiDTO.NgayThi;
             values[3] = kyThiDTO.GioThi;
 
-            connect.ExcuteNonQuery("KyThi_Update", names, values, param);
+            return connect.ExcuteNonQuery("KyThi_Update", names, values, param);
         }
 
-        public void DeleteKyThi(KyThiDTO kyThiDTO)
+        public int DeleteKyThi(KyThiDTO kyThiDTO)
         {
             int param = 1;
             string[] names = new string[param];
@@ -95,7 +95,7 @@ namespace DAL
             names[0] = "@MaKyThi";
             values[0] = kyThiDTO.MaKyThi;
 
-            connect.ExcuteNonQuery("KyThi_Delete", names, values, param);
+            return connect.ExcuteNonQuery("KyThi_Delete", names, values, param);
         }
     }
 }
