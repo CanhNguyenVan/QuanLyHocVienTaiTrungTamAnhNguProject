@@ -75,13 +75,15 @@ namespace GUI
                 giaoVienDto.TenGiaoVien = txt_TenGiaoVien.Text;
                 giaoVienDto.MaBangCap = (cbx_MaBangCap.SelectedItem as BangCapDTO).MaBangCap;
 
-                _giaoVienBll.InsertGiaoVien(giaoVienDto);
+                if (1 == _giaoVienBll.InsertGiaoVien(giaoVienDto))
+                {
 
-                MessageBox.Show("Thêm thành công!");
+                    MessageBox.Show("Thêm thành công!");
 
-                LoadData();
-               
-                Binding();
+                    LoadData();
+
+                    Binding();
+                }
             }
             catch (Exception ex)
             {
@@ -98,13 +100,15 @@ namespace GUI
                 giaoVienDto.TenGiaoVien = txt_TenGiaoVien.Text;
                 giaoVienDto.MaBangCap = (cbx_MaBangCap.SelectedItem as BangCapDTO).MaBangCap;
 
-                _giaoVienBll.UpdateGiaoVien(giaoVienDto);
+                if (1 == _giaoVienBll.UpdateGiaoVien(giaoVienDto))
+                {
 
-                MessageBox.Show("Sửa thành công!");
+                    MessageBox.Show("Sửa thành công!");
 
-                LoadData();
+                    LoadData();
 
-                Binding();
+                    Binding();
+                }
             }
             catch (Exception ex)
             {
@@ -121,13 +125,15 @@ namespace GUI
                 giaoVienDto.TenGiaoVien = txt_TenGiaoVien.Text;
                 giaoVienDto.MaBangCap = (cbx_MaBangCap.SelectedItem as BangCapDTO).MaBangCap;
 
-                _giaoVienBll.DeleteGiaoVien(giaoVienDto);
+                if (1 == _giaoVienBll.DeleteGiaoVien(giaoVienDto))
+                {
 
-                MessageBox.Show("Sửa thành công!");
+                    MessageBox.Show("Sửa thành công!");
 
-                LoadData();
+                    LoadData();
 
-                Binding();
+                    Binding();
+                }
             }
             catch (Exception ex)
             {

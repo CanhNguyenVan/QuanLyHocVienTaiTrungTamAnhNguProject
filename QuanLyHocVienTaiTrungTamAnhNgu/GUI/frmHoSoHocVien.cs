@@ -75,11 +75,15 @@ namespace GUI
                 hoSoHocVienDto.DiemThi = float.Parse(txt_Diem.Text);
                 hoSoHocVienDto.XepLoai = txt_XepLoai.Text;
 
-                _hoSoHocVienBll.UpdateHoSoHocVien(hoSoHocVienDto);
+                if (1 == _hoSoHocVienBll.UpdateHoSoHocVien(hoSoHocVienDto))
+                {
 
-                MessageBox.Show("Cập nhật thành công!");
+                    MessageBox.Show("Cập nhật thành công!");
 
-                LoadData();
+                    LoadData();
+
+                    Binding();
+                }
             }
             catch (Exception ex)
             {

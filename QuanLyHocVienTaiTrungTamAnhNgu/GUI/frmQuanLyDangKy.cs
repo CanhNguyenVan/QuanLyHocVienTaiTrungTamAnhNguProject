@@ -86,11 +86,11 @@ namespace GUI
 
                 // Insert vào cơ sở dữ liệu
                 if (1 == _hocVienBll.InsertHocVien(hocVienDto) &&
-                    1 == _dangKyBll.InsertDangKy(dangKyDto)
+                    1 == _dangKyBll.InsertDangKy(dangKyDto) &&
+                    1 == _bienLaiBll.InsertBienLai(bienLaiDto) &&
+                    1 == _hoSoHocVienBll.InsertHoSoHocVien(hoSoHocVienDto)
                     )
                 {
-                    _bienLaiBll.InsertBienLai(bienLaiDto);
-                    _hoSoHocVienBll.InsertHoSoHocVien(hoSoHocVienDto);
 
                     MessageBox.Show("Đăng ký thành công!");
                 }
