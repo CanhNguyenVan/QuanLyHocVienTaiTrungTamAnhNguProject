@@ -46,10 +46,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,24 +71,84 @@
     <Compile Include="BangCapDAL.cs" />
     <Compile Include="BienLaiDAL.cs" />
     <Compile Include="CapLopDAL.cs" />
+    <Compile Include="GIAOVIEN.cs">
+      <DependentUpon>QLHVEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="GiaoVienDAL.cs" />
+    <Compile Include="GIAOVIEN_LOPHOC.cs">
+      <DependentUpon>QLHVEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HOCPHI.cs">
+      <DependentUpon>QLHVEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HOCVIEN.cs">
+      <DependentUpon>QLHVEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="HocVienDAL.cs" />
     <Compile Include="DangKyDAL.cs" />
     <Compile Include="DataConnecter.cs" />
     <Compile Include="DiemThiDAL.cs" />
+    <Compile Include="HOCVIEN_LOPHOC.cs">
+      <DependentUpon>QLHVEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="HoSoHocVienDAL.cs" />
+    <Compile Include="KETQUA.cs">
+      <DependentUpon>QLHVEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KHOA.cs">
+      <DependentUpon>QLHVEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="KhoaHocDAL.cs" />
     <Compile Include="KyThiDAL.cs" />
     <Compile Include="LoaiLopDAL.cs" />
     <Compile Include="LopDAL.cs" />
+    <Compile Include="LOPHOC.cs">
+      <DependentUpon>QLHVEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LOPHOC_KHOAHOC.cs">
+      <DependentUpon>QLHVEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LOPHOC_PHONGHOC.cs">
+      <DependentUpon>QLHVEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="PhanCongDAL.cs" />
+    <Compile Include="PHONGHOC.cs">
+      <DependentUpon>QLHVEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="QLHVEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLHVEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QLHVEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLHVEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QLHVEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLHVEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>QLHVEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>QLHVEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TAIKHOAN.cs">
+      <DependentUpon>QLHVEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="TaiKhoanDAL.cs" />
+    <Compile Include="TaiKhoan_SelectAll_Result.cs">
+      <DependentUpon>QLHVEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="ThoiKhoaBieuDAL.cs" />
     <Compile Include="TraCuuHocVienDAL.cs" />
     <Compile Include="TraCuuLopDAL.cs" />
@@ -92,13 +163,22 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <EntityDeploy Include="QLHVEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QLHVEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="QLHVEntities.edmx.diagram">
+      <DependentUpon>QLHVEntities.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
@@ -116,6 +196,18 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="QLHVEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLHVEntities.edmx</DependentUpon>
+      <LastGenOutput>QLHVEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="QLHVEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLHVEntities.edmx</DependentUpon>
+      <LastGenOutput>QLHVEntities.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

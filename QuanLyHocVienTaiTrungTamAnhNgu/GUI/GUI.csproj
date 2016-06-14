@@ -52,6 +52,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="frmBaoCaoDoanhThu.cs">
@@ -273,6 +274,7 @@
     <EmbeddedResource Include="Report_DoanhThu.rdlc" />
     <EmbeddedResource Include="Report_Lop.rdlc" />
     <EmbeddedResource Include="Report_HocVien.rdlc" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -340,9 +342,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\info %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\phan quyen.png" />

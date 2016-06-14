@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ee70dfdbb89e4a5fb931cc05bea67fb4" Name="Diagram1">
+        <EntityTypeShape EntityType="QLHVModel.GIAOVIEN" Width="1.5" PointX="0.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLHVModel.GIAOVIEN_LOPHOC" Width="1.75" PointX="2.75" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLHVModel.HOCPHI" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLHVModel.HOCVIEN" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLHVModel.HOCVIEN_LOPHOC" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLHVModel.KETQUA" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLHVModel.KHOA" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLHVModel.LOPHOC" Width="1.5" PointX="7.5" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLHVModel.LOPHOC_KHOAHOC" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLHVModel.LOPHOC_PHONGHOC" Width="1.5" PointX="3.875" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLHVModel.PHONGHOC" Width="1.5" PointX="10.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLHVModel.TAIKHOAN" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="QLHVModel.FK_GIAOVIEN_LOPHOC_GIAOVIEN" ManuallyRouted="true" >
+          <ConnectorPoint PointX="2" PointY="1.677643229166667" />
+          <ConnectorPoint PointX="2.2475" PointY="1.677643229166667" />
+          <ConnectorPoint PointX="2.2475" PointY="1.5109765625000005" />
+          <ConnectorPoint PointX="2.5025" PointY="1.5109765625000005" />
+          <ConnectorPoint PointX="2.5025" PointY="1.677643229166667" />
+          <ConnectorPoint PointX="2.75" PointY="1.677643229166667" />
+        </AssociationConnector>
+        <AssociationConnector Association="QLHVModel.FK_HOCPHI_HOCVIEN" />
+        <AssociationConnector Association="QLHVModel.FK_HOCVIEN_LOPHOC_HOCVIEN" />
+        <AssociationConnector Association="QLHVModel.FK_KETQUA_HOCVIEN" />
+        <AssociationConnector Association="QLHVModel.FK_LOPHOC_KHOAHOC_KHOA" />
+        <AssociationConnector Association="QLHVModel.FK_LOPHOC_PHONGHOC_PHONGHOC" />
+        <AssociationConnector Association="QLHVModel.GIAOVIEN_LOPHOCLOPHOC" />
+        <AssociationConnector Association="QLHVModel.HOCVIEN_LOPHOCLOPHOC" />
+        <AssociationConnector Association="QLHVModel.LOPHOC_KHOAHOCLOPHOC" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,830 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="QLHVModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="GIAOVIEN">
+          <Key>
+            <PropertyRef Name="MaGiaoVien" />
+          </Key>
+          <Property Name="MaGiaoVien" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TenGiaoVien" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="GioiTinh" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="TrinhDo" Type="nvarchar" MaxLength="50" />
+          <Property Name="NgaySinh" Type="smalldatetime" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="SoDienThoai" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
+          <Property Name="CMND" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="TrangThai" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GIAOVIEN_LOPHOC">
+          <Key>
+            <PropertyRef Name="MaGiaoVien" />
+            <PropertyRef Name="MaLopHoc" />
+          </Key>
+          <Property Name="MaGiaoVien" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MaLopHoc" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Muc" Type="int" Nullable="false" />
+          <Property Name="TrangThai" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HOCPHI">
+          <Key>
+            <PropertyRef Name="MaHocPhi" />
+          </Key>
+          <Property Name="MaHocPhi" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MaHocVien" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="SoTienCanDong" Type="money" Nullable="false" />
+          <Property Name="SoTienDaDong" Type="money" Nullable="false" />
+          <Property Name="SoDu" Type="money" Nullable="false" />
+          <Property Name="No" Type="money" Nullable="false" />
+          <Property Name="TrangThai" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HOCVIEN">
+          <Key>
+            <PropertyRef Name="MaHocVien" />
+          </Key>
+          <Property Name="MaHocVien" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TenHocVien" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="GioiTinh" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="NgaySinh" Type="smalldatetime" />
+          <Property Name="SoDienThoai" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
+          <Property Name="CMND" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="TrangThai" Type="int" Nullable="false" />
+          <Property Name="NgayTao" Type="smalldatetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HOCVIEN_LOPHOC">
+          <Key>
+            <PropertyRef Name="MaHocVien" />
+            <PropertyRef Name="MaLopHoc" />
+          </Key>
+          <Property Name="MaHocVien" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MaLopHoc" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Muc" Type="int" />
+          <Property Name="TrangThai" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KETQUA">
+          <Key>
+            <PropertyRef Name="MaKetQua" />
+          </Key>
+          <Property Name="MaKetQua" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MaHocVien" Type="varchar" MaxLength="10" />
+          <Property Name="LoaiKetQua" Type="int" />
+          <Property Name="Diem" Type="nchar" MaxLength="10" />
+          <Property Name="TrangThai" Type="int" />
+        </EntityType>
+        <EntityType Name="KHOA">
+          <Key>
+            <PropertyRef Name="MaKhoaHoc" />
+          </Key>
+          <Property Name="MaKhoaHoc" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TenKhoaHoc" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ThoiGianBatDau" Type="smalldatetime" Nullable="false" />
+          <Property Name="ThoiGianKetThuc" Type="smalldatetime" Nullable="false" />
+          <Property Name="TrangThai" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LOPHOC_KHOAHOC">
+          <Key>
+            <PropertyRef Name="MaLopHoc" />
+            <PropertyRef Name="MaKhoaHoc" />
+          </Key>
+          <Property Name="MaLopHoc" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MaKhoaHoc" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Muc" Type="int" />
+          <Property Name="TrangThai" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LOPHOC_PHONGHOC">
+          <Key>
+            <PropertyRef Name="MaLopHoc" />
+            <PropertyRef Name="MaPhongHoc" />
+          </Key>
+          <Property Name="MaLopHoc" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MaPhongHoc" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Muc" Type="int" />
+          <Property Name="TrangThai" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="PHONGHOC">
+          <Key>
+            <PropertyRef Name="MaPhongHoc" />
+          </Key>
+          <Property Name="MaPhongHoc" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TenPhong" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TrangThai" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TAIKHOAN">
+          <Key>
+            <PropertyRef Name="MaTK" />
+          </Key>
+          <Property Name="MaTK" Type="int" Nullable="false" />
+          <Property Name="TenTK" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="MatKhau" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="LoaiTK" Type="int" />
+        </EntityType>
+        <Association Name="FK_GIAOVIEN_LOPHOC_GIAOVIEN">
+          <End Role="GIAOVIEN" Type="Self.GIAOVIEN" Multiplicity="1" />
+          <End Role="GIAOVIEN_LOPHOC" Type="Self.GIAOVIEN_LOPHOC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GIAOVIEN">
+              <PropertyRef Name="MaGiaoVien" />
+            </Principal>
+            <Dependent Role="GIAOVIEN_LOPHOC">
+              <PropertyRef Name="MaGiaoVien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HOCPHI_HOCVIEN">
+          <End Role="HOCVIEN" Type="Self.HOCVIEN" Multiplicity="1" />
+          <End Role="HOCPHI" Type="Self.HOCPHI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOCVIEN">
+              <PropertyRef Name="MaHocVien" />
+            </Principal>
+            <Dependent Role="HOCPHI">
+              <PropertyRef Name="MaHocVien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HOCVIEN_LOPHOC_HOCVIEN">
+          <End Role="HOCVIEN" Type="Self.HOCVIEN" Multiplicity="1" />
+          <End Role="HOCVIEN_LOPHOC" Type="Self.HOCVIEN_LOPHOC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOCVIEN">
+              <PropertyRef Name="MaHocVien" />
+            </Principal>
+            <Dependent Role="HOCVIEN_LOPHOC">
+              <PropertyRef Name="MaHocVien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KETQUA_HOCVIEN">
+          <End Role="HOCVIEN" Type="Self.HOCVIEN" Multiplicity="0..1" />
+          <End Role="KETQUA" Type="Self.KETQUA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOCVIEN">
+              <PropertyRef Name="MaHocVien" />
+            </Principal>
+            <Dependent Role="KETQUA">
+              <PropertyRef Name="MaHocVien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LOPHOC_KHOAHOC_KHOA">
+          <End Role="KHOA" Type="Self.KHOA" Multiplicity="1" />
+          <End Role="LOPHOC_KHOAHOC" Type="Self.LOPHOC_KHOAHOC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHOA">
+              <PropertyRef Name="MaKhoaHoc" />
+            </Principal>
+            <Dependent Role="LOPHOC_KHOAHOC">
+              <PropertyRef Name="MaKhoaHoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LOPHOC_PHONGHOC_PHONGHOC">
+          <End Role="PHONGHOC" Type="Self.PHONGHOC" Multiplicity="1" />
+          <End Role="LOPHOC_PHONGHOC" Type="Self.LOPHOC_PHONGHOC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PHONGHOC">
+              <PropertyRef Name="MaPhongHoc" />
+            </Principal>
+            <Dependent Role="LOPHOC_PHONGHOC">
+              <PropertyRef Name="MaPhongHoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="TaiKhoan_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaTK" Type="int" Mode="In" />
+        </Function>
+        <Function Name="TaiKhoan_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaTK" Type="int" Mode="In" />
+          <Parameter Name="TenTK" Type="nvarchar" Mode="In" />
+          <Parameter Name="MatKhau" Type="nvarchar" Mode="In" />
+          <Parameter Name="LoaiTK" Type="int" Mode="In" />
+        </Function>
+        <Function Name="TaiKhoan_SelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="TaiKhoan_SelectLastMaTK" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="TaiKhoan_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaTK" Type="int" Mode="In" />
+          <Parameter Name="TenTK" Type="nvarchar" Mode="In" />
+          <Parameter Name="MatKhau" Type="nvarchar" Mode="In" />
+          <Parameter Name="LoaiTK" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="QLHVModelStoreContainer">
+          <EntitySet Name="GIAOVIEN" EntityType="Self.GIAOVIEN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GIAOVIEN_LOPHOC" EntityType="Self.GIAOVIEN_LOPHOC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HOCPHI" EntityType="Self.HOCPHI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HOCVIEN" EntityType="Self.HOCVIEN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HOCVIEN_LOPHOC" EntityType="Self.HOCVIEN_LOPHOC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KETQUA" EntityType="Self.KETQUA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KHOA" EntityType="Self.KHOA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOPHOC_KHOAHOC" EntityType="Self.LOPHOC_KHOAHOC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOPHOC_PHONGHOC" EntityType="Self.LOPHOC_PHONGHOC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PHONGHOC" EntityType="Self.PHONGHOC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TAIKHOAN" EntityType="Self.TAIKHOAN" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_GIAOVIEN_LOPHOC_GIAOVIEN" Association="Self.FK_GIAOVIEN_LOPHOC_GIAOVIEN">
+            <End Role="GIAOVIEN" EntitySet="GIAOVIEN" />
+            <End Role="GIAOVIEN_LOPHOC" EntitySet="GIAOVIEN_LOPHOC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HOCPHI_HOCVIEN" Association="Self.FK_HOCPHI_HOCVIEN">
+            <End Role="HOCVIEN" EntitySet="HOCVIEN" />
+            <End Role="HOCPHI" EntitySet="HOCPHI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HOCVIEN_LOPHOC_HOCVIEN" Association="Self.FK_HOCVIEN_LOPHOC_HOCVIEN">
+            <End Role="HOCVIEN" EntitySet="HOCVIEN" />
+            <End Role="HOCVIEN_LOPHOC" EntitySet="HOCVIEN_LOPHOC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KETQUA_HOCVIEN" Association="Self.FK_KETQUA_HOCVIEN">
+            <End Role="HOCVIEN" EntitySet="HOCVIEN" />
+            <End Role="KETQUA" EntitySet="KETQUA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LOPHOC_KHOAHOC_KHOA" Association="Self.FK_LOPHOC_KHOAHOC_KHOA">
+            <End Role="KHOA" EntitySet="KHOA" />
+            <End Role="LOPHOC_KHOAHOC" EntitySet="LOPHOC_KHOAHOC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LOPHOC_PHONGHOC_PHONGHOC" Association="Self.FK_LOPHOC_PHONGHOC_PHONGHOC">
+            <End Role="PHONGHOC" EntitySet="PHONGHOC" />
+            <End Role="LOPHOC_PHONGHOC" EntitySet="LOPHOC_PHONGHOC" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QLHVModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="GIAOVIEN">
+          <Key>
+            <PropertyRef Name="MaGiaoVien" />
+          </Key>
+          <Property Name="MaGiaoVien" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TenGiaoVien" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GioiTinh" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TrinhDo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NgaySinh" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SoDienThoai" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CMND" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TrangThai" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="GIAOVIEN_LOPHOC" Relationship="QLHVModel.FK_GIAOVIEN_LOPHOC_GIAOVIEN" FromRole="GIAOVIEN" ToRole="GIAOVIEN_LOPHOC" />
+        </EntityType>
+        <EntityType Name="GIAOVIEN_LOPHOC">
+          <Key>
+            <PropertyRef Name="MaGiaoVien" />
+            <PropertyRef Name="MaLopHoc" />
+          </Key>
+          <Property Name="MaGiaoVien" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MaLopHoc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TrangThai" Type="Int32" Nullable="false" />
+          <Property Name="Muc" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="GIAOVIEN" Relationship="QLHVModel.FK_GIAOVIEN_LOPHOC_GIAOVIEN" FromRole="GIAOVIEN_LOPHOC" ToRole="GIAOVIEN" />
+          <NavigationProperty Name="LOPHOCs" Relationship="QLHVModel.GIAOVIEN_LOPHOCLOPHOC" FromRole="GIAOVIEN_LOPHOC" ToRole="LOPHOC" />
+        </EntityType>
+        <EntityType Name="HOCPHI">
+          <Key>
+            <PropertyRef Name="MaHocPhi" />
+          </Key>
+          <Property Name="MaHocPhi" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MaHocVien" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SoTienCanDong" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="SoTienDaDong" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="SoDu" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="No" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="TrangThai" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="HOCVIEN" Relationship="QLHVModel.FK_HOCPHI_HOCVIEN" FromRole="HOCPHI" ToRole="HOCVIEN" />
+        </EntityType>
+        <EntityType Name="HOCVIEN">
+          <Key>
+            <PropertyRef Name="MaHocVien" />
+          </Key>
+          <Property Name="MaHocVien" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TenHocVien" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="GioiTinh" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+          <Property Name="SoDienThoai" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CMND" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TrangThai" Type="Int32" Nullable="false" />
+          <Property Name="NgayTao" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="HOCPHIs" Relationship="QLHVModel.FK_HOCPHI_HOCVIEN" FromRole="HOCVIEN" ToRole="HOCPHI" />
+          <NavigationProperty Name="HOCVIEN_LOPHOC" Relationship="QLHVModel.FK_HOCVIEN_LOPHOC_HOCVIEN" FromRole="HOCVIEN" ToRole="HOCVIEN_LOPHOC" />
+          <NavigationProperty Name="KETQUAs" Relationship="QLHVModel.FK_KETQUA_HOCVIEN" FromRole="HOCVIEN" ToRole="KETQUA" />
+        </EntityType>
+        <EntityType Name="HOCVIEN_LOPHOC">
+          <Key>
+            <PropertyRef Name="MaHocVien" />
+            <PropertyRef Name="MaLopHoc" />
+          </Key>
+          <Property Name="MaHocVien" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MaLopHoc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TrangThai" Type="Int32" Nullable="false" />
+          <Property Name="Muc" Type="Int32" />
+          <NavigationProperty Name="HOCVIEN" Relationship="QLHVModel.FK_HOCVIEN_LOPHOC_HOCVIEN" FromRole="HOCVIEN_LOPHOC" ToRole="HOCVIEN" />
+          <NavigationProperty Name="LOPHOCs" Relationship="QLHVModel.HOCVIEN_LOPHOCLOPHOC" FromRole="HOCVIEN_LOPHOC" ToRole="LOPHOC" />
+        </EntityType>
+        <EntityType Name="KETQUA">
+          <Key>
+            <PropertyRef Name="MaKetQua" />
+          </Key>
+          <Property Name="MaKetQua" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MaHocVien" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="LoaiKetQua" Type="Int32" />
+          <Property Name="Diem" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="TrangThai" Type="Int32" />
+          <NavigationProperty Name="HOCVIEN" Relationship="QLHVModel.FK_KETQUA_HOCVIEN" FromRole="KETQUA" ToRole="HOCVIEN" />
+        </EntityType>
+        <EntityType Name="KHOA">
+          <Key>
+            <PropertyRef Name="MaKhoaHoc" />
+          </Key>
+          <Property Name="MaKhoaHoc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TenKhoaHoc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ThoiGianBatDau" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ThoiGianKetThuc" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="TrangThai" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="LOPHOC_KHOAHOC" Relationship="QLHVModel.FK_LOPHOC_KHOAHOC_KHOA" FromRole="KHOA" ToRole="LOPHOC_KHOAHOC" />
+        </EntityType>
+        <EntityType Name="LOPHOC">
+          <Key>
+            <PropertyRef Name="MaLopHoc" />
+            <PropertyRef Name="Muc" />
+          </Key>
+          <Property Name="MaLopHoc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Muc" Type="Int32" Nullable="false" />
+          <Property Name="TenLopHoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HocPhi" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="BuoiHoc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GioBatDau" Type="Time" Nullable="false" Precision="0" />
+          <Property Name="GioKetThuc" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="TrangThai" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="GIAOVIEN_LOPHOC" Relationship="QLHVModel.GIAOVIEN_LOPHOCLOPHOC" FromRole="LOPHOC" ToRole="GIAOVIEN_LOPHOC" />
+          <NavigationProperty Name="HOCVIEN_LOPHOC" Relationship="QLHVModel.HOCVIEN_LOPHOCLOPHOC" FromRole="LOPHOC" ToRole="HOCVIEN_LOPHOC" />
+          <NavigationProperty Name="LOPHOC_KHOAHOC" Relationship="QLHVModel.LOPHOC_KHOAHOCLOPHOC" FromRole="LOPHOC" ToRole="LOPHOC_KHOAHOC" />
+        </EntityType>
+        <EntityType Name="LOPHOC_KHOAHOC">
+          <Key>
+            <PropertyRef Name="MaLopHoc" />
+            <PropertyRef Name="MaKhoaHoc" />
+          </Key>
+          <Property Name="MaLopHoc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MaKhoaHoc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TrangThai" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Muc" Type="Int32" />
+          <NavigationProperty Name="KHOA" Relationship="QLHVModel.FK_LOPHOC_KHOAHOC_KHOA" FromRole="LOPHOC_KHOAHOC" ToRole="KHOA" />
+          <NavigationProperty Name="LOPHOCs" Relationship="QLHVModel.LOPHOC_KHOAHOCLOPHOC" FromRole="LOPHOC_KHOAHOC" ToRole="LOPHOC" />
+        </EntityType>
+        <EntityType Name="LOPHOC_PHONGHOC">
+          <Key>
+            <PropertyRef Name="MaLopHoc" />
+            <PropertyRef Name="MaPhongHoc" />
+          </Key>
+          <Property Name="MaLopHoc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MaPhongHoc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TrangThai" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Muc" Type="Int32" />
+          <NavigationProperty Name="PHONGHOC" Relationship="QLHVModel.FK_LOPHOC_PHONGHOC_PHONGHOC" FromRole="LOPHOC_PHONGHOC" ToRole="PHONGHOC" />
+        </EntityType>
+        <EntityType Name="PHONGHOC">
+          <Key>
+            <PropertyRef Name="MaPhongHoc" />
+          </Key>
+          <Property Name="MaPhongHoc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TenPhong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TrangThai" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="LOPHOC_PHONGHOC" Relationship="QLHVModel.FK_LOPHOC_PHONGHOC_PHONGHOC" FromRole="PHONGHOC" ToRole="LOPHOC_PHONGHOC" />
+        </EntityType>
+        <EntityType Name="TAIKHOAN">
+          <Key>
+            <PropertyRef Name="MaTK" />
+          </Key>
+          <Property Name="MaTK" Type="Int32" Nullable="false" />
+          <Property Name="TenTK" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MatKhau" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LoaiTK" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="QLHVEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="GIAOVIENs" EntityType="Self.GIAOVIEN" />
+          <EntitySet Name="GIAOVIEN_LOPHOC" EntityType="Self.GIAOVIEN_LOPHOC" />
+          <EntitySet Name="HOCPHIs" EntityType="Self.HOCPHI" />
+          <EntitySet Name="HOCVIENs" EntityType="Self.HOCVIEN" />
+          <EntitySet Name="HOCVIEN_LOPHOC" EntityType="Self.HOCVIEN_LOPHOC" />
+          <EntitySet Name="KETQUAs" EntityType="Self.KETQUA" />
+          <EntitySet Name="KHOAs" EntityType="Self.KHOA" />
+          <EntitySet Name="LOPHOCs" EntityType="Self.LOPHOC" />
+          <EntitySet Name="LOPHOC_KHOAHOC" EntityType="Self.LOPHOC_KHOAHOC" />
+          <EntitySet Name="LOPHOC_PHONGHOC" EntityType="Self.LOPHOC_PHONGHOC" />
+          <EntitySet Name="PHONGHOCs" EntityType="Self.PHONGHOC" />
+          <EntitySet Name="TAIKHOANs" EntityType="Self.TAIKHOAN" />
+          <FunctionImport Name="TaiKhoan_Delete">
+          <Parameter Name="MaTK" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="TaiKhoan_Insert">
+            <Parameter Name="MaTK" Mode="In" Type="Int32" />
+            <Parameter Name="TenTK" Mode="In" Type="String" />
+            <Parameter Name="MatKhau" Mode="In" Type="String" />
+            <Parameter Name="LoaiTK" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="TaiKhoan_SelectAll" ReturnType="Collection(QLHVModel.TaiKhoan_SelectAll_Result)" />
+          <FunctionImport Name="TaiKhoan_SelectLastMaTK" ReturnType="Collection(Int32)" />
+          <FunctionImport Name="TaiKhoan_Update">
+            <Parameter Name="MaTK" Mode="In" Type="Int32" />
+            <Parameter Name="TenTK" Mode="In" Type="String" />
+            <Parameter Name="MatKhau" Mode="In" Type="String" />
+            <Parameter Name="LoaiTK" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <AssociationSet Name="FK_GIAOVIEN_LOPHOC_GIAOVIEN" Association="QLHVModel.FK_GIAOVIEN_LOPHOC_GIAOVIEN">
+            <End Role="GIAOVIEN" EntitySet="GIAOVIENs" />
+            <End Role="GIAOVIEN_LOPHOC" EntitySet="GIAOVIEN_LOPHOC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HOCPHI_HOCVIEN" Association="QLHVModel.FK_HOCPHI_HOCVIEN">
+            <End Role="HOCVIEN" EntitySet="HOCVIENs" />
+            <End Role="HOCPHI" EntitySet="HOCPHIs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HOCVIEN_LOPHOC_HOCVIEN" Association="QLHVModel.FK_HOCVIEN_LOPHOC_HOCVIEN">
+            <End Role="HOCVIEN" EntitySet="HOCVIENs" />
+            <End Role="HOCVIEN_LOPHOC" EntitySet="HOCVIEN_LOPHOC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KETQUA_HOCVIEN" Association="QLHVModel.FK_KETQUA_HOCVIEN">
+            <End Role="HOCVIEN" EntitySet="HOCVIENs" />
+            <End Role="KETQUA" EntitySet="KETQUAs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LOPHOC_KHOAHOC_KHOA" Association="QLHVModel.FK_LOPHOC_KHOAHOC_KHOA">
+            <End Role="KHOA" EntitySet="KHOAs" />
+            <End Role="LOPHOC_KHOAHOC" EntitySet="LOPHOC_KHOAHOC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LOPHOC_PHONGHOC_PHONGHOC" Association="QLHVModel.FK_LOPHOC_PHONGHOC_PHONGHOC">
+            <End Role="PHONGHOC" EntitySet="PHONGHOCs" />
+            <End Role="LOPHOC_PHONGHOC" EntitySet="LOPHOC_PHONGHOC" />
+          </AssociationSet>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(QLHVModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(QLHVModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+          <AssociationSet Name="GIAOVIEN_LOPHOCLOPHOC" Association="QLHVModel.GIAOVIEN_LOPHOCLOPHOC">
+            <End Role="GIAOVIEN_LOPHOC" EntitySet="GIAOVIEN_LOPHOC" />
+            <End Role="LOPHOC" EntitySet="LOPHOCs" />
+          </AssociationSet>
+          <AssociationSet Name="HOCVIEN_LOPHOCLOPHOC" Association="QLHVModel.HOCVIEN_LOPHOCLOPHOC">
+            <End Role="HOCVIEN_LOPHOC" EntitySet="HOCVIEN_LOPHOC" />
+            <End Role="LOPHOC" EntitySet="LOPHOCs" />
+          </AssociationSet>
+          <AssociationSet Name="LOPHOC_KHOAHOCLOPHOC" Association="QLHVModel.LOPHOC_KHOAHOCLOPHOC">
+            <End Role="LOPHOC_KHOAHOC" EntitySet="LOPHOC_KHOAHOC" />
+            <End Role="LOPHOC" EntitySet="LOPHOCs" />
+          </AssociationSet>
+        </EntityContainer>
+        <ComplexType Name="TaiKhoan_SelectAll_Result">
+          <Property Type="Int32" Name="MaTK" Nullable="false" />
+          <Property Type="String" Name="TenTK" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="MatKhau" Nullable="false" MaxLength="30" />
+          <Property Type="Int32" Name="LoaiTK" Nullable="true" />
+        </ComplexType>
+        <Association Name="FK_GIAOVIEN_LOPHOC_GIAOVIEN">
+          <End Type="QLHVModel.GIAOVIEN" Role="GIAOVIEN" Multiplicity="1" />
+          <End Type="QLHVModel.GIAOVIEN_LOPHOC" Role="GIAOVIEN_LOPHOC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GIAOVIEN">
+              <PropertyRef Name="MaGiaoVien" />
+            </Principal>
+            <Dependent Role="GIAOVIEN_LOPHOC">
+              <PropertyRef Name="MaGiaoVien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HOCPHI_HOCVIEN">
+          <End Type="QLHVModel.HOCVIEN" Role="HOCVIEN" Multiplicity="1" />
+          <End Type="QLHVModel.HOCPHI" Role="HOCPHI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOCVIEN">
+              <PropertyRef Name="MaHocVien" />
+            </Principal>
+            <Dependent Role="HOCPHI">
+              <PropertyRef Name="MaHocVien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HOCVIEN_LOPHOC_HOCVIEN">
+          <End Type="QLHVModel.HOCVIEN" Role="HOCVIEN" Multiplicity="1" />
+          <End Type="QLHVModel.HOCVIEN_LOPHOC" Role="HOCVIEN_LOPHOC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOCVIEN">
+              <PropertyRef Name="MaHocVien" />
+            </Principal>
+            <Dependent Role="HOCVIEN_LOPHOC">
+              <PropertyRef Name="MaHocVien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KETQUA_HOCVIEN">
+          <End Type="QLHVModel.HOCVIEN" Role="HOCVIEN" Multiplicity="0..1" />
+          <End Type="QLHVModel.KETQUA" Role="KETQUA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOCVIEN">
+              <PropertyRef Name="MaHocVien" />
+            </Principal>
+            <Dependent Role="KETQUA">
+              <PropertyRef Name="MaHocVien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LOPHOC_KHOAHOC_KHOA">
+          <End Type="QLHVModel.KHOA" Role="KHOA" Multiplicity="1" />
+          <End Type="QLHVModel.LOPHOC_KHOAHOC" Role="LOPHOC_KHOAHOC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHOA">
+              <PropertyRef Name="MaKhoaHoc" />
+            </Principal>
+            <Dependent Role="LOPHOC_KHOAHOC">
+              <PropertyRef Name="MaKhoaHoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LOPHOC_PHONGHOC_PHONGHOC">
+          <End Type="QLHVModel.PHONGHOC" Role="PHONGHOC" Multiplicity="1" />
+          <End Type="QLHVModel.LOPHOC_PHONGHOC" Role="LOPHOC_PHONGHOC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PHONGHOC">
+              <PropertyRef Name="MaPhongHoc" />
+            </Principal>
+            <Dependent Role="LOPHOC_PHONGHOC">
+              <PropertyRef Name="MaPhongHoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <Association Name="GIAOVIEN_LOPHOCLOPHOC">
+          <End Type="QLHVModel.GIAOVIEN_LOPHOC" Role="GIAOVIEN_LOPHOC" Multiplicity="1" />
+          <End Type="QLHVModel.LOPHOC" Role="LOPHOC" Multiplicity="*" />
+        </Association>
+        <Association Name="HOCVIEN_LOPHOCLOPHOC">
+          <End Type="QLHVModel.HOCVIEN_LOPHOC" Role="HOCVIEN_LOPHOC" Multiplicity="1" />
+          <End Type="QLHVModel.LOPHOC" Role="LOPHOC" Multiplicity="*" />
+        </Association>
+        <Association Name="LOPHOC_KHOAHOCLOPHOC">
+          <End Type="QLHVModel.LOPHOC_KHOAHOC" Role="LOPHOC_KHOAHOC" Multiplicity="1" />
+          <End Type="QLHVModel.LOPHOC" Role="LOPHOC" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QLHVModelStoreContainer" CdmEntityContainer="QLHVEntities">
+          <EntitySetMapping Name="GIAOVIENs">
+            <EntityTypeMapping TypeName="QLHVModel.GIAOVIEN">
+              <MappingFragment StoreEntitySet="GIAOVIEN">
+                <ScalarProperty Name="MaGiaoVien" ColumnName="MaGiaoVien" />
+                <ScalarProperty Name="TenGiaoVien" ColumnName="TenGiaoVien" />
+                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+                <ScalarProperty Name="TrinhDo" ColumnName="TrinhDo" />
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="CMND" ColumnName="CMND" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GIAOVIEN_LOPHOC">
+            <EntityTypeMapping TypeName="QLHVModel.GIAOVIEN_LOPHOC">
+              <MappingFragment StoreEntitySet="GIAOVIEN_LOPHOC">
+                <ScalarProperty Name="Muc" ColumnName="Muc" />
+                <ScalarProperty Name="MaGiaoVien" ColumnName="MaGiaoVien" />
+                <ScalarProperty Name="MaLopHoc" ColumnName="MaLopHoc" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HOCPHIs">
+            <EntityTypeMapping TypeName="QLHVModel.HOCPHI">
+              <MappingFragment StoreEntitySet="HOCPHI">
+                <ScalarProperty Name="MaHocPhi" ColumnName="MaHocPhi" />
+                <ScalarProperty Name="MaHocVien" ColumnName="MaHocVien" />
+                <ScalarProperty Name="SoTienCanDong" ColumnName="SoTienCanDong" />
+                <ScalarProperty Name="SoTienDaDong" ColumnName="SoTienDaDong" />
+                <ScalarProperty Name="SoDu" ColumnName="SoDu" />
+                <ScalarProperty Name="No" ColumnName="No" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HOCVIENs">
+            <EntityTypeMapping TypeName="QLHVModel.HOCVIEN">
+              <MappingFragment StoreEntitySet="HOCVIEN">
+                <ScalarProperty Name="MaHocVien" ColumnName="MaHocVien" />
+                <ScalarProperty Name="TenHocVien" ColumnName="TenHocVien" />
+                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="CMND" ColumnName="CMND" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+                <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HOCVIEN_LOPHOC">
+            <EntityTypeMapping TypeName="QLHVModel.HOCVIEN_LOPHOC">
+              <MappingFragment StoreEntitySet="HOCVIEN_LOPHOC">
+                <ScalarProperty Name="Muc" ColumnName="Muc" />
+                <ScalarProperty Name="MaHocVien" ColumnName="MaHocVien" />
+                <ScalarProperty Name="MaLopHoc" ColumnName="MaLopHoc" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KETQUAs">
+            <EntityTypeMapping TypeName="QLHVModel.KETQUA">
+              <MappingFragment StoreEntitySet="KETQUA">
+                <ScalarProperty Name="MaKetQua" ColumnName="MaKetQua" />
+                <ScalarProperty Name="MaHocVien" ColumnName="MaHocVien" />
+                <ScalarProperty Name="LoaiKetQua" ColumnName="LoaiKetQua" />
+                <ScalarProperty Name="Diem" ColumnName="Diem" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KHOAs">
+            <EntityTypeMapping TypeName="QLHVModel.KHOA">
+              <MappingFragment StoreEntitySet="KHOA">
+                <ScalarProperty Name="MaKhoaHoc" ColumnName="MaKhoaHoc" />
+                <ScalarProperty Name="TenKhoaHoc" ColumnName="TenKhoaHoc" />
+                <ScalarProperty Name="ThoiGianBatDau" ColumnName="ThoiGianBatDau" />
+                <ScalarProperty Name="ThoiGianKetThuc" ColumnName="ThoiGianKetThuc" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOPHOC_KHOAHOC">
+            <EntityTypeMapping TypeName="QLHVModel.LOPHOC_KHOAHOC">
+              <MappingFragment StoreEntitySet="LOPHOC_KHOAHOC">
+                <ScalarProperty Name="Muc" ColumnName="Muc" />
+                <ScalarProperty Name="MaLopHoc" ColumnName="MaLopHoc" />
+                <ScalarProperty Name="MaKhoaHoc" ColumnName="MaKhoaHoc" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOPHOC_PHONGHOC">
+            <EntityTypeMapping TypeName="QLHVModel.LOPHOC_PHONGHOC">
+              <MappingFragment StoreEntitySet="LOPHOC_PHONGHOC">
+                <ScalarProperty Name="Muc" ColumnName="Muc" />
+                <ScalarProperty Name="MaLopHoc" ColumnName="MaLopHoc" />
+                <ScalarProperty Name="MaPhongHoc" ColumnName="MaPhongHoc" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PHONGHOCs">
+            <EntityTypeMapping TypeName="QLHVModel.PHONGHOC">
+              <MappingFragment StoreEntitySet="PHONGHOC">
+                <ScalarProperty Name="MaPhongHoc" ColumnName="MaPhongHoc" />
+                <ScalarProperty Name="TenPhong" ColumnName="TenPhong" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TAIKHOANs">
+            <EntityTypeMapping TypeName="QLHVModel.TAIKHOAN">
+              <MappingFragment StoreEntitySet="TAIKHOAN">
+                <ScalarProperty Name="MaTK" ColumnName="MaTK" />
+                <ScalarProperty Name="TenTK" ColumnName="TenTK" />
+                <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+                <ScalarProperty Name="LoaiTK" ColumnName="LoaiTK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="TaiKhoan_Delete" FunctionName="QLHVModel.Store.TaiKhoan_Delete" />
+          <FunctionImportMapping FunctionImportName="TaiKhoan_Insert" FunctionName="QLHVModel.Store.TaiKhoan_Insert" />
+          <FunctionImportMapping FunctionImportName="TaiKhoan_SelectAll" FunctionName="QLHVModel.Store.TaiKhoan_SelectAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QLHVModel.TaiKhoan_SelectAll_Result">
+                <ScalarProperty Name="MaTK" ColumnName="MaTK" />
+                <ScalarProperty Name="TenTK" ColumnName="TenTK" />
+                <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+                <ScalarProperty Name="LoaiTK" ColumnName="LoaiTK" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="TaiKhoan_SelectLastMaTK" FunctionName="QLHVModel.Store.TaiKhoan_SelectLastMaTK" />
+          <FunctionImportMapping FunctionImportName="TaiKhoan_Update" FunctionName="QLHVModel.Store.TaiKhoan_Update" />
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="QLHVModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="QLHVModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="QLHVModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="QLHVModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QLHVModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="QLHVModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QLHVModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="QLHVModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="QLHVModel.Store.sp_upgraddiagrams" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
