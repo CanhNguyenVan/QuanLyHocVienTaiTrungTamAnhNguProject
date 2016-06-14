@@ -22,7 +22,7 @@ namespace DAL
         // Contructor
         public DataConnecter()
         {
-            strConnect = ConfigurationManager.ConnectionStrings[1].ConnectionString;
+            strConnect = ConfigurationManager.ConnectionStrings["GUI.Properties.Settings.QuanLyHocVienTrungTamAnhNguConnectionString"].ConnectionString;
             
             sqlConnect.ConnectionString = strConnect;
             if (sqlConnect.State == ConnectionState.Closed)
